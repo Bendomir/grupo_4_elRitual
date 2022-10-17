@@ -63,6 +63,7 @@ https://www.ticketek.com.ar/
 ● Por la estética que presentan:
 https://www.dolce-gusto.com.ar/capsulas
 https://rosariorock.com/musica/
+https://www.mercadolibre.com.ar/
 
 ● Por las funcionalidades implementadas:
 https://www.entradaweb.com.ar/
