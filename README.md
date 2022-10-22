@@ -1,4 +1,6 @@
 # grupo_4_elRitual
+●Link a Trello para organizar el trabajo
+https://trello.com/w/elritualgrupo4
 
 'El Ritual" es un sitio orientado a los amantes de la música. A través de una variada oferta busca acercarle a la audiencia una completa ruta cultural en las distintas ciudades del país.
 
@@ -32,3 +34,5 @@ https://www.mercadolibre.com.ar/
 ● Por las funcionalidades implementadas
 Nos sentimos mas que identificados con la funcionalidad de esta web a la hora de buscar los eventos que ofrece.
 https://www.entradaweb.com.ar/
+
+
