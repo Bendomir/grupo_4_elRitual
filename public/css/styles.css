@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb!important;
+    /* width: 100%; */
+}
+
+/* HEADER */
+
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.burger-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    font-size: 30px;
+}
+.top-header{
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo img{
+    width: 100%;
+}
+.logo p{
+    text-align: center;
+    padding-bottom: 10px; 
+}
+
+
+.mobile-user{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.mobile-login-register i{
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 20px;
+    padding: 10px;
+}
+.mobile-cart i{
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.nav-bar, .nav-user{
+    display: none;
+}
+
