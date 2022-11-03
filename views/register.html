@@ -134,60 +134,38 @@
                     <span class="feedback"></span>
                     </label>
                 </div>
-                    
-                    <h5>Perfil de Usuario</h5>
+
                 <div class="user-data">
-                    <div class="user-data-perfil">
-                        <label for="user-perfil"><input type="radio" name="user-perfil" value="Comprador" required>Comprador</label>
-                        <label for="user-perfil"><input type="radio" name="user-perfil" value="Vendedor" required>Vendedor</label>
-                        <span class="feedback"></span>
-                    </div>
-                </div>
-                    <h5>Intereses</h5>
-                <div class="user-data">
-                    <div class="user-data-preferences">
-                        <label for="user-preferences"><input type="checkbox" value="Electro">Electro</label>
-                        <label for="user-preferences"><input type="checkbox" value="Moda">Moda</label>
-                        <label for="user-preferences"><input type="checkbox" value="Hogar">Hogar</label>
-                        <label for="user-preferences"><input type="checkbox" value="Jugueteria">Jugueteria</label>
-                        <label for="user-preferences"><input type="checkbox" value="VidaSana">Vida Sana</label>
-                    </div>
+                    <h5>Agregá una foto</h5>
+                    <label for="user-avatar">
+                    <input type="file" name="user-picture" accept=".jpg, .png">
+                    <span class="feedback"></span>
+                    </label>
                 </div>
 
-                    <div class="user-data">
-                        <h5>Agregá una foto</h5>
-                        <label for="user-avatar">
-                        <input type="file" name="user-picture" accept=".jpg, .png">
-                        <span class="feedback"></span>
-                        </label>
+                <div class="user-data">
+                    <label for="password">
+                    <input type="password" name="password" placeholder="Elegí tu contraseña" minlength="8" required>
+                    <span class="feedback"></span>
+                    </label>
+                </div>
+                <div class="user-data">
+                    <label for="password">
+                    <input type="password" name="password" placeholder="Confirmá tu contraseña" required>
+                    <span class="feedback"></span>
+                    </label>
+                   </div>
+
+                <div class="user-data-buttons">
+
+                    <div class="user-data-submit-button">          
+                        <button type="submit">Enviar</button>
                     </div>
 
-                    <div class="user-data">
-                        <label for="password">
-                        <input type="password" name="password" placeholder="Elegí tu contraseña" minlength="8" required>
-                        <span class="feedback"></span>
-                        </label>
+                    <div class="user-data-reset-button">          
+                        <button type="reset">Borrar</button>
                     </div>
-                    <div class="user-data">
-                        <label for="password">
-                        <input type="password" name="password" placeholder="Confirmá tu contraseña" required>
-                        <span class="feedback"></span>
-                        </label>
-                    </div>
-
-                    <div class="user-data-buttons">
-
-                        <div class="user-data-submit-button">          
-                            <!-- <button type="submit"  ></button> -->
-                            <button type="submit">Enviar</button>
-                        </div>
-
-                        <div class="user-data-reset-button">          
-                            <!-- <button type="reset"  ></button> -->
-                            <button type="reset">Borrar</button>
-                        </div>
-
-                    </div>
+                </div>
             </form>
 
         </div>
@@ -200,10 +178,14 @@
         
 
         <section class = 'social-medias'>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-whatsapp"></i>
         </section>
 
 
-        <div class="social-medias">
+        <div class="legacy">
             <section class = 'privacy'>
                 <p>Política de Privacidad</p>
             </section>
@@ -217,9 +199,9 @@
             </section>   
         </div>
 
-            <section class = 'copyright'>
-                <p>Copyright © 1999-2020 El Ritual S.R.L. - Todos los derechos reservados</p>
-            </section>
+        <section class = 'copyright'>
+            <p>Copyright © 1999-2020 El Ritual S.R.L. - Todos los derechos reservados</p>
+        </section>
         
     </footer>
 </body>

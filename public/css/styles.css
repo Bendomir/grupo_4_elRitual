@@ -10,7 +10,7 @@ body {
     /* width: 100%; */
 }
 
-/* HEADER */
+/* -----------------HEADER ------------------*/
 
 header{
     background-color: black;
@@ -75,3 +75,32 @@ header{
     display: none;
 }
 
+
+/* -----------------MAIN ------------------*/
+
+main{
+    text-align: center;
+}
+
+
+/* -----------------FOOTER ------------------*/
+.social-medias{
+    text-align: center;
+    margin: 2% 38%;
+    border: 1px rgba(168, 168, 168, 0.5) solid;
+    background-color: rgba(168, 168, 168, 0.5)
+}
+
+.fa-twitter{
+color: aqua;
+}
+.fa-instagram{
+color: blueviolet;
+}
+.fa-facebook{
+    color: blue;
+
+}
+.fa-whatsapp{
+    color: green;
+}
