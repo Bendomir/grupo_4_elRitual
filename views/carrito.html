@@ -20,8 +20,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
  <!-- Hojas de estilo y normalice -->
- <link rel="stylesheet" href="/css/styles.css">
+
  <link rel="stylesheet" href="/css/normalize.css">
+ <link rel="stylesheet" href="/css/style-carrito.css">
 
 </head>
 <body>
@@ -73,17 +74,70 @@
 
     <main>
         <section class="total-products">
-        <h2>Carrito de compras</h2>
+        <h1>Carrito de compras</h1>
         <div class="products">
-            <article>
+            <article class="product-detail">
                 <img src="images/remera-ACDC.jpg" alt="Remera AC/DC">
+                <section class="description">
+                    <h3>Remera AC/DC</h3>
+                    <p class="precio">$4200</p>
+                </section>
             </article>
-            <article>
+            <article class="product-detail">
                 <img src="images/remera-nirvana.jpg" alt="Remera Nirvana">
+                <section class="description">
+                    <h3>Remera Nirvana</h3>
+                    <p class="precio">$4200</p>
+                </section>
             </article>
         </div>
         </section>
-        <h3><strong>Subtotal</strong>(sin envio): <strong>$8400</strong></h3>
-        <p>Total: 8400</p>
-
+        <p class="subtotal"><strong>Subtotal</strong>(sin envio): <strong>$8400</strong><p>
+        <p class="total"><strong>Total: 8400</strong></p>
+        <div class="button-compra">
+        <button>INICIAR COMPRA</button>
+        </div>
+        <div class="ver-products">
+        <a href="*">Ver más productos</a>
+        </div>
     </main>
+    <footer>
+        <div class="social-medias">
+        <ul class="wrapper">
+            <li class="icon facebook">
+                <span class="tooltip">Facebook</span>
+                <span><i class="fab fa-facebook-f"></i></span>
+            </li>
+            <li class="icon twitter">
+                <span class="tooltip">Twitter</span>
+                <span><i class="fab fa-twitter"></i></span>
+            </li>
+                <li class="icon instagram">
+                    <span class="tooltip">Facebook</span>
+                    <span><i class="fab fa-instagram"></i></span>
+                </li>
+                <li class="icon whatsapp">
+                    <span class="tooltip">Whatsapp</span>
+                    <span><i class="fab fa-whatsapp"></i></span>
+                </li>
+            </div>
+
+    <div class="legacy">
+        <section class = 'privacy'>
+            <p>Política de Privacidad</p>
+        </section>
+
+        <section class = 'terms'>
+            <p>Términos y condiciones legales</p>
+        </section>    
+
+        <section class = 'consumer-defense'>
+            <p>Defensa del consumidor</p>
+        </section>   
+    </div>
+
+    <section class = 'copyright'>
+        <p>Copyright © 1999-2020 El Ritual S.R.L. - Todos los derechos reservados</p>
+    </section>
+    
+</footer>

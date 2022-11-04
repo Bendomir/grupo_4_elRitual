@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb!important;
+    /* width: 100%; */
+}
+
+/* -----------------HEADER ------------------*/
+
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.burger-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    font-size: 30px;
+}
+.top-header{
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo img{
+    width: 100%;
+}
+.logo p{
+    text-align: center;
+    padding-bottom: 10px; 
+    font-size: 18px;
+}
+
+
+.mobile-user{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.mobile-login-register i{
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 20px;
+    padding: 10px;
+}
+.mobile-cart i{
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.nav-bar, .nav-user{
+    display: none;
+    
+}
+
+/* ----------------- Main ------------------*/
+h1{
+    font-size: 20px;
+    background-color: #fff;
+    padding: 0.5em 1.3em;
+    border: solid 2px #B600F6;
+    margin: 10px 200px -8px 15px;
+}
+img{
+    width: 35vw;
+}
+.product-detail{
+    display: flex;
+    border-bottom: solid 3px #B600F6;
+    background-color: #fff;
+    margin: 10px 15px 10px 15px;
+}
+.description{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 60%;
+    margin-top: 20px;
+}
+
+.subtotal{
+    font-size: 15px;
+    text-align: end;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.total{
+    font-size: 20px;
+    text-align: end;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: #B600F6;
+}
+.ver-products{
+    text-align: center;
+}
+
+/* ----------------- INICIO botton libreria ------------------*/
+
+.button-compra{
+    text-align: center;
+    margin: 25px;
+}
+
+button {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #B600F6;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0 !important;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+   }
+   
+   button:disabled {
+    pointer-events: none;
+   }
+   
+   button:hover {
+    color: #fff;
+    background-color: #B600F6;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+   }
+   
+   button:active {
+    box-shadow: none;
+    transform: translateY(0);
+   }
+
+   /* ----------------- FIN botton libreria ------------------*/
+
+   /* ----------------- redes sociales ------------------*/
+   .wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #fff;
+  }
+  .wrapper .whatsapp:hover,
+  .wrapper .whatsapp:hover .tooltip,
+  .wrapper .whatsapp:hover .tooltip::before {
+    background: #49be25;
+    color: #fff;
+  }
+  /* ----------------- fin redes sociales ------------------*/
+
+   /* ----------------- legacy ------------------*/
+
+   .legacy{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    margin: 15px;
+    justify-content: space-around;
+   }
+   .consumer-defense{
+    width: 80%;
+    text-align: center;
+    margin: 10px;
+   }
+
+.copyright p{
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 18px;
+}
