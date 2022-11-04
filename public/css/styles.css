@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arimo', 'Roboto', sans-serif;
     background-color: #ebebeb!important;
     /* width: 100%; */
 }
@@ -17,6 +17,8 @@ header{
     color: white;
     display: flex;
     justify-content: center;
+    font-family: 'Rock Salt';
+    padding-bottom: 3%;
 }
 
 .burger-menu{
@@ -57,15 +59,15 @@ header{
 }
 
 .mobile-login-register i{
-    border: 1px solid whitesmoke;
-    background-color: whitesmoke;
+    border: 1px solid rgb(190, 190, 190);
+    background-color: rgb(190, 190, 190);
     color: black;
     border-radius: 20px;
     padding: 10px;
 }
 .mobile-cart i{
-    border: 1px solid whitesmoke;
-    background-color: whitesmoke;
+    border: 1px solid rgb(190, 190, 190);
+    background-color: rgb(190, 190, 190);
     color: black;
     border-radius: 20px;
     padding: 8px;

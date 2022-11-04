@@ -13,7 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- TIPOGRAFIA ROBOTO -->
+<!-- TIPOGRAFIAS-->
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">    
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 <!-- ICONOS -->
@@ -103,14 +105,29 @@
 
                 <div class="user-data">
                     <label for="adress">
-                        <h5>Localidad</h5>
+                        <h5>Provincia</h5>
                     <select name="adress" required>
-                        <option value="">Selecciona tu localidad</option>
-                        <option value="Capital Federal">Capital Federal</option>
-                        <option value="Zona Sur">Zona Sur</option>
-                        <option value="Zona Norte">Zona Norte</option>
-                        <option value="Zona Oeste">Zona Oeste</option>
-                        <option value="Interior">Interior</option>
+                        <option value="">Selecciona tu Provincia</option>
+                        <option value="Ciudad Autónoma de Buenos Aires">CABA</option>
+                        <option value="Gran Buenos Aires">Gran Buenos Aires</option>
+                        <option value="Provincia de Buenos Aires">Prov. de Buenos Aires</option>
+                        <option value="Catamarca">Catamarca</option>
+                        <option value="Chaco">Chaco</option>
+                        <option value="Chubut">Chubut</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="Entre Ríos">Entre Ríos</option>
+                        <option value="Formosa">Formosa</option>
+                        <option value="Jujuy">Jujuy</option>
+                        <option value="La Pampa">La Pampa</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Misiones">Misiones</option>
+                        <option value="Río Negro">Río Negro</option>
+                        <option value="San Luis">San Luis</option>
+                        <option value="Santa Cruz">Santa Cruz</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                        <option value="Tierra del Fuego">Tierra del Fuego</option>
                     </select>
                     <span class="feedback"></span>
                     </label>
@@ -125,6 +142,18 @@
                 <div class="user-data">
                     <label for="adress">
                     <input type="text" name="adress" placeholder="Altura" required>
+                    <span class="feedback"></span>
+                    </label>
+                </div>
+                <div class="user-data">
+                    <label for="adress">
+                    <input type="text" name="adress" placeholder="Torre / Piso / Dpto." required>
+                    <span class="feedback"></span>
+                    </label>
+                </div>
+                <div class="user-data">
+                    <label for="adress">
+                    <input type="text" name="adress" placeholder="Otras aclaraciones" required>
                     <span class="feedback"></span>
                     </label>
                 </div>
