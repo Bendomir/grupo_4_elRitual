@@ -22,7 +22,7 @@
  <!-- Hojas de estilo y normalice -->
 
  <link rel="stylesheet" href="/css/normalize.css">
- <link rel="stylesheet" href="/css/style-carrito.css">
+ <link rel="stylesheet" href="/css/tienda.css">
 
 </head>
 <body>
@@ -67,40 +67,83 @@
             </ul>
         </nav>
 
-
-
-
     </header>
-
     <main>
-        <section class="total-products">
-        <h1>Carrito de compras</h1>
-        <div class="products">
-            <article class="product-detail">
-                <img src="images/remera-ACDC.jpg" alt="Remera AC/DC">
-                <section class="description">
-                    <h3>Remera AC/DC</h3>
-                    <p class="precio">$4200</p>
-                </section>
-            </article>
-            <article class="product-detail">
-                <img src="images/remera-nirvana.jpg" alt="Remera Nirvana">
-                <section class="description">
-                    <h3>Remera Nirvana</h3>
-                    <p class="precio">$4200</p>
-                </section>
-            </article>
-        </div>
-        </section>
-        <p class="subtotal"><strong>Subtotal</strong>(sin envio): <strong>$8400</strong><p>
-        <p class="total"><strong>Total: 8400</strong></p>
-        <div class="button-compra">
-        <button>INICIAR COMPRA</button>
-        </div>
-        <div class="ver-products">
-        <a href="*">Ver más productos</a>
-        </div>
+    <div class="copy">
+        <a href="/">Inicio</a>
+        <p  class="product">/productos</p>
+    </div>
+
+    <h1>
+        ELEGÍ LA INDUMENTARIA DE TU SHOW
+    </h1>
+    <form action="*" method="post">
+    <div class="filter">
+        
+            <label for="">Ordenar por: </label>
+                <select name="categorias" class="categorias">
+                    <option value="Más vendidos" selected>Más vendidos</option>
+                    <option value="Precio: Mayor-Menor">Precio: Mayor-Menor</option>
+                    <option value="Precio: Mayor-Menor">Precio: Menor - Mayor </option>
+                    <option value="Más visitados">Más visitados</option>
+                    <option value="Más recientes">Más recientes</option>
+                </select>
+            </div>
+        </form>
+    
+
+    <section class="product">
+     <div class="card">
+        <article class="product-detail">
+            <img src="./images/remera-ACDC.jpg" alt="Remera AC/DC black">
+            <section class="description">
+                <h3>Remera AC/DC</h3>
+                <p class="precio">$4200</p>
+            </section>
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+                </div>
+        </article>
+    </div>
+    <div class="card">
+        <article class="product-detail">
+            <img src="./images/remera-nirvana.jpg" alt="Remeras Nirvana">
+            <section class="description">
+                <h3>Remera Nirvana</h3>
+                <p class="precio">$4200</p>
+            </section>
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+          </article>
+        <div class="card">
+        <article class="product-detail">
+            <img src="./images/remera-soda-stereo.jpg" alt="Remera Soda Stereo">
+            <section class="description">
+                <h3>Remera Soda Stereo</h3>
+                <p class="precio">$4200</p>
+            </section>
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+                </div>
+        </article>
+    </div>
+        <div class="card">
+        <article class="product-detail">
+            <img src="./images/remera.jpg" alt="Remera AC/DC white">
+            <section class="description">
+                <h3>Remera AC/DC</h3>
+                <p class="precio">$4200</p>
+            </section>
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+                </div>
+        </article>
+    </div>
+    </section>
     </main>
+
     <footer>
         <div class="social-medias">
         <ul class="wrapper">
@@ -141,5 +184,7 @@
     </section>
     
 </footer>
+
 </body>
+
 </html>

@@ -5,8 +5,9 @@
 }
 
 body {
-    font-family: 'Arimo', 'Roboto', sans-serif;
-    background-color: #ebebeb
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb!important;
+    /* width: 100%; */
 }
 
 /* -----------------HEADER ------------------*/
@@ -16,8 +17,6 @@ header{
     color: white;
     display: flex;
     justify-content: center;
-    font-family: 'Rock Salt';
-    padding-bottom: 3%;
 }
 
 .burger-menu{
@@ -40,11 +39,13 @@ header{
 }
 
 .logo img{
-    width: 100%;
+    width: 30vw;
+    height: 30vw;
 }
 .logo p{
     text-align: center;
     padding-bottom: 10px; 
+    font-size: 18px;
 }
 
 
@@ -58,15 +59,15 @@ header{
 }
 
 .mobile-login-register i{
-    border: 1px solid rgb(190, 190, 190);
-    background-color: rgb(190, 190, 190);
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
     color: black;
     border-radius: 20px;
     padding: 10px;
 }
 .mobile-cart i{
-    border: 1px solid rgb(190, 190, 190);
-    background-color: rgb(190, 190, 190);
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
     color: black;
     border-radius: 20px;
     padding: 8px;
@@ -74,207 +75,161 @@ header{
 
 .nav-bar, .nav-user{
     display: none;
+    
 }
 
+/* ----------------- fin header ------------------*/
 
-/* -----------------MAIN ------------------*/
+/* ----------------- INICIO main ------------------*/
+
+.copy{
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+h1{
+    font-size: 16px;
+    text-align: center;
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+}
+.categorias{
+    width: 50%;
+    margin-top: 10px;
+}
 
 main{
-    margin: 0% auto;
-    width: 90%;
+    width: 80vw;
+    margin-left: 20px;
 }
 
-.register {
+
+img{
+    width: 180px;
+    height: 180px;
+}
+
+.product{
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-} 
-
-.login {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-} 
-
-
-.register h3, .login h3 {
-    text-align: center;
-    padding: 15px;
-}
-h5 {
-    padding: 10px;
-}
-
-.register form{
-    text-align: center;
-    border: rgb(178, 199, 245) 5px solid;
-    margin: 10px 0px;
-    border-radius: 20px;
-    background-color: whitesmoke
-}
-
-.login form{
-    text-align: center;
-    border: rgb(178, 199, 245) 5px solid;
-    margin: 10px 0px;
-    border-radius: 20px;
-    background-color: whitesmoke;
-    width: 90%;
-}
-
-.user-data{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 5px;
-}
-
-
-.user-data input, .login-data input {
-    line-height: 28px;
-    border: 2px solid transparent;
-    border-bottom-color: #777;
-    border-radius: 1rem;
-    padding: .2rem 0;
-    outline: none;
-    background-color: transparent;
-    color: #0d0c22;
-    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    outline: none;
-    padding: .2rem 1rem;
-    border-radius: 1rem;
-    border-color: #7a9cc6;
-   }
-
-label {
-    width: 100%;
-    padding-left: 5px;
-    }
-   
-
-input{
-    outline: none;
-    padding: .2rem 1rem;
-    border-radius: 1rem;
-    border-color: #7a9cc6;
-    width: 80%;
-   }
-
-input:focus , input:hover {
-    outline: none;
-    padding: .2rem 1rem;
-    border-radius: 1rem;
-    border-color: #7a9cc6;
-   }
-
-   
-input::placeholder {
-    color: #777;
-   }
-   
-input:focus::placeholder {
-    opacity: 0;
-    transition: opacity .3s;
-   }
-
-
-
-/* ---------------BOTONES------------------ */
-
-.user-data-buttons button {
-    width: 100px;
-    margin: 12px;
-}
-
-.user-data-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-
-}
-
-.user-data-submit-button button, .user-data-reset-button button  {
-    font-family: inherit;
-    font-size: 20px;
-    color: white;
-    padding: 0.7em 1em;
-    padding-left: 1.1em;
-    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    border: none;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.2s;
-   }
-   .user-data-submit-button button{
-    background: royalblue;
-   }
+}
+.product-detail{
+    width: 100%;
+    text-align: center;
+}
+.precio{
+    margin: 10px;
+}
+/* ----------------- inicio card ------------------*/
 
-   .user-data-reset-button button{
-    background: #e62222;
-   }
+.card {
+    width: 260px;
+    height: 360px;
+    backdrop-filter: blur(7px);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 26px;
+    box-shadow: 35px 35px 68px 0px rgba(106, 90, 205, 0.2), inset -8px -8px 16px 0px rgba(106, 90, 205, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+    /* cursor: pointer; */
+
+  }
+  
+  .card:hover {
+    box-shadow: 35px 35px 68px 0px rgba(106, 90, 205, 0.5);
+  }
+  
+  /* .card:active {
+    transform: scale(0.95);
+    border: 1px solid blue; */
+    /* animation: 0.3s click cubic-bezier(.42,0,.58,1); */
+
+
+  /* @keyframes click{
+    from{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(0.95);
+    }
+    to{
+      transform: scale(1);
+    }
+  } */
   
 
+/* ----------------- FIN CARD ------------------*/
+
+
+
+
+
+/* ----------------- FIN MAIN ------------------*/
+
+
+
+/* ----------------- INICIO botton libreria ------------------*/
+
+.button-compra{
+    text-align: center;
+    margin: 25px;
+}
+
+button {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #B600F6;
+    border-radius: 4em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0 !important;
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 0.5em 1.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+   }
    
+   button:disabled {
+    pointer-events: none;
+   }
+   
+   button:hover {
+    color: #fff;
+    background-color: #B600F6;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+   }
+   
+   button:active {
+    box-shadow: none;
+    transform: translateY(0);
+   }
 
+   /* ----------------- FIN botton libreria ------------------*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.login-button {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.login-button button {
-	background-color:#44c767;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:10px 20px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-    margin-top: 10px;
-    transition: all 1s;
-}
-.login-button button:hover {
-	background-color:#0022AA;
-    border:1px solid #0022AA;
-}
-.login-button button:active {
-	position:relative;
-	top:1px;
-}
-
-
-
-
-
-
-
-
-
-
-/* --------------------FOOTER ---------------------*/
-/* ----------------- REDES SOCIALES ------------------*/
+   /* ----------------- redes sociales ------------------*/
    .wrapper {
     display: inline-flex;
     list-style: none;
@@ -366,16 +321,18 @@ input:focus::placeholder {
     background: #49be25;
     color: #fff;
   }
-/* ------------------- LEGACY ------------------*/
+  /* ----------------- fin redes sociales ------------------*/
 
-.legacy{
+   /* ----------------- legacy ------------------*/
+
+   .legacy{
     display: flex;
     flex-wrap: wrap;
     font-size: 15px;
     margin: 15px;
     justify-content: space-around;
    }
-.consumer-defense{
+   .consumer-defense{
     width: 80%;
     text-align: center;
     margin: 10px;
