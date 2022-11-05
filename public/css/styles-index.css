@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arimo', 'Roboto', sans-serif;
-    background-color: #ebebeb
+    background-color: #D0CFEC;
 }
 
 /* -----------------HEADER ------------------*/
@@ -58,15 +58,15 @@ header{
 }
 
 .mobile-login-register i{
-    border: 1px solid rgb(190, 190, 190);
-    background-color: rgb(190, 190, 190);
+    border: 1px solid #D0CFEC;
+    background-color: #D0CFEC;
     color: black;
     border-radius: 20px;
     padding: 10px;
 }
 .mobile-cart i{
-    border: 1px solid rgb(190, 190, 190);
-    background-color: rgb(190, 190, 190);
+    border: 1px solid #D0CFEC;
+    background-color: #D0CFEC;
     color: black;
     border-radius: 20px;
     padding: 8px;
@@ -77,205 +77,115 @@ header{
 }
 
 
-/* -----------------MAIN ------------------*/
+/* --------------------MAIN ---------------------*/
 
 main{
     margin: 0% auto;
     width: 90%;
-}
-
-.register {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-} 
-
-.login {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-} 
-
-
-.register h3, .login h3 {
     text-align: center;
-    padding: 15px;
-}
-h5 {
-    padding: 10px;
 }
 
-.register form{
-    text-align: center;
-    border: rgb(178, 199, 245) 5px solid;
-    margin: 10px 0px;
-    border-radius: 20px;
-    background-color: whitesmoke
-}
-
-.login form{
-    text-align: center;
-    border: rgb(178, 199, 245) 5px solid;
-    margin: 10px 0px;
-    border-radius: 20px;
-    background-color: whitesmoke;
-    width: 90%;
-}
-
-.user-data{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 5px;
+h1{
+    font-family: 'Rock Salt';
+    padding: 7% 0%;
 }
 
 
-.user-data input, .login-data input {
-    line-height: 28px;
-    border: 2px solid transparent;
-    border-bottom-color: #777;
-    border-radius: 1rem;
-    padding: .2rem 0;
-    outline: none;
-    background-color: transparent;
-    color: #0d0c22;
-    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    outline: none;
-    padding: .2rem 1rem;
-    border-radius: 1rem;
-    border-color: #7a9cc6;
-   }
-
-label {
-    width: 100%;
-    padding-left: 5px;
-    }
-   
-
-input{
-    outline: none;
-    padding: .2rem 1rem;
-    border-radius: 1rem;
-    border-color: #7a9cc6;
-    width: 80%;
-   }
-
-input:focus , input:hover {
-    outline: none;
-    padding: .2rem 1rem;
-    border-radius: 1rem;
-    border-color: #7a9cc6;
-   }
-
-   
-input::placeholder {
-    color: #777;
-   }
-   
-input:focus::placeholder {
-    opacity: 0;
-    transition: opacity .3s;
-   }
-
-
-
-/* ---------------BOTONES------------------ */
-
-.user-data-buttons button {
-    width: 100px;
-    margin: 12px;
+.search{
+    padding: 3% 0% 12% 0%;
+}
+.calendar {
+    width: 6%;
+    position: relative;
+    right: 10%;
 }
 
-.user-data-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-
-}
-
-.user-data-submit-button button, .user-data-reset-button button  {
-    font-family: inherit;
+.loupe{
+    position: relative;
+    left: 10%;
+    z-index: 1;
     font-size: 20px;
-    color: white;
-    padding: 0.7em 1em;
-    padding-left: 1.1em;
-    display: flex;
-    align-items: center;
     border: none;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.2s;
-   }
-   .user-data-submit-button button{
-    background: royalblue;
-   }
+    background-color: transparent;
+}
 
-   .user-data-reset-button button{
-    background: #e62222;
-   }
-  
 
+/* button */
+
+.search-bar {
+    appearance: none;
+    background-color: white;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 2em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 2.75em;
+    min-width: 0;
+    outline: none;
+    padding: 0em 4em;
+    text-align: left;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+   }
    
+   .search-bar:disabled {
+    pointer-events: none;
+   }
+   
+   .search-bar:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+   }
+   
+   .search-bar:active {
+    box-shadow: none;
+    transform: translateY(0);
+   }
+
+
+/* button end */
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.login-button {
+.carrusel{
+    padding: 5% 0%;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
-.login-button button {
-	background-color:#44c767;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:10px 20px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-    margin-top: 10px;
-    transition: all 1s;
-}
-.login-button button:hover {
-	background-color:#0022AA;
-    border:1px solid #0022AA;
-}
-.login-button button:active {
-	position:relative;
-	top:1px;
+.carrusel button{
+    background-color: transparent;
+    border: transparent;
+    padding: 0% 5%;
 }
 
+.carrusel button{
+    font-size: 40px;
+    color: white;
+}
 
-
-
-
-
-
-
+.carrusel-tablet, .carrusel-desktop{
+    display: none;
+}
 
 
 /* --------------------FOOTER ---------------------*/
 /* ----------------- REDES SOCIALES ------------------*/
-   .wrapper {
+.wrapper {
     display: inline-flex;
     list-style: none;
     height: 120px;
@@ -387,6 +297,9 @@ input:focus::placeholder {
     margin-bottom: 18px;
 }
 
+@media (min-width: 560px){
+}
 
-
+@media (min-width: 860px){
+}
 
