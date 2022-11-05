@@ -82,12 +82,32 @@ header{
     flex-direction: column;
 }
 
+
+
 .product{
     display: flex;
     flex-direction: column;
     
     
 }
+
+.size p{
+
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: red;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align:left;
+        margin:0px auto;
+        padding:3%
+    
+}
+
+
 
 /* ----------------- FIN botton libreria ------------------*/
 
