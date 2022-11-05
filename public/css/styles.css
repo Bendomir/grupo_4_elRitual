@@ -6,8 +6,7 @@
 
 body {
     font-family: 'Arimo', 'Roboto', sans-serif;
-    background-color: #ebebeb!important;
-    /* width: 100%; */
+    background-color: #ebebeb
 }
 
 /* -----------------HEADER ------------------*/
@@ -81,28 +80,309 @@ header{
 /* -----------------MAIN ------------------*/
 
 main{
+    margin: 0% auto;
+    width: 90%;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+} 
+
+.login {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+} 
+
+
+.register h3, .login h3 {
     text-align: center;
+    padding: 15px;
+}
+h5 {
+    padding: 10px;
 }
 
-
-/* -----------------FOOTER ------------------*/
-.social-medias{
+.register form{
     text-align: center;
-    margin: 2% 38%;
-    border: 1px rgba(168, 168, 168, 0.5) solid;
-    background-color: rgba(168, 168, 168, 0.5)
+    border: rgb(178, 199, 245) 5px solid;
+    margin: 10px 0px;
+    border-radius: 20px;
+    background-color: whitesmoke
 }
 
-.fa-twitter{
-color: aqua;
+.login form{
+    text-align: center;
+    border: rgb(178, 199, 245) 5px solid;
+    margin: 10px 0px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    width: 90%;
 }
-.fa-instagram{
-color: blueviolet;
+
+.user-data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 5px;
 }
-.fa-facebook{
-    color: blue;
+
+
+.user-data input, .login-data input {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    border-radius: 1rem;
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #7a9cc6;
+   }
+
+label {
+    width: 100%;
+    padding-left: 5px;
+    }
+   
+
+input{
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #7a9cc6;
+    width: 80%;
+   }
+
+input:focus , input:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #7a9cc6;
+   }
+
+   
+input::placeholder {
+    color: #777;
+   }
+   
+input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+   }
+
+
+
+/* ---------------BOTONES------------------ */
+
+.user-data-buttons button {
+    width: 100px;
+    margin: 12px;
+}
+
+.user-data-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 
 }
-.fa-whatsapp{
-    color: green;
+
+.user-data-submit-button button, .user-data-reset-button button  {
+    font-family: inherit;
+    font-size: 20px;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 1.1em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+   }
+   .user-data-submit-button button{
+    background: royalblue;
+   }
+
+   .user-data-reset-button button{
+    background: #e62222;
+   }
+  
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.login-button button {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+    margin-top: 10px;
+    transition: all 1s;
+}
+.login-button button:hover {
+	background-color:#0022AA;
+    border:1px solid #0022AA;
+}
+.login-button button:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------------FOOTER ---------------------*/
+/* ----------------- REDES SOCIALES ------------------*/
+   .wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #fff;
+  }
+  .wrapper .whatsapp:hover,
+  .wrapper .whatsapp:hover .tooltip,
+  .wrapper .whatsapp:hover .tooltip::before {
+    background: #49be25;
+    color: #fff;
+  }
+/* ------------------- LEGACY ------------------*/
+
+.legacy{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    margin: 15px;
+    justify-content: space-around;
+   }
+.consumer-defense{
+    width: 80%;
+    text-align: center;
+    margin: 10px;
+   }
+
+.copyright p{
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 18px;
 }
