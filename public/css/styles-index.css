@@ -98,6 +98,9 @@ h1{
     width: 6%;
     position: relative;
     right: 10%;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
 }
 
 .loupe{
@@ -298,6 +301,65 @@ h1{
 }
 
 @media (min-width: 560px){
+    .burger-menu{
+        font-size: 70px;
+    }
+
+    .logo p{
+        font-size: 30px;
+        padding: 5% 0% 7% 0%;
+    }
+
+    .mobile-login-register i {
+        padding: 15px 17px;
+        border-radius: 35px;
+        font-size: 40px;
+    }
+
+    .mobile-cart i {
+        padding: 12px;
+        border-radius: 30px;
+        font-size: 35px;
+    }
+
+    h1{
+        font-size: 45px!important;
+    }
+
+    h2{
+        font-size: 35px;
+    }
+
+    .search-bar{
+        width: 80%;
+        min-height: 3.25em;
+        font-size: 28px;
+        padding: 0em 3em;
+    }
+
+    .loupe{
+        font-size: 38px;
+    }
+
+    .calendar{
+        font-size: 38px;
+        right: 11%;
+    }
+
+    .carrusel-mobile{
+        display: none;
+    }
+
+    .carrusel-tablet{
+        display: block;
+    }
+
+    .carrusel-tablet img{
+        width: 100%;
+        height: 110%;
+    }
+
+
 }
 
 @media (min-width: 860px){
