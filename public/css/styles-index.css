@@ -173,7 +173,14 @@ h1{
 .carrusel button{
     background-color: transparent;
     border: transparent;
-    padding: 0% 5%;
+    /* padding: 0% 5%; */
+}
+
+.arrow-left {
+    padding-right: 4%;
+}
+.arrow-right {
+    padding-left: 4%;
 }
 
 .carrusel button{
@@ -324,6 +331,11 @@ h1{
     }
 
     /* FIN HEADER */
+
+    /* main{
+        width: 100%;
+    } */
+
     h1{
         font-size: 45px!important;
     }
@@ -365,12 +377,26 @@ h1{
 }
 
 @media (min-width: 860px){
+
+    /* -----------------HEADER------------------- */
+
+    .nav-user a{
+        font-family: "arimo", "roboto", sans-serif;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 23px;
+    }
+
     .burger-menu{
         display: none;
     }
 
     header{
         justify-content: left;
+        width: 100%;
     }
 
     .mobile-user{
@@ -380,28 +406,77 @@ h1{
     .nav-total{
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
+        width: 80%;
     }
 
     .nav-bar{
         display: flex;
-        flex-direction: row!important;
-        flex-wrap: wrap;
-        
-    }
+        justify-content: space-around;
+        width: 100%;
+        flex-wrap: nowrap;
+        padding: 0% 3%;
+    } 
 
     .nav-user{
         display: flex;
+        justify-content: right
+
+    }  
+    .nav-user li{
+        width: 15%;
+        text-align: center;
     }
 
-    a{
-        text-decoration: none;
-        color: white;
-        font-size: 18px;
+    .nav-user i{
+        border: 1px solid  #D0CFEC;
+        padding: 15%;
+        color: black;
+        background-color: #D0CFEC;
+        border-radius: 25px;
     }
 
-    .nav-user a{
-        font-family: "arimo", "roboto", sans-serif;
+
+
+    /* -----------------FIN HEADER------------------- */
+
+    h1{
+        font-size: 50px!important;
     }
+
+    h2{
+        font-size: 40px;
+    }
+
+
+    .search-bar{
+        width: 85%;
+        font-size: 32px;
+    }
+
+    .loupe{
+        font-size: 55px;
+    }
+
+    .calendar{
+        font-size: 55px;
+    }
+
+    .carrusel-tablet{
+        display: none;
+    }
+
+    .carrusel-desktop{
+        display: block;
+    }
+
+    .carrusel-desktop img{
+        width: 100%;
+        height: 120%;
+    }
+
+
+
 
 
 }
