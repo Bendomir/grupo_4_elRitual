@@ -301,6 +301,7 @@ h1{
 }
 
 @media (min-width: 560px){
+    /* HEADER */
     .burger-menu{
         font-size: 70px;
     }
@@ -322,6 +323,7 @@ h1{
         font-size: 35px;
     }
 
+    /* FIN HEADER */
     h1{
         font-size: 45px!important;
     }
@@ -363,5 +365,44 @@ h1{
 }
 
 @media (min-width: 860px){
+    .burger-menu{
+        display: none;
+    }
+
+    header{
+        justify-content: left;
+    }
+
+    .mobile-user{
+        display: none;
+    }
+
+    .nav-total{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-bar{
+        display: flex;
+        flex-direction: row!important;
+        flex-wrap: wrap;
+        
+    }
+
+    .nav-user{
+        display: flex;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+    }
+
+    .nav-user a{
+        font-family: "arimo", "roboto", sans-serif;
+    }
+
+
 }
 
