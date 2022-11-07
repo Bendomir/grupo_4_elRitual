@@ -98,13 +98,17 @@ h2{
     flex-direction: column;
     padding: 15px;
     margin-top: 50px;
-       
-    
+    color: #393D3F;
 }
+
+
 
 .size{
   display: flex;
   margin-top: 10px;
+  justify-content: space-between;
+  color: #393D3F;
+  position: absolute;
 }
 .size p{
 
@@ -114,13 +118,19 @@ h2{
         background: white;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content:center;
         align-items: center;
         text-align:left;
         margin:0px auto;
-        padding:3%
+        padding:3%;
+        position: relative;
+        top: 515px;
+        
     
 }
+
+/*----------------Media queries-------------*/
+
 
 
 
