@@ -6,7 +6,10 @@
 
 body {
     font-family: 'Arimo', 'Roboto', sans-serif;
-    background-color: #D0CFEC;
+    background-color: #2e2f31;
+    background-image: url(/images/fondo-home.jpeg);
+    background-repeat: repeat-y;
+    background-size: contain; 
 }
 
 /* -----------------HEADER ------------------*/
@@ -44,7 +47,19 @@ header{
 }
 .logo p{
     text-align: center;
-    padding-bottom: 10px; 
+    padding: 5px 0px 7px 0px; 
+}
+
+@keyframes logo{
+    50% {transform: translateY(3px);
+    }
+}
+
+.logo img{
+    animation-name: logo;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1s;
 }
 
 
@@ -80,34 +95,39 @@ header{
 /* --------------------MAIN ---------------------*/
 
 main{
+    text-align: center;
+    color: whitesmoke;
     margin: 0% auto;
     width: 90%;
-    text-align: center;
+
 }
 
 h1{
     font-family: 'Rock Salt';
-    padding: 7% 0%;
+    padding: 3% 0% 3% 0%;
 }
 
 
 .search{
     padding: 3% 0% 12% 0%;
+    position: relative;
 }
 .calendar {
     width: 6%;
-    position: relative;
-    right: 10%;
+    position: absolute;
+    right: 16%;
+    top: 19%;
     background-color: transparent;
     border: none;
-    font-size: 20px;
+    font-size: 35px;
 }
 
 .loupe{
-    position: relative;
-    left: 10%;
+    position: absolute;
+    left: 16%;
+    top: 20%;
     z-index: 1;
-    font-size: 20px;
+    font-size: 25px;
     border: none;
     background-color: transparent;
 }
@@ -294,17 +314,20 @@ h1{
     font-size: 15px;
     margin: 15px;
     justify-content: space-around;
+    color: whitesmoke;
    }
 .consumer-defense{
     width: 80%;
     text-align: center;
     margin: 10px;
+    color: whitesmoke;
    }
 
 .copyright p{
     font-size: 13px;
     text-align: center;
     margin-bottom: 18px;
+    color: whitesmoke;
 }
 
 @media (min-width: 560px){
@@ -332,10 +355,6 @@ h1{
 
     /* FIN HEADER */
 
-    /* main{
-        width: 100%;
-    } */
-
     h1{
         font-size: 45px!important;
     }
@@ -345,19 +364,22 @@ h1{
     }
 
     .search-bar{
-        width: 80%;
+        width: 70%;
         min-height: 3.25em;
         font-size: 28px;
         padding: 0em 3em;
     }
 
     .loupe{
-        font-size: 38px;
+        font-size: 45px;
+        left: 18%;
+        top: 22%;
     }
 
     .calendar{
-        font-size: 38px;
-        right: 11%;
+        font-size: 45px;
+        right: 18%;
+        top: 21%;
     }
 
     .carrusel-mobile{
@@ -420,7 +442,8 @@ h1{
 
     .nav-user{
         display: flex;
-        justify-content: right
+        justify-content: right;
+        align-items: center;
 
     }  
     .nav-user li{
@@ -450,16 +473,20 @@ h1{
 
 
     .search-bar{
-        width: 85%;
+        width: 50%;
         font-size: 32px;
     }
 
     .loupe{
         font-size: 55px;
+        top: 20%;
+        left: 27%;
     }
 
     .calendar{
-        font-size: 55px;
+        font-size: 85px;
+        right: 27%;
+        top: 15%;
     }
 
     .carrusel-tablet{
@@ -475,9 +502,20 @@ h1{
         height: 120%;
     }
 
-
-
-
+    @keyframes logo{
+        50% {transform: translateY(10px);
+        }
+    }
+    
+    .logo img{
+        animation-name: logo;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-duration: 1s;
+    }
 
 }
+
+
+
 
