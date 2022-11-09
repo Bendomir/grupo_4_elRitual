@@ -13,69 +13,82 @@ body {
 /* -----------------HEADER ------------------*/
 
 header{
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: 'Rock Salt';
+  padding-bottom: 3%;
 }
 
 .burger-menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 33%;
-    font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  font-size: 30px;
 }
 .top-header{
-    width: 33%;
-    justify-content: center;
-    align-items: center;
+  width: 33%;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .logo img{
-    width: 30vw;
-    height: 30vw;
+  width: 100%;
 }
 .logo p{
-    text-align: center;
-    padding-bottom: 10px; 
-    font-size: 18px;
+  text-align: center;
+  padding-bottom: 10px; 
+  font-size: 18px;
+}
+
+@keyframes logo{
+  50% {transform: translateY(3px);
+  }
+}
+
+.logo img{
+  animation-name: logo;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1s;
 }
 
 
 .mobile-user{
-    width: 33%;
-    display: flex;
-    flex-direction: column;
-    text-align: center; 
-    justify-content: space-around;
-    font-size: 18px;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  text-align: center; 
+  justify-content: space-around;
+  font-size: 18px;
 }
 
 .mobile-login-register i{
-    border: 1px solid whitesmoke;
-    background-color: whitesmoke;
-    color: black;
-    border-radius: 20px;
-    padding: 10px;
+  border: 1px solid whitesmoke;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 20px;
+  padding: 10px;
 }
 .mobile-cart i{
-    border: 1px solid whitesmoke;
-    background-color: whitesmoke;
-    color: black;
-    border-radius: 20px;
-    padding: 8px;
+  border: 1px solid whitesmoke;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 20px;
+  padding: 8px;
 }
 
 .nav-bar, .nav-user{
-    display: none;
-    
+  display: none;
+  
 }
 
 /* ----------------- fin header ------------------*/
@@ -91,6 +104,7 @@ header{
 h1{
     font-size: 16px;
     text-align: center;
+    font-family: 'arimo';
 }
 .filter{
     display: flex;
@@ -99,6 +113,11 @@ h1{
 .categorias{
     width: 50%;
     margin-top: 10px;
+      border: solid 2px #B600F6;
+      margin: 10px 200px -8px 15px;
+      background-color: #fff;
+      border-radius: 0.9em
+  
 }
 
 main{
@@ -107,7 +126,7 @@ main{
 }
 
 
-img{
+main img{
     width: 180px;
     height: 180px;
 }
@@ -342,4 +361,129 @@ button {
     font-size: 13px;
     text-align: center;
     margin-bottom: 18px;
+}
+
+
+@media (min-width: 860px){
+
+  /* -----------------HEADER------------------- */
+
+  .nav-user a{
+      font-family: "arimo", "roboto", sans-serif;
+  }
+
+  header a{
+      text-decoration: none;
+      color: white;
+      font-size: 23px;
+  }
+
+  .burger-menu{
+      display: none;
+  }
+
+  header{
+      justify-content: left;
+      width: 100%;
+  }
+
+  .mobile-user{
+      display: none;
+  }
+
+  .nav-total{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 80%;
+  }
+
+  .nav-bar{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      flex-wrap: nowrap;
+      padding: 0% 3%;
+  } 
+
+  .nav-user{
+      display: flex;
+      justify-content: right;
+      align-items: center;
+
+  }  
+  .nav-user li{
+      width: 15%;
+      text-align: center;
+  }
+
+  .nav-user i{
+      border: 1px solid  #D0CFEC;
+      padding: 15%;
+      color: black;
+      background-color: #D0CFEC;
+      border-radius: 25px;
+  }
+  @keyframes logo{
+      50% {transform: translateY(10px);
+      }
+  }
+  
+  .logo img{
+      animation-name: logo;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-duration: 1s;
+  }
+
+  /* -----------------FIN HEADER------------------- */
+    /* -----------------INICIO MAIN------------------- */
+
+
+    .categorias{
+      width: 30%;
+    }
+    .product{
+      
+      display:flex;
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .card{
+      width: 40%;
+    }
+
+    .description{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+      /* -----------------FIN MAIN------------------- */
+
+
+         /* ----------------- legacy ------------------*/
+
+         .legacy{
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 15px;
+          margin-left: 60px;
+          justify-content: space-around;
+          
+         }
+      
+      
+         .consumer-defense{
+          width: 80%;
+          text-align: center;
+          margin: 10px;
+         }
+      
+      .copyright p{
+          font-size: 13px;
+          text-align: center;
+          margin-bottom: 18px;
+      
+      }
 }

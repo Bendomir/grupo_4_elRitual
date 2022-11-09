@@ -47,7 +47,8 @@ header{
 }
 .logo p{
     text-align: center;
-    padding: 5px 0px 7px 0px; 
+    padding-bottom: 10px; 
+    font-size: 18px;
 }
 
 @keyframes logo{
