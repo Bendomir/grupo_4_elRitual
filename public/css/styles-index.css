@@ -447,16 +447,17 @@ h1{
 
     }  
     .nav-user li{
-        width: 15%;
+        width: 20%;
         text-align: center;
     }
 
     .nav-user i{
         border: 1px solid  #D0CFEC;
-        padding: 15%;
+        padding: 8%;
         color: black;
         background-color: #D0CFEC;
-        border-radius: 25px;
+        border-radius: 40px;
+        font-size: 28px;
     }
 
 

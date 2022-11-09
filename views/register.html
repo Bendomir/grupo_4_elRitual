@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
  <!-- Hojas de estilo y normalice -->
- <link rel="stylesheet" href="/css/styles.css">
+ <link rel="stylesheet" href="/css/styles-login-register.css">
  <link rel="stylesheet" href="/css/normalize.css">
 
 </head>
@@ -46,28 +46,25 @@
 
         <div class="mobile-user">
             <section class="mobile-login-register">
-                <i class="fas fa-user"></i>
+                <a href="/login"><i class="fas fa-user"></i></a>
             </section>
             <section class="mobile-cart">
-                <i class="fas fa-shopping-cart"></i>
+                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
             </section>
         </div>
+        <nav class="nav-total">
+                <ul class="nav-user">
+                    <li type="none"> <a href="/register">Crear cuenta</a></li>
+                    <li type="none"> <a href="/login">Iniciar Sesión</a></li>
+                    <li type="none"> <a href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
 
-        <nav class="nav-bar">
-            <ul>
-                <li type="none"> <a href="*">Productos</a> </li>
-                <li type="none"> <a href="*">Noticias</a> </li>
-                <li type="none"> <a href="*">Próximos Estrenos</a> </li>
-            </ul>
+                <ul class="nav-bar">
+                    <li type="none"> <a href="/tienda">Productos</a> </li>
+                    <li type="none"> <a href="*">Noticias</a> </li>
+                    <li type="none"> <a href="*">Próximos Estrenos</a> </li>
+                </ul>
         </nav>
-        <nav class="nav-user">
-            <ul>
-                <li type="none"> <a href="/register">Crear cuenta</a></li>
-                <li type="none"> <a href="*">Iniciar Sesión</a></li>
-                <li type="none"> <a href="*"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
-        </nav>
-
 
 
 
@@ -185,14 +182,23 @@
                     </label>
                    </div>
 
-                <div class="user-data-buttons">
+                <div class="user-data-checkbox">
+                    <label for="terms" class="terms">
+                    <input type="checkbox" name="terms" required>
+                    Acepto las bases y condiciones.
+                    <a href="*">Ver bases y condiciones</a>
+                    </label>
+                    <label for="newsletter" class="newsletter">
+                    <input type="checkbox" name="newsletter">
+                    Deseo recibir información sobre eventos y promociones.
+                    </label>
+                    
 
+                </div>
+
+                <div class="prueba">
                     <div class="user-data-submit-button">          
-                        <button type="submit"><span>Enviar</span></button>
-                    </div>
-
-                    <div class="user-data-reset-button">          
-                        <button type="reset">Borrar</button>
+                        <button type="submit"><span>Registrate</span></button>
                     </div>
                 </div>
             </form>
