@@ -453,9 +453,7 @@ button {
     .card{
       width: 40%;
     }
-    .card img{
-      
-    }
+
     .description{
       display: flex;
       flex-direction: column;
