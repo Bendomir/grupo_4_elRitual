@@ -13,8 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- TIPOGRAFIA ROBOTO -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<!-- TIPOGRAFIA  -->
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">    
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -44,28 +46,29 @@
 
         <div class="mobile-user">
             <section class="mobile-login-register">
-                <i class="fas fa-user"></i>
+                <a href="/login"><i class="fas fa-user"></i></a>
             </section>
             <section class="mobile-cart">
-                <i class="fas fa-shopping-cart"></i>
+                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
             </section>
         </div>
+        <nav class="nav-total">
+                <ul class="nav-user">
+                    <li type="none"> <a href="/register">Crear cuenta</a></li>
+                    <li type="none"> <a href="/login">Iniciar Sesión</a></li>
+                    <li type="none"> <a href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
 
-        <nav class="nav-bar">
-            <ul>
-                <li type="none"> <a href="*">Productos</a> </li>
-                <li type="none"> <a href="*">Noticias</a> </li>
-                <li type="none"> <a href="*">Próximos Estrenos</a> </li>
-            </ul>
+                <ul class="nav-bar">
+                    <li type="none"> <a href="/tienda">Productos</a> </li>
+                    <li type="none"> <a href="*">Noticias</a> </li>
+                    <li type="none"> <a href="*">Próximos Estrenos</a> </li>
+                </ul>
         </nav>
-        <nav class="nav-user">
-            <ul>
-                <li type="none"> <a href="/register">Crear cuenta</a></li>
-                <li type="none"> <a href="*">Iniciar Sesión</a></li>
-                <li type="none"> <a href="*"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
-        </nav>
-</header>
+
+
+
+    </header>
     <main>
         <article class="copy">
             <a href="/">Inicio</a>
@@ -74,35 +77,34 @@
         </article>
         <article class="product">
             <img src="images/remera-ACDC.jpg" alt="">
-            <h2>
-                Remera AC-DC
-            </h2>
-            <h1>
-                $ 4.200
-            </h1>
-            <p>
-                <i class="far fa-credit-card"></i>    24 cuotas de $ 175
-            </p>
-            <br>
-            <hr>
+                <div class="product-copy">
+                    <h2>
+                         Remera AC-DC
+                     </h2>
+                    <h1>
+                        $ 4.200
+                    </h1>
+                    <p>
+                        <i class="far fa-credit-card"></i>    24 cuotas de $ 175
+                    </p>
+                        <br>
+                        <hr>
         
-
-        
-            <h2>
-                Talle XL
-            </h2>
+                    <h2>
+                        Talle XL
+                    </h2>
+                </div>
+            </article>
             <div class="size">
-            <p >
-                L
-            </p>
-            <p >
-                M
-            </p>
-            <p >
-                S
-            </p>
+                <label for="size">Elegí tu talle</label>
+                <select name="size" id="">
+                    <option value="s">Small</option>
+                    <option value="m">Medium</option>
+                    <option value="l">Large</option>
+                 </select>
             </div>
-        </article>
+            <br>
+            <br>
 
         <footer>
             <div class="social-medias">
