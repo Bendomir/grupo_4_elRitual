@@ -1,3 +1,5 @@
+RETROSPECTIVA SPRINT 1
+
 
 Nos juntamos atravez de discord para realizar la retrospectiva del primer sprint, fue un momento rescatable para poder pensar en las cosas que podemos mejorar como grupo.
 Nos basamos en la dinamica Estrella de Mar para poder desarrollarnos en los puntos mas importantes de dicho sprint. 

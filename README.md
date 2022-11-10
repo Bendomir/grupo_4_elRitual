@@ -36,3 +36,13 @@ Nos sentimos mas que identificados con la funcionalidad de esta web a la hora de
 https://www.entradaweb.com.ar/
 
 
+
+Tablero de Trabajo TRELLO
+
+Tareas a realizar:
+https://trello.com/b/VlYbqdUO/tareas
+
+
+Lineamientos y objetivos de trabajo:
+https://trello.com/b/fUsO6dOX/lineamientos-objetivos
+
