@@ -36,3 +36,8 @@ app.get('/tienda', (req, res) => {
 
     res.sendFile(path.resolve('./views/tienda.html'));
 });
+
+app.get('/login', (req, res) => {
+
+    res.sendFile(path.resolve('./views/login.html'));
+});
