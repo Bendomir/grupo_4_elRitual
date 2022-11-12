@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("partials/head") %>
+     <link rel="stylesheet" href="/css/style-carrito.css">
+    
+    </head>
+    <body>
+        <header>
+    
+            <%- include("partials/header") %>
+    
+        </header>
+
+    <main>
+        <section class="total-products">
+        <div class="title-carrito">
+        <h1>Carrito de compras</h1>
+        </div>
+
+        <div class="products">
+            <article class="product-detail">
+                <img src="images/remera-ACDC.jpg" alt="Remera AC/DC">
+                <section class="description">
+                    <h3>Remera AC/DC</h3>
+                    <p class="precio">$4200</p>
+                </section>
+            </article>
+            <article class="product-detail">
+                <img src="images/remera-nirvana.jpg" alt="Remera Nirvana">
+                <section class="description">
+                    <h3>Remera Nirvana</h3>
+                    <p class="precio">$4200</p>
+                </section>
+            </article>
+        </div>
+        </section>
+        <p class="subtotal"><strong>Subtotal</strong>(sin envio): <strong>$8400</strong><p>
+        <p class="total"><strong>Total: 8400</strong></p>
+        <div class="button-compra">
+        <button>INICIAR COMPRA</button>
+        </div>
+        <div class="ver-products">
+        <a href="*">Ver más productos</a>
+        </div>
+    </main>
+    <footer>
+        <%- include("partials/footer") %>
+</footer>
+</body>
+</html>

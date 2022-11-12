@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("partials/head") %>
+     <link rel="stylesheet" href="/css/styles-login-register.css">
+    
+    </head>
+    <body>
+        <header>
+    
+            <%- include("partials/header") %>
+    
+        </header>
+
+<main>
+
+    <div class="login">
+        <form action="/" method="GET">
+            <h3>Inicio de sesión</h3>
+
+            <div class="user-data">
+                <label for="user">
+                <input type="text" name="user" placeholder="Nombre de usuario" minlength="8" required>
+                <span class="feedback"></span>
+                </label>
+            </div>
+
+            <div class="user-data">
+                <label for="password">
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <span class="feedback"></span>
+                </label>
+            </div>
+
+            <div class="prueba">
+                <div class="user-data-submit-button">          
+                    <button type="submit"><span>Continuar</span></button>
+                </div>
+            </div>
+
+
+        </form>
+
+        <form action="/" method="GET">
+            <button type="submit"><i class="fab fa-facebook"></i>Loguear con facebook</button>
+
+        </form>
+        <form action="/" method="GET">
+            <button type="submit"><i class="fab fa-google"></i>Loguear con gmail</button>
+
+        </form>
+
+    </div>
+</main>
+<footer>
+
+    <%- include("partials/footer") %>
+
+</footer>
+</body>
+</html>

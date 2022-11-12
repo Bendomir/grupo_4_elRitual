@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head") %>
+ <link rel="stylesheet" href="/css/tienda.css">
+
+</head>
+<body>
+    <header>
+
+        <%- include("partials/header") %>
+
+    </header>
+    <main>
+    <div class="copy">
+        <a href="/">Inicio</a>
+        <p  class="product">/productos</p>
+    </div>
+
+    <h1>
+        ELEGÍ LA INDUMENTARIA DE TU SHOW
+    </h1>
+    <form action="*" method="post">
+    <div class="filter">
+        
+            <label for="">Ordenar por: </label>
+                <select name="categorias" class="categorias">
+                    <option value="Más vendidos" selected>Más vendidos</option>
+                    <option value="Precio: Mayor-Menor">Precio: Mayor-Menor</option>
+                    <option value="Precio: Mayor-Menor">Precio: Menor - Mayor </option>
+                    <option value="Más visitados">Más visitados</option>
+                    <option value="Más recientes">Más recientes</option>
+                </select>
+            </div>
+        </form>
+    
+
+    <section class="product">
+     <div class="card">
+        <article class="product-detail">
+            <img src="./images/remera-ACDC.jpg" alt="Remera AC/DC black">
+            <section class="description">
+                <h3>Remera AC/DC</h3>
+                <p class="precio">$4200</p>
+            
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+                </div>
+            </section>
+        </article>
+    </div>
+    <div class="card">
+        <article class="product-detail">
+            <img src="./images/remera-nirvana.jpg" alt="Remeras Nirvana">
+            <section class="description">
+                <h3>Remera Nirvana</h3>
+                <p class="precio">$4200</p>
+            </section>
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+          </article>
+        <div class="card">
+        <article class="product-detail">
+            <img src="./images/remera-soda-stereo.jpg" alt="Remera Soda Stereo">
+            <section class="description">
+                <h3>Remera Soda Stereo</h3>
+                <p class="precio">$4200</p>
+            </section>
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+                </div>
+        </article>
+    </div>
+        <div class="card">
+        <article class="product-detail">
+            <img src="./images/remera.jpg" alt="Remera AC/DC white">
+            <section class="description">
+                <h3>Remera AC/DC</h3>
+                <p class="precio">$4200</p>
+            </section>
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+                </div>
+        </article>
+    </div>
+    </section>
+    </main>
+    <footer>
+    <%- include("partials/footer") %>
+    </footer>
+</body>
+
+</html>

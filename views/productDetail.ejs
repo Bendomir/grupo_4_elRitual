@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("partials/head") %>
+     <link rel="stylesheet" href="/css/style-productDesign.css">
+    
+    </head>
+    <body>
+        <header>
+    
+            <%- include("partials/header") %>
+    
+        </header>
+    <main>
+        <article class="copy">
+            <a href="/">Inicio</a>
+            <a href="tienda"> Productos<a>
+            <p  class="products"> Remera AC/DC</p>
+        </article>
+        <article class="product">
+            <img src="images/remera-ACDC.jpg" alt="">
+                <div class="product-copy">
+                    <h2>
+                         Remera AC-DC
+                     </h2>
+                    <h1>
+                        $ 4.200
+                    </h1>
+                    <p>
+                        <i class="far fa-credit-card"></i>    24 cuotas de $ 175
+                    </p>
+                        <br>
+                        <hr>
+        
+                    <h2>
+                        Talle XL
+                    </h2>
+                </div>
+            </article>
+            <div class="size">
+                <label for="size">Elegí tu talle</label>
+                <select name="size" id="">
+                    <option value="s">Small</option>
+                    <option value="m">Medium</option>
+                    <option value="l">Large</option>
+                 </select>
+            </div>
+            <br>
+            <br>
+
+        <footer>
+            <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>
