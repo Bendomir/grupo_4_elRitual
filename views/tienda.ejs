@@ -35,56 +35,29 @@
     
 
     <section class="product">
+
+
+    <% product.forEach(product => { %> 
+
      <div class="card">
+        <a href="/product/<%= product.id %> ">
         <article class="product-detail">
-            <img src="./images/remera-ACDC.jpg" alt="Remera AC/DC black">
+            <img src= <%= product.images %> alt="">
+        </a>
             <section class="description">
-                <h3>Remera AC/DC</h3>
-                <p class="precio">$4200</p>
+                <h3><%= product.name %></h3>
+                <p class="precio"><%= product.price %></p>
             
             <div class="agregar-carrito">
                 <button>AGREGAR AL CARRITO</button>
-                </div>
-            </section>
-        </article>
-    </div>
-    <div class="card">
-        <article class="product-detail">
-            <img src="./images/remera-nirvana.jpg" alt="Remeras Nirvana">
-            <section class="description">
-                <h3>Remera Nirvana</h3>
-                <p class="precio">$4200</p>
-            </section>
-            <div class="agregar-carrito">
-                <button>AGREGAR AL CARRITO</button>
-                </div>
             </div>
-          </article>
-        <div class="card">
-        <article class="product-detail">
-            <img src="./images/remera-soda-stereo.jpg" alt="Remera Soda Stereo">
-            <section class="description">
-                <h3>Remera Soda Stereo</h3>
-                <p class="precio">$4200</p>
             </section>
-            <div class="agregar-carrito">
-                <button>AGREGAR AL CARRITO</button>
-                </div>
         </article>
     </div>
-        <div class="card">
-        <article class="product-detail">
-            <img src="./images/remera.jpg" alt="Remera AC/DC white">
-            <section class="description">
-                <h3>Remera AC/DC</h3>
-                <p class="precio">$4200</p>
-            </section>
-            <div class="agregar-carrito">
-                <button>AGREGAR AL CARRITO</button>
-                </div>
-        </article>
-    </div>
-    </section>
+
+    <% }) %> 
+
+</section>
     </main>
     <footer>
     <%- include("partials/footer") %>

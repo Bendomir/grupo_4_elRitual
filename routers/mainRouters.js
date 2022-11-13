@@ -6,7 +6,7 @@ const mainControllers = require ("../controllers/mainControllers")
 router.get('/', mainControllers.index)
 
 router.get('/register', mainControllers.register)
-router.get('/product', mainControllers.productDetail);
+router.get('/product/:id', mainControllers.productDetail);
 
 router.get('/carrito', mainControllers.carrito);
 
