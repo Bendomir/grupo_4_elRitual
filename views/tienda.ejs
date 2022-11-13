@@ -39,14 +39,14 @@
 
     <% product.forEach(product => { %> 
 
-     <div class="card">
+    <div class="card">
         <a href="/product/<%= product.id %> ">
         <article class="product-detail">
             <img src= <%= product.images %> alt="">
         </a>
             <section class="description">
                 <h3><%= product.name %></h3>
-                <p class="precio"><%= product.price %></p>
+                <p class="precio">$ <%= product.price %></p>
             
             <div class="agregar-carrito">
                 <button>AGREGAR AL CARRITO</button>

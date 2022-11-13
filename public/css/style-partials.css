@@ -82,6 +82,9 @@ header{
 
 /* ----------------- FOOTER  ------------------*/
 /* ----------------- redes sociales ------------------*/
+footer{
+    color: black;
+}
 .wrapper {
     display: inline-flex;
     list-style: none;

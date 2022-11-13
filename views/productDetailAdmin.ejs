@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <%- include("partials/head") %>
-     <link rel="stylesheet" href="/css/style-productDesign.css">    
+     <link rel="stylesheet" href="/css/style-productDetail.css">    
     </head>
     <body>
         <header>
@@ -11,44 +11,49 @@
     
         </header>
     <main>
+
         <article class="copy">
-            <a href="/">Inicio</a>
-            <a href="tienda"> Productos<a>
+            <a href="/">Inicio/</a>
+            <a href="/tienda">Productos/</a>
             <p  class="products"> Remera AC/DC</p>
         </article>
-        <article class="product">
-            <img src= <%= product[0].images %> alt="">
-                <div class="product-copy">
-                    <h2>
-                        <%= product[0].name %>
-                     </h2>
-                    <h1>
-                        <%= product[0].price %>
-                    </h1>
-                    <p>
-                        <i class="far fa-credit-card"></i>    24 cuotas de $ 175
-                    </p>
-                        <br>
-                        <hr>
-        
-                    <h2>
-                        Talle XL
-                    </h2>
-                </div>
-            </article>
-            <div class="size">
-                <label for="size">Elegí tu talle</label>
-                <select name="size" id="">
-                    <option value="s">Small</option>
-                    <option value="m">Medium</option>
-                    <option value="l">Large</option>
-                 </select>
-            </div>
-            <br>
-            <br>
 
-        <footer>
+        <article class="product">
+            
+            <img src=<%= product[0].images %> alt="">
+            <div class="image-edit">
+                <i class="far fa-edit"></i>
+            </div>
+
+            <div class="product-detail">
+                <h2><%= product[0].name %> <i class="far fa-edit"></i></h2>
+                <h1>$ <%= product[0].price %> <i class="far fa-edit"></i></h1>
+                <p> <i class="far fa-credit-card"></i>6 cuotas sin interes de $ <%= (product[0].price)/6 %> <i class="far fa-edit"></i></p>        
+                <h2> Talle XL <i class="far fa-edit"></i></h2>
+
+                <div class="admin">
+                    <div class="size">
+                        <label for="size">Elegí tu talle</label>
+                        <select name="size" id="">
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                        </select>
+                    </div>
+                    <div class="edit">
+                        <a href="/product/:id"><button>Guardar</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+    </main>
+
+    <footer>
             <%- include("partials/footer") %>
     </footer>
+
+
 </body>
 </html>
