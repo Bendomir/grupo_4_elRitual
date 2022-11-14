@@ -131,9 +131,14 @@ p i{
   color:#B600F6;
   padding-left: 5%
 } 
-.image-edit{
-  font-size: 40px;
+.product i{
+  font-size: 15px;
 } 
+.image-edit{
+  margin-left: -25px;
+  margin-top: 10px;
+  
+}
 
 /*----------------Media queries-------------*/
 
