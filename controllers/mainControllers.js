@@ -27,9 +27,13 @@ const mainControllers={
     },
     login: (req, res) => {
 
-        res.render("login");
-    
+        res.render("login");   
+},
+    chargeProduct: (req, res) => {
+
+    res.render("chargeProduct");   
 }
+
 }
 module.exports = mainControllers
 

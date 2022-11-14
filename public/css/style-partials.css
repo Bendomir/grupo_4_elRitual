@@ -89,7 +89,7 @@ footer{
     display: inline-flex;
     list-style: none;
     height: 120px;
-    width: 100%;
+    width: 80%;
     padding-top: 40px;
     font-family: "Poppins", sans-serif;
     justify-content: center;
@@ -186,6 +186,10 @@ footer{
     font-size: 15px;
     margin: 15px;
     justify-content: space-around;
+   }
+
+   .terms{
+    font-size: 15px;
    }
    .consumer-defense{
     width: 80%;
@@ -309,7 +313,12 @@ footer{
 
     /* -----------------FIN HEADER------------------- */
 
+
          /* ----------------- FOOTER ------------------*/
+
+         .wrapper{
+            width: 100%;
+         }
          /* ----------------- legacy ------------------*/
 
          .legacy{
@@ -319,6 +328,12 @@ footer{
             margin-left: 60px;
             justify-content: space-around;
             
+           }
+           .terms{
+            font-size: 15px;
+           }
+           .privacy{
+            width: 40%;
            }
         
         
