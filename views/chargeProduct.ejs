@@ -13,22 +13,24 @@
         </header>
     <main>
 
+        <h1>Cargá un nuevo producto</h1>
+
         <article class="copy">
             <a href="/">Inicio/</a>
             <a href="/tienda">Productos/</a>
-            <h1> Armado de Indumentaria</h1>
+            <a>Cargá un nuevo producto</a>
         </article>
 
         <article class="product">
             <section class="image">
 
-                <label for="imagenDePerfil" class="perfil"> imagen de producto  <br> <br>
+                <label for="imagenDePerfil" class="perfil"> Agregar Imagen</label>
                 <input type="file" name="imagenDePerfil">
-                </label>
+                
       
             </section>
 
-            <div class="product-detail">
+            <section class="product-detail">
                 <div class="user-data">
                     <label for="name-lastName">
                     <input type="text" name="name-lastName" placeholder="Nombre de Indumentaria" required>
@@ -43,9 +45,17 @@
                 </div>
             
                 <div class="user-data">
+                    <i class="far fa-credit-card"></i>
                     <label for="name-lastName" >
-                        <i class="far fa-credit-card"></i>
-                    <input type="text" name="name-lastName" placeholder="Cuotas sin intereses" required>
+                        <select name="size" id="Small" class="quota">
+                            <option>Cuotas sín Interes</option>
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                        </select>
+                        
+                    <!-- <input type="text" name="name-lastName" placeholder="Cuotas sin intereses" required> -->
                     <span class="feedback"></span>
                     </label>
                 </div>      
@@ -53,18 +63,61 @@
 
                 <div class="admin">
                     <div class="size">
-                        <label for="size">Elegí tu talle</label>
-                        <select name="size" id="">
-                            <option value="s">Small</option>
-                            <option value="m">Medium</option>
-                            <option value="l">Large</option>
+                        <label for="size">Seleccioná los talles</label>
+                        <select name="size" id="Small" class="small">
+                            <option value="0">S</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select name="size" id="Medium" class="medium">
+                            <option value="0">M</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select name="size" id="Large" class="large">
+                            <option value="0">L</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <select name="size" id="Extra Large" class="xl">
+                            <option value="0">XL</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
                         </select>
                     </div>
-                    <div class="edit">
+                    <div class="save">
                         <a href="/product-admin/:id"><button>Guardar</button></a>
                     </div>
                 </div>
-            </div>
+            </section>
 
         </article>
 

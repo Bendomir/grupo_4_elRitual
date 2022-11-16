@@ -13,8 +13,7 @@
 
 <main>
 
-    <div class="login">
-        <form action="/" method="GET">
+        <form action="/" method="GET" class="login">
             <h3>Inicio de sesión</h3>
 
             <div class="user-data">
@@ -31,25 +30,21 @@
                 </label>
             </div>
 
-            <div class="prueba">
-                <div class="user-data-submit-button">          
-                    <button type="submit"><span>Continuar</span></button>
-                </div>
+            <div class="login-redes">
+                <button type="submit" class="facebook"><a href=""><i class="fab fa-facebook"></i>Ingresá con Facebook</a></button>
+
+                <button type="submit" class="google"><a href=""><i class="fab fa-google"></i>Ingresá con Gmail</a></button>
             </div>
 
+            
+            <div class="login-register">  
+                <button type="submit" class="user-data-button"><span>Continuar</span></button>
+                      
+                <button class="user-data-button"><a href="/register">Registrate</a></button>
+            </div>
 
         </form>
 
-        <form action="/" method="GET">
-            <button type="submit"><i class="fab fa-facebook"></i>Loguear con facebook</button>
-
-        </form>
-        <form action="/" method="GET">
-            <button type="submit"><i class="fab fa-google"></i>Loguear con gmail</button>
-
-        </form>
-
-    </div>
 </main>
 <footer>
 

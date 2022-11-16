@@ -17,7 +17,7 @@ router.get('/tienda', mainControllers.tienda);
 
 router.get('/login', mainControllers.login);
 
-router.get('/chargeProduct', mainControllers.chargeProduct)
+router.get('/charge-product', mainControllers.chargeProduct)
 
 
 

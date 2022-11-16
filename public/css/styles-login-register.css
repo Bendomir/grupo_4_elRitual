@@ -22,13 +22,6 @@ main{
     flex-wrap: wrap;
 } 
 
-.login {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-} 
-
-
 .register h3, .login h3 {
     text-align: center;
     padding: 15px;
@@ -49,16 +42,33 @@ h5 {
     margin-right: 10px;
 }
 .login{
-    text-align: right;
-    padding-right: 12%;
     display: flex;
+    flex-wrap: wrap;
+    text-align: right;
+    padding: 0% 5% 5% 5%;
     flex-direction: column;
     border: rgb(178, 199, 245) 5px solid;
-    margin: 10px 0px;
     border-radius: 20px;
     background-color: whitesmoke;
     width: 90%;
+    margin: 5% auto;
 }
+.login label{
+    text-align: center;
+}
+.login-redes{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin: 2% 0%;
+   }
+
+.login-register{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin: 2% 0%;
+   }
 
 .user-data{
     display: flex;
@@ -68,12 +78,11 @@ h5 {
 }
 
 
-.user-data input, .login-data input {
+.user-data input{
     line-height: 28px;
     border: 2px solid transparent;
     border-bottom-color: #777;
     border-radius: 1rem;
-    padding: .2rem 0;
     outline: none;
     background-color: transparent;
     color: #0d0c22;
@@ -84,7 +93,7 @@ h5 {
     border-color: #7a9cc6;
    }
 
-label {
+.register label {
     width: 100%;
     padding-left: 5px;
     }
@@ -96,6 +105,11 @@ input{
     border-radius: 1rem;
     border-color: #7a9cc6;
     width: 80%;
+   }
+
+.login input{
+
+    width: 100%;
    }
 
 input:focus , input:hover {
@@ -132,7 +146,7 @@ input:focus::placeholder {
 
 
 
-.register .user-data-submit-button button {
+.register .user-data-submit-button  {
     margin: 2% 0% 4% 53%;
     font-family: inherit;
     font-size: 20px;
@@ -147,12 +161,13 @@ input:focus::placeholder {
     transition: all 0.2s;
     background: #E2340E;
    }
-   .login .user-data-submit-button button {
-    margin: 2% 0% 4% 53%;
+   
+.login .user-data-button  {
+    /* margin: 2% 0% 4% 53%; */
     font-family: inherit;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
-    padding: 0.5em 2em;
+    padding: 0.5em 1em;
     /* padding-left: 1.1em; */
     display: flex;
     align-items: center;
@@ -163,36 +178,30 @@ input:focus::placeholder {
      background: #E2340E; 
    }
 
-/* .login-button { 
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+   .login-register a {
+    text-decoration: none;
+    color: white;
+   }
+
+   button a {
+    text-decoration: none;
+    color: black;
+   }
+
+.facebook, .google{
+    font-size: 12px;
 }
 
-.login-button button {
-	background-color:#44c767;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:10px 20px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
-    margin-top: 10px;
-    transition: all 1s;
-}
-.login-button button:hover {
-	background-color:#0022AA;
-    border:1px solid #0022AA;
-}
-.login-button button:active {
-	position:relative;
-	top:1px;
-}
-*/
+   .fa-facebook{
+    color: blue;
+   }
+
+   .fa-google{
+    color: red;
+   }
+
+
+
 
 @media (min-width: 560px){
 

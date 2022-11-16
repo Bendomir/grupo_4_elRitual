@@ -12,7 +12,7 @@ Nos basamos en la dinamica Estrella de Mar para poder desarrollarnos en los punt
 4. Debemos hacer menos enfoque en detalles y priorizar más las consignas.
 5. Debemos dejar de ser tan desestructurados y desorganizados.
 
-RETROSPECTIVA SPRINT 3
+RETROSPECTIVA SPRINT 2
 1. 
 2. Debemos actualizar más Trello y estar mas atentos
 3. Debemos continuar mejorando la organizacion 
