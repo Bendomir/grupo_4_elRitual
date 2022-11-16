@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("partials/head") %>
+        <link rel="stylesheet" href="/css/chargeProduct.css">    
+        <link rel="stylesheet" href="/css/style-partials.css">   
+    </head>
+    <body>
+        <header>
+    
+            <%- include("partials/header") %>
+    
+        </header>
+    <main>
+
+        <article class="copy">
+            <a href="/">Inicio/</a>
+            <a href="/tienda">Productos/</a>
+            <h1> Armado de Indumentaria</h1>
+        </article>
+
+        <article class="product">
+            <section class="image">
+
+                <label for="imagenDePerfil" class="perfil"> imagen de producto  <br> <br>
+                <input type="file" name="imagenDePerfil">
+                </label>
+      
+            </section>
+
+            <div class="product-detail">
+                <div class="user-data">
+                    <label for="name-lastName">
+                    <input type="text" name="name-lastName" placeholder="Nombre de Indumentaria" required>
+                    <span class="feedback"></span>
+                    </label>
+                </div>
+                <div class="user-data">
+                    <label for="name-lastName">
+                    <input type="text" name="name-lastName" placeholder="Precio" required>
+                    <span class="feedback"></span>
+                    </label>
+                </div>
+            
+                <div class="user-data">
+                    <label for="name-lastName" >
+                        <i class="far fa-credit-card"></i>
+                    <input type="text" name="name-lastName" placeholder="Cuotas sin intereses" required>
+                    <span class="feedback"></span>
+                    </label>
+                </div>      
+                
+
+                <div class="admin">
+                    <div class="size">
+                        <label for="size">Elegí tu talle</label>
+                        <select name="size" id="">
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                        </select>
+                    </div>
+                    <div class="edit">
+                        <a href="/product-admin/:id"><button>Guardar</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+    </main>
+
+
+            <%- include("partials/footer") %>
+
+
+
+</body>
+</html>

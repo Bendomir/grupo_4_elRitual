@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head") %>
+ <link rel="stylesheet" href="/css/tienda.css">
+</head>
+<body>
+    <header>
+
+        <%- include("partials/header") %>
+
+    </header>
+    <main>
+    <div class="copy">
+        <a href="/">Inicio</a>
+        <p  class="product">/productos</p>
+    </div>
+
+    <h1>
+        ELEGÍ LA INDUMENTARIA DE TU SHOW
+    </h1>
+    <form action="*" method="post">
+    <div class="filter">
+        
+            <label for="">Ordenar por: </label>
+                <select name="categorias" class="categorias">
+                    <option value="Más vendidos" selected>Más vendidos</option>
+                    <option value="Precio: Mayor-Menor">Precio: Mayor-Menor</option>
+                    <option value="Precio: Mayor-Menor">Precio: Menor - Mayor </option>
+                    <option value="Más visitados">Más visitados</option>
+                    <option value="Más recientes">Más recientes</option>
+                </select>
+            </div>
+        </form>
+    
+
+    <section class="product">
+
+
+    <% product.forEach(product => { %> 
+
+    <div class="card">
+        <a href="/product/<%= product.id %> ">
+        <article class="product-detail">
+            <img src= <%= product.images %> alt="">
+        </a>
+            <section class="description">
+                <h3><%= product.name %></h3>
+                <p class="precio">$ <%= product.price %></p>
+            
+            <div class="agregar-carrito">
+                <button>AGREGAR AL CARRITO</button>
+            </div>
+            </section>
+        </article>
+    </div>
+
+    <% }) %> 
+
+</section>
+    </main>
+    <footer>
+    <%- include("partials/footer") %>
+    </footer>
+</body>
+
+</html>

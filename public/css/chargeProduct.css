@@ -1,0 +1,189 @@
+main {
+    margin: 0% auto;
+    width: 90%;
+}
+h1{
+    font-family: 'Rock Salt';
+    text-align: center;
+    font-size: 23px;
+}
+.product-detail {
+    margin-top: 10px;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    } 
+
+.image{
+    border: solid 6px violet;
+    width: 60%;
+    padding: 6%;
+    padding-bottom: 25%;
+    padding-top: 25%;
+    padding-left: 4%;
+    font-size: 15px;
+    text-align: center;
+    margin: auto;
+    background-color: floralwhite;
+    }
+
+    .price {
+        font-size: 2em;
+        margin: 0.67em 0;
+    }
+    .product{
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        color: #393D3F;
+    }
+    
+    .admin {
+        display: flex;
+        margin-top: 50px;
+        font-size: 18px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    select{
+        margin: 10px 0px;
+    }
+    
+    .size{
+        text-align: left;
+    
+    }
+    
+    .edit{
+        width: 40%;
+        text-align: right;
+        margin-right: 10%;
+    }
+
+    .register h3, .login h3 {
+        text-align: center;
+        padding: 15px;
+    }
+    h5 {
+        padding: 10px;
+    }
+    
+    .register form{
+        text-align: center;
+        border: rgb(178, 199, 245) 5px solid;
+        margin: 10px 0px;
+        border-radius: 20px;
+        background-color: whitesmoke
+    }
+    
+    .login i{
+        margin-right: 10px;
+    }
+    .login{
+        text-align: right;
+        padding-right: 12%;
+        display: flex;
+        flex-direction: column;
+        border: rgb(178, 199, 245) 5px solid;
+        margin: 10px 0px;
+        border-radius: 20px;
+        background-color: whitesmoke;
+        width: 90%;
+    }
+    
+    .user-data{
+        padding-bottom: 5px;
+        margin-top: 10px;
+    }
+    
+    
+    .user-data input, .login-data input {
+        line-height: 28px;
+        border: 2px solid transparent;
+        border-bottom-color: #777;
+        border-radius: 1rem;
+        padding: .2rem 0;
+        outline: none;
+        background-color: transparent;
+        color: #0d0c22;
+        transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        outline: none;
+        padding: .2rem 1rem;
+        border-radius: 1rem;
+        border-color: #7a9cc6;
+       }
+    
+       label, .far{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+       }
+    
+    input{
+        outline: none;
+        padding: .2rem 1rem;
+        border-radius: 1rem;
+        border-color: #7a9cc6;
+        width: 80%;
+       }
+    
+    input:focus , input:hover {
+        outline: none;
+        padding: .2rem 1rem;
+        border-radius: 1rem;
+        border-color: #7a9cc6;
+       }
+    
+       
+    input::placeholder {
+        color: #777;
+       }
+       
+    input:focus::placeholder {
+        opacity: 0;
+        transition: opacity .3s;
+       }
+    
+    
+       .user-data-checkbox input{
+        width: 5%;
+       }
+       
+       .terms, .newsletter {
+        display: block;
+        font-size: 11px;
+        text-align: left;
+       }
+
+
+@media (min-width: 768px){
+main{
+    text-align: center;
+}
+.image {
+    border: solid 6px violet;
+    width: 30%;
+    padding: 4%;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    /* padding-left: 4%; */
+    font-size: 20px;
+    text-align: center;
+}
+.size{
+    margin-left: 100px;
+}
+.productDetail{
+    justify-content: center;
+}
+.admin{
+    justify-content: center;
+    margin-top: 50px;
+}
+
+}

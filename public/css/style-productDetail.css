@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb!important;
+    /* width: 100%; */
+}
+
+
+/*--------------MAIN-----------------*/
+
+main{
+  margin: 0% auto;
+  width: 90%;
+}
+.copy{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-top: 10px;
+        
+}
+
+article a{
+  color: black;
+  font-size:16px
+}
+
+h2{
+  margin: 10px 0px;
+}
+
+img{
+  text-align: center;
+}
+
+
+
+.product{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-top: 50px;
+    color: #393D3F;
+}
+
+.admin {
+    display: flex;
+    /* text-align: right;
+    margin-right: 425px; */
+    font-size: 18px;
+    width: 100%;
+}
+select{
+    margin: 10px 0px;
+}
+
+.size{
+    text-align: left;
+    width: 60%;
+
+}
+
+.edit{
+    width: 40%;
+    text-align: right;
+    margin-right: 10%;
+}
+
+/* ----------------- INICIO botton libreria ------------------*/
+
+.button-compra{
+    text-align: center;
+    margin: 25px;
+}
+
+button {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #B600F6;
+    border-radius: 4em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0 !important;
+    min-height: 2.25em;
+    min-width: 2em;
+    outline: none;
+    padding: 0.5em 1.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+   }
+   
+   button:disabled {
+    pointer-events: none;
+   }
+   
+   button:hover {
+    color: #fff;
+    background-color: #B600F6;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+   }
+   
+   button:active {
+    box-shadow: none;
+    transform: translateY(0);
+   }
+
+   /* ----------------- FIN botton libreria ------------------*/
+
+p i{
+  padding-right: 1%;
+}
+
+.fa-edit{
+  color:#B600F6;
+  padding-left: 5%
+} 
+.product i{
+  font-size: 15px;
+} 
+.image-edit{
+  margin-left: -25px;
+  margin-top: 10px;
+  
+}
+
+/*----------------Media queries-------------*/
+
+@media (min-width: 560px){
+
+
+  
+}
+@media (min-width: 768px){
+
+/*---------------MAIN-------------------*/
+.product{
+  flex-direction: row;
+}
+
+.product-detail{
+  display: flex;
+  flex-direction: column;
+  margin-left: 65px;
+  width: 200%;
+  text-align: justify;
+  justify-content: space-around;
+  font-size: 26px;
+}
+
+.product img{
+  width: 50%;
+  border: solid 2px black;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);;
+  
+}
+
+
+}
+/* ----------------- FIN botton libreria ------------------*/

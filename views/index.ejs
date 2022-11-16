@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("partials/head") %>
+    <link rel="stylesheet" href="/css/styles-index.css">
+    </head>
+<body>
+    <header>
+    <%- include("partials/header") %>
+    </header>
+    <main>
+
+        <h1>El Ritual</h1>
+        <h2>Buscá tu entrada</h2>
+
+        <form action="*" class="search" method="GET">
+            <button class="loupe"><i class="fa fa-search"></i></button>
+            <input type="text" placeholder="Buscar evento, ciudad, etc" class="search-bar">
+            <input type="date" name="calendar" min="2022-01-01" class="calendar">
+            
+            <!-- <i class="fas fa-calendar-alt"></i> -->
+        </form>
+
+
+        
+        <h2>Conocé nuestro merchandising</h2>
+
+        <div class="carrusel">
+
+            <button class="arrow-left"><i class="fas fa-chevron-left"></i></button>
+
+            <div class="carrusel-mobile">
+                <a href="/"><img src="images/remera-soda-stereo.jpg" alt="Remera Mobile"></a>
+            </div>
+
+            <div class="carrusel-tablet">
+                <a href="/"><img src="images/remeras-tablet.jpg" alt="Remera Tablet"></a>
+            </div>
+
+            <div class="carrusel-desktop">
+                <a href="/"><img src="images/remeras-desktop.jpg" alt="Remera Desktop"></a>
+            </div>
+
+            <button class="arrow-right"><i class="fas fa-chevron-right"></i></button>
+
+         </div>
+    </main>
+
+    
+    <footer>
+        <%- include("partials/footer") %>
+    
+</footer>
+</body>
+</html>
