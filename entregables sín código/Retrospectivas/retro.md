@@ -13,6 +13,8 @@ Nos basamos en la dinamica Estrella de Mar para poder desarrollarnos en los punt
 5. Debemos dejar de ser tan desestructurados y desorganizados.
 
 RETROSPECTIVA SPRINT 2
-1. 
-2. Debemos actualizar más Trello y estar mas atentos
-3. Debemos continuar mejorando la organizacion 
+1. Debemos comenzar a desarrollar 1 tarjeta por objetivo del sprint en trello para poder desarrollar mas la tarea dentro de la tarjeta
+2. Debemos actualizar mas el tablero de trabajo de Trello para poder hacer un buen seguimiento día a día
+3. Debemos seguir por el camino que estamos transitando para mejorar la organización y distribución de tareas
+4. Debemos hacer menos hincapíe en intentar desarrollar algo no visto en clase
+5. Para este sprint no encontramos alguna acción o cualidad de la cual debamos desprendernos
