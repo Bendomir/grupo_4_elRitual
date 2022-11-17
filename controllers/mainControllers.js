@@ -9,13 +9,13 @@ const mainControllers={
         res.render("register");
     },
     productDetail: (req, res) => {
-
-        res.render("productDetail", {"product": products});
+        let product = products[(req.params.id)-1]
+        res.render("productDetail", {product});
     },
 
     productDetailAdmin: (req, res) => {
-
-        res.render("productDetailAdmin", {"product": products});
+        let product = products[(req.params.id)-1]
+        res.render("productDetailAdmin", {product});
     },
     carrito: (req, res) => {
 
@@ -23,7 +23,7 @@ const mainControllers={
     },
     tienda: (req, res) => {
 
-        res.render("tienda", {"product": products});
+        res.render("tienda", {products});
     },
     login: (req, res) => {
 

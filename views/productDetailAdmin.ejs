@@ -20,15 +20,15 @@
 
         <article class="product">
             
-            <img src=<%= product[0].images %> alt="">
+            <img src=<%= product.images %> alt="">
             <div class="image-edit">
                 <i class="far fa-edit"></i>
             </div>
 
             <div class="product-detail">
-                <h2><%= product[0].name %> <i class="far fa-edit"></i></h2>
-                <h1>$ <%= product[0].price %> <i class="far fa-edit"></i></h1>
-                <p> <i class="far fa-credit-card"></i>6 cuotas sin interes de $ <%= (product[0].price)/6 %> <i class="far fa-edit"></i></p>        
+                <h2><%= product.name %> <i class="far fa-edit"></i></h2>
+                <h1>$ <%= product.price %> <i class="far fa-edit"></i></h1>
+                <p> <i class="far fa-credit-card"></i>6 cuotas sin interes de $ <%= (product.price)/6 %> <i class="far fa-edit"></i></p>        
                 <h2> Talle XL <i class="far fa-edit"></i></h2>
 
                 <div class="admin">
@@ -84,7 +84,7 @@
                         </select>
                     </div>
                     <div class="edit">
-                        <a href="/product/:id"><button>Guardar</button></a>
+                        <a href="/product/<%= product.id %>"><button>Guardar</button></a>
                     </div>
                 </div>
             </div>
