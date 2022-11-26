@@ -1,4 +1,10 @@
 const path = require('path');
+const fs = require('fs');
+const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
+
 const mainControllers={
     index:(req, res) => {
 
@@ -38,29 +44,4 @@ const mainControllers={
 module.exports = mainControllers
 
 
-let products = [
-    {
-    id: "1",
-    name: "Remera AC/DC",
-    images: "/images/remera-ACDC.jpg",
-    price: 4200
-    },
-    {
-    id: "2",
-    name: "Remera Nirvana",
-    images: "/images/remera-nirvana.jpg",
-    price: 4200
-    },
-    {
-    id: "3",
-    name: "Remera Soda Stereo",
-    images: "/images/remera-soda-stereo.jpg",
-    price: 4200
-    },
-    {
-    id: "4",
-    name: "Remera AC/DC",
-    images: "/images/remera.jpg",
-    price: 4200
-    }
-]
+
