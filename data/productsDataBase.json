@@ -2,84 +2,84 @@
 	{
 		"id": 1,
 		"name": "Remera AC-DC",
-		"price": 6500,
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera-ACDC.jpg"
 	},
 	{
 		"id": 2,
-		"name": "Remera Nirvana",
-		"price": 6500,
+		"name": "Vestido Nirvana",
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera-nirvana.jpg"
 	},
 	{
 		"id": 3,
 		"name": "Remera Soda Stereo",
-		"price": 6500,
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera-soda-stereo.jpg"
 	},
 	{
 		"id": 4,
-		"name": "Vestido",
-		"price": 6500,
+		"name": "Remera AC-DC 'Are you ready?'",
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera.jpg"
 	},
 	{
 		"id": 5,
 		"name": "Remera AC-DC",
-		"price": 6500,
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera-ACDC.jpg"
 	},
 	{
 		"id": 6,
-		"name": "Remera Nirvana",
-		"price": 6500,
+		"name": "Vestido Nirvana",
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera-nirvana.jpg"
 	},
 	{
 		"id": 7,
 		"name": "Remera Soda Stereo",
-		"price": 6500,
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera-soda-stereo.jpg"
 	},
 	{
 		"id": 8,
-		"name": "Vestido",
-		"price": 6500,
+		"name": "Remera AC-DC 'Are you ready?'",
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera.jpg"
 	},
 	{
 		"id": 9,
 		"name": "Remera AC-DC",
-		"price": 6500,
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera-ACDC.jpg"
 	},
 	{
 		"id": 10,
-		"name": "Remera Nirvana",
-		"price": 6500,
+		"name": "Vestido Nirvana",
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera-nirvana.jpg"
 	},
 	{
 		"id":11,
 		"name": "Remera Soda Stereo",
-		"price": 6500,
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera-soda-stereo.jpg"
 	},
 	{
 		"id": 12,
-		"name": "Vestido",
-		"price": 6500,
+		"name": "Remera AC-DC 'Are you ready?'",
+		"price": 6000,
 		"cuotas": "6 cuotas sin interés de $ 1.083",
 		"images": "../images/remera.jpg"
 	}
