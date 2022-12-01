@@ -21,15 +21,12 @@
         <article class="product">
             
             <img src=<%= product.images %> alt="">
-            <div class="image-edit">
-                <i class="far fa-edit"></i>
-            </div>
+            <form action="/product-admin/<%= product.id %>?method=PUT" class="product-detail" method="POST" enctype="multipart/form-data">
+                <input type="file">
+                <input type="text" id="name" name="name" placeholder="<%= product.name %>" value="<%= product.name %>">
+                <input type="text" id="price" name="price" placeholder="<%= product.price %>" value="<%= product.price %>">
+                <input type="text" id="quota" name="quota" placeholder="<%= product.quota %> Cuotas sin interes" value="6">
 
-            <div class="product-detail">
-                <h2><%= product.name %> <i class="far fa-edit"></i></h2>
-                <h1>$ <%= product.price %> <i class="far fa-edit"></i></h1>
-                <p> <i class="far fa-credit-card"></i>6 cuotas sin interes de $ <%= (product.price)/6 %> <i class="far fa-edit"></i></p>        
-                <h2> Talle XL <i class="far fa-edit"></i></h2>
 
                 <div class="admin">
                     <div class="size">
@@ -84,10 +81,10 @@
                         </select>
                     </div>
                     <div class="edit">
-                        <a href="/product/<%= product.id %>"><button>Guardar</button></a>
+                        <button type="submit">Guardar</button>
                     </div>
                 </div>
-            </div>
+            </form>
 
         </article>
 

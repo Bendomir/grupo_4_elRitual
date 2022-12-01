@@ -15,14 +15,44 @@ const mainControllers={
         res.render("register");
     },
     productDetail: (req, res) => {
-        let product = products[(req.params.id)-1]
+        let product = products.find(product => product.id == req.params.id);
         res.render("productDetail", {product});
     },
 
-    productDetailAdmin: (req, res) => {
-        let product = products[(req.params.id)-1]
+    edit: (req, res) => {
+		let product = products.find(product => product.id == req.params.id);
         res.render("productDetailAdmin", {product});
-    },
+	},
+	update: (req, res) => {
+		let productToEdit = products.find(product => product.id == req.params.id);
+
+         let img
+		 if(req.files.length > 0) {
+		 	img = req.files[0].filename
+		 } else {
+		 	img = 'default-image.png'
+		 }
+
+		let addProduct = {
+			'id': productToEdit.id,
+			'name': req.body.name,
+			'price': req.body.price,
+			'quota': req.body.quota,
+			'images': img
+			}
+
+		let newProduct = products.map(product => {
+			if (addProduct.id == product.id){
+				return product = addProduct
+			} return product
+		})
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(newProduct, null, '\t'));
+
+	 res.redirect('/')
+
+	},
+
     carrito: (req, res) => {
 
         res.render("carrito");

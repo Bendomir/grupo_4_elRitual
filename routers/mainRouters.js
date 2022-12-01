@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mainControllers = require ("../controllers/mainControllers")
+const upload = require('../middlewares/multer')
 
 
 router.get('/', mainControllers.index)
@@ -9,7 +10,9 @@ router.get('/register', mainControllers.register)
 
 router.get('/product/:id', mainControllers.productDetail);
 
-router.get('/product-admin/:id', mainControllers.productDetailAdmin);
+router.get('/product-admin/:id', mainControllers.edit);
+router.post('/product-admin/:id', upload.any(), mainControllers.update);
+
 
 router.get('/carrito', mainControllers.carrito);
 
