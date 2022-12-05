@@ -11,7 +11,7 @@ router.get('/register', mainControllers.register)
 router.get('/product/:id', mainControllers.productDetail);
 
 router.get('/product-admin/:id', mainControllers.edit);
-router.post('/product-admin/:id', upload.any(), mainControllers.update);
+router.post('/product-admin/:id', upload.any(""), mainControllers.update);
 
 
 router.get('/carrito', mainControllers.carrito);
