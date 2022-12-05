@@ -20,26 +20,29 @@
             <a href="/tienda">Productos/</a>
             <a>Cargá un nuevo producto</a>
         </article>
-
-        <article class="product">
+        
+        <form action="/charge-product" method="POST" enctype="multipart/form-data">
+       
+            <article class="product">
             <section class="image">
 
-                <label for="imagenDePerfil" class="perfil"> Agregar Imagen</label>
-                <input type="file" name="imagenDePerfil">
+                <label for="images" class="perfil"> Agregar Imagen</label>
+                <input type="file" id="images" name="images">
                 
       
             </section>
 
+
             <section class="product-detail">
                 <div class="user-data">
                     <label for="name-lastName">
-                    <input type="text" name="name-lastName" placeholder="Nombre de Indumentaria" required>
+                    <input type="text" id="name" name="name" placeholder="Nombre de Indumentaria" required>
                     <span class="feedback"></span>
                     </label>
                 </div>
                 <div class="user-data">
                     <label for="name-lastName">
-                    <input type="text" name="name-lastName" placeholder="Precio" required>
+                    <input type="text" id="price" name="price" placeholder="Precio" required>
                     <span class="feedback"></span>
                     </label>
                 </div>
@@ -47,7 +50,7 @@
                 <div class="user-data">
                     <i class="far fa-credit-card"></i>
                     <label for="name-lastName" >
-                        <select name="size" id="Small" class="quota">
+                        <select id="quota" name="quota" class="quota">
                             <option>Cuotas sín Interes</option>
                             <option value="3">3</option>
                             <option value="6">6</option>
@@ -120,7 +123,7 @@
             </section>
 
         </article>
-
+       </form>
     </main>
 
 
