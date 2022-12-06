@@ -19,6 +19,15 @@ const mainControllers={
         res.render("productDetail", {product});
     },
 
+	destroy: (req, res) => {
+		let id = req.params.id
+		let productToDelete = products.filter(product => product.id != id);
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
+		res.redirect('/');
+
+	},
+
     edit: (req, res) => {
 		let product = products.find(product => product.id == req.params.id);
         res.render("productDetailAdmin", {product});

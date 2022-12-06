@@ -136,18 +136,5 @@
 			"0"
 		],
 		"images": "images-1670178608171.jpg"
-	},
-	{
-		"id": 17,
-		"name": "Ricardo",
-		"price": "5000",
-		"quota": "6",
-		"size": [
-			"0",
-			"0",
-			"0",
-			"0"
-		],
-		"images": "images-1670368829299.png"
 	}
 ]
