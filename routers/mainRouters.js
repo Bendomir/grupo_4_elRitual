@@ -9,6 +9,7 @@ router.get('/', mainControllers.index)
 router.get('/register', mainControllers.register)
 
 router.get('/product/:id', mainControllers.productDetail);
+router.delete('/product/:id', mainControllers.destroy);
 
 router.get('/product-admin/:id', mainControllers.edit);
 router.post('/product-admin/:id', upload.any(""), mainControllers.update);

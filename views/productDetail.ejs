@@ -40,6 +40,11 @@
                     <div class="edit">
                         <a href="/product-admin/<%= product.id %> "><button>Editar</button></a>
                     </div>
+                    <div class="edit">
+                        <form action="/product/<%= product.id %>?_method=DELETE" method="post">
+                            <button type="submit">Borrar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
