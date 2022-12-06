@@ -27,10 +27,10 @@ const mainControllers={
 		let productToEdit = products.find(product => product.id == req.params.id);
 
          let img
-		 if(req.files.length > 0) {
-		 	img = req.files[0].filename
+		 if(req.files.length > 0){
+			img = req.files[0].filename
 		 } else {
-		 	img = 'default-image.png'
+		 	img = productToEdit.images
 		 }
 
 		let addProduct = {
