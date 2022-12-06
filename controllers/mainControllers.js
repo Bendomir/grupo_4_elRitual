@@ -27,11 +27,14 @@ const mainControllers={
 		let productToEdit = products.find(product => product.id == req.params.id);
 
          let img
-		 if(req.files.length > 0){
-			img = req.files[0].filename
-		 } else {
-		 	img = productToEdit.images
-		 }
+		 console.log(req)
+		 console.log('validacion', req.file )
+		  if(req.file){
+		 	img = req.file.filename
+			
+		  } else {
+		  	img = productToEdit.images
+		  }
 
 		let addProduct = {
 			'id': productToEdit.id,
