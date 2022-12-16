@@ -12,13 +12,22 @@
         </header>
 
 <main>
-
-        <form action="/" method="GET" class="login">
+    <% if (typeof errors != "undefined") { %>
+     <p style="color: red">ERROR</p>
+     <ul>
+        <% for( let i = 0; i < errors.length; i++ ) { %>
+        <li>
+            <%= errors[i].msg %> 
+        </li>
+        <% } %>
+     </ul>
+    <% } %>
+    <form action="/login" method="POST" class="login" enctype="multipart/form-data"> 
             <h3>Inicio de sesión</h3>
 
             <div class="user-data">
                 <label for="user">
-                <input type="text" name="user" placeholder="Nombre de usuario" minlength="8" required>
+                <input type="text" name="user" placeholder="Nombre de usuario" minlength="4" required>
                 <span class="feedback"></span>
                 </label>
             </div>

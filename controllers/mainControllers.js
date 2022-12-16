@@ -2,8 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-
+const { validationResult } = require ("express-validator")
+const User = require("../models/User")
 
 const mainControllers={
     index:(req, res) => {
@@ -77,6 +77,56 @@ const mainControllers={
 
         res.render("login");   
 },
+    processLogin: function (req,res) {
+	let errors = validationResult(req);
+
+	if (errors.isEmpty()) {
+		let usersJSON = fs.readFileSync("users.json", {encoding: "utf-8"})
+		let users;
+		if (usersJSON == "") {
+			users = [];
+		} else {
+			users = JSON.parse(usersJSON)
+		}
+
+
+	for (let i = 0; i < users.length; i++){
+		if (users[i].email == req.body.email){
+			if (bcrypt.compareSync(req.body.password, users[i].password)){
+			let usuarioALogearse = users[i];
+			break;
+			}
+		}
+	}
+	if (usuarioALogearse == undefined) {
+		return res.render ("login", {errors: [
+			{msg: "Credenciales invalidas"}
+		]})
+	}
+
+		req.session.usuarioALogearse = usuarioALogearse;
+		res.render("sucess")
+	} else {
+		return res.render ("login", {errors: errors.mapped(), old: req.body})
+	}
+
+	},	
+	loginProcess: function (req,res) {
+	let userToLogin = User.findByField("user", req.body.user);
+	if(userToLogin){
+			let isOkThePassword = bccyptjs.compareSync(req.body.password, userToLogin.password)
+			if (userToLogin.password === req.body.password){
+				return res.send("ok puedes ingresar")
+			}
+		}
+	 return res.render("userLoginForm",{
+		errors: {
+			user: {
+				msg: "El usuario no se encuentra registrado"
+			}
+		}
+	})},
+
     chargeProduct: (req, res) => {
 
     res.render("chargeProduct");   
