@@ -114,7 +114,7 @@ const mainControllers={
 	loginProcess: function (req,res) {
 	let userToLogin = User.findByField("user", req.body.user);
 	if(userToLogin){
-			let isOkThePassword = bccyptjs.compareSync(req.body.password, userToLogin.password)
+			let isOkThePassword = bcyptjs.compareSync(req.body.password, userToLogin.password)
 			if (userToLogin.password === req.body.password){
 				return res.send("ok puedes ingresar")
 			}

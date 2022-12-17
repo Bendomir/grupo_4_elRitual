@@ -12,16 +12,7 @@
         </header>
 
 <main>
-    <% if (typeof errors != "undefined") { %>
-     <p style="color: red">ERROR</p>
-     <ul>
-        <% for( let i = 0; i < errors.length; i++ ) { %>
-        <li>
-            <%= errors[i].msg %> 
-        </li>
-        <% } %>
-     </ul>
-    <% } %>
+
     <form action="/login" method="POST" class="login" enctype="multipart/form-data"> 
             <h3>Inicio de sesión</h3>
 
@@ -38,6 +29,16 @@
                 <span class="feedback"></span>
                 </label>
             </div>
+            <% if (typeof errors != "undefined") { %>
+                <p style="color: red">ERROR</p>
+                <ul>
+                   <% for( let i = 0; i < errors.length; i++ ) { %>
+                   <li>
+                       <%= errors[i].msg %> 
+                   </li>
+                   <% } %>
+                </ul>
+               <% } %>
 
             <div class="login-redes">
                 <button type="submit" class="facebook"><a href=""><i class="fab fa-facebook"></i>Ingresá con Facebook</a></button>
