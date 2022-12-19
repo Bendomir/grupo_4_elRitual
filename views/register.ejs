@@ -16,112 +16,42 @@
         <div class="register">
             
 
-            <form action="/" method="GET">
+            <form action="/register" method="POST" enctype="multipart/form-data">
                 <h3>Completa tus datos</h3>
 
                 <div class="user-data">
-                    <label for="name-lastName">
-                    <input type="text" name="name-lastName" placeholder="Nombre y apellido" required>
-                    <span class="feedback"></span>
+                    <label for="firstName">
+                    <input type="text" name="firstName" placeholder="Nombre " required>
+                    </label>
+                </div>
+                <div class="user-data">
+                    <label for="lastName">
+                    <input type="text" name="lastName" placeholder="Apellido" required>
                     </label>
                 </div>
 
                 <div class="user-data">
-                    <label for="user">
-                    <input type="text" name="user" placeholder="Elegí tu nombre de usuario" minlength="8" required>
-                    <span class="feedback"></span>
-                    </label>
-                </div>
-                    
-                <div class="user-data">
-                    <h5>Fecha de Nacimiento</h5>
-                    <label for="birthday">
-                    <input type="date" name="birthday" min="1920-01-01" required>
-                    <span class="feedback"></span>
+                    <label for="email">
+                    <input type="email" name="email" placeholder="email" required>
                     </label>
                 </div>
 
                 <div class="user-data">
-                    <label for="adress">
-                        <h5>Provincia</h5>
-                    <select name="adress" required>
-                        <option value="">Selecciona tu Provincia</option>
-                        <option value="Ciudad Autónoma de Buenos Aires">CABA</option>
-                        <option value="Gran Buenos Aires">Gran Buenos Aires</option>
-                        <option value="Provincia de Buenos Aires">Prov. de Buenos Aires</option>
-                        <option value="Catamarca">Catamarca</option>
-                        <option value="Chaco">Chaco</option>
-                        <option value="Chubut">Chubut</option>
-                        <option value="Córdoba">Córdoba</option>
-                        <option value="Corrientes">Corrientes</option>
-                        <option value="Entre Ríos">Entre Ríos</option>
-                        <option value="Formosa">Formosa</option>
-                        <option value="Jujuy">Jujuy</option>
-                        <option value="La Pampa">La Pampa</option>
-                        <option value="La Rioja">La Rioja</option>
-                        <option value="Mendoza">Mendoza</option>
-                        <option value="Misiones">Misiones</option>
-                        <option value="Río Negro">Río Negro</option>
-                        <option value="San Luis">San Luis</option>
-                        <option value="Santa Cruz">Santa Cruz</option>
-                        <option value="Santa Fe">Santa Fe</option>
-                        <option value="Tierra del Fuego">Tierra del Fuego</option>
-                    </select>
-                    <span class="feedback"></span>
+                    <label for="password">
+                    <input type="password" name="password" placeholder="Password" required>
                     </label>
                 </div>
 
-                <div class="user-data">
-                    <label for="adress">
-                    <input type="text" name="adress" placeholder="Calle" required>
-                    <span class="feedback"></span>
-                    </label>
-                </div>
-                <div class="user-data">
-                    <label for="adress">
-                    <input type="text" name="adress" placeholder="Altura" required>
-                    <span class="feedback"></span>
-                    </label>
-                </div>
-                <div class="user-data">
-                    <label for="adress">
-                    <input type="text" name="adress" placeholder="Torre / Piso / Dpto." required>
-                    <span class="feedback"></span>
-                    </label>
-                </div>
-                <div class="user-data">
-                    <label for="adress">
-                    <input type="text" name="adress" placeholder="Otras aclaraciones" required>
-                    <span class="feedback"></span>
-                    </label>
-                </div>
-                <div class="user-data">
-                    <label for="adress">
-                    <input type="text" name="adress" placeholder="Código Postal" required>
-                    <span class="feedback"></span>
-                    </label>
-                </div>
-
-                <div class="user-data">
+                
+                    <div class="user-data">
                     <h5>Agregá una foto</h5>
                     <label for="user-avatar">
-                    <input type="file" name="user-picture" accept=".jpg, .png">
+                    <input type="file" name="userImage" accept=".jpg, .png">
                     <span class="feedback"></span>
                     </label>
                 </div>
 
-                <div class="user-data">
-                    <label for="password">
-                    <input type="password" name="password" placeholder="Elegí tu contraseña" minlength="8" required>
-                    <span class="feedback"></span>
-                    </label>
-                </div>
-                <div class="user-data">
-                    <label for="password">
-                    <input type="password" name="password" placeholder="Confirmá tu contraseña" required>
-                    <span class="feedback"></span>
-                    </label>
-                   </div>
+              
 
                 <div class="user-data-checkbox">
                     <label for="terms" class="terms">

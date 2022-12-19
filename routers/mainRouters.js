@@ -7,6 +7,7 @@ const { check } = require ("express-validator")
 router.get('/', mainControllers.index)
 
 router.get('/register', mainControllers.register)
+router.post('/register', mainControllers.procesarRegistro)
 
 router.get('/product/:id', mainControllers.productDetail);
 router.delete('/product/:id', mainControllers.destroy);
