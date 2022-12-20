@@ -16,29 +16,32 @@
         <div class="register">
             
 
-            <form action="/register" method="POST" enctype="multipart/form-data">
+            <form action="/register" method="POST">
                 <h3>Completa tus datos</h3>
+
+               
 
                 <div class="user-data">
                     <label for="firstName">
-                    <input type="text" name="firstName" placeholder="Nombre " required>
+                    <input type="text" id="firstName" name="firstName" placeholder="Nombre " required>
                     </label>
                 </div>
                 <div class="user-data">
                     <label for="lastName">
-                    <input type="text" name="lastName" placeholder="Apellido" required>
+                        <input type="text" id="lastName" name="lastName" placeholder="apellido " required>
                     </label>
+
                 </div>
 
                 <div class="user-data">
                     <label for="email">
-                    <input type="email" name="email" placeholder="email" required>
+                    <input type="email" id="email" name="email" placeholder="email" required>
                     </label>
                 </div>
 
                 <div class="user-data">
                     <label for="password">
-                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
                     </label>
                 </div>
 
@@ -46,7 +49,7 @@
                     <div class="user-data">
                     <h5>Agregá una foto</h5>
                     <label for="user-avatar">
-                    <input type="file" name="userImage" accept=".jpg, .png">
+                    <input type="file" id="userImage" name="userImage" accept=".jpg, .png">
                     <span class="feedback"></span>
                     </label>
                 </div>

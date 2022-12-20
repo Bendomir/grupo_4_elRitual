@@ -2,8 +2,11 @@ const path = require('path');
 const fs = require('fs');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const userFilePath = path.join(__dirname, '../data/users.json');
+const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 const { validationResult } = require ('express-validator')
 const User = require("../models/User")
+
 
 const mainControllers={
     index:(req, res) => {
@@ -15,6 +18,23 @@ const mainControllers={
         res.render("register");
     },
 	procesarRegistro: (req, res) => {
+	let newUser = {
+		"id" : User.generateId(),
+		"firstName": req.body.firstName,
+		"lastName": req.body.apellido,
+		"email": req.body.email
+		
+	}
+
+	console.log (newUser)
+
+	
+	users.push(newUser)
+	fs.writeFileSync(userFilePath, JSON.stringify(users,null,"\t"))
+	return res.send ('Ok. Se guardó el usuario')
+	
+	
+	/*{
 		const resultValidation = validationResult(req);
 
 		if(resultValidation.errors.length > 0){
@@ -22,9 +42,12 @@ const mainControllers={
 				oldData: req.body
 				})
 		}
+		
+		
 		User.create(req.body)
 		return res.send ('Ok. Se guardó el usuario')
-	},
+	}*/
+},
     productDetail: (req, res) => {
         let product = products.find(product => product.id == req.params.id);
         res.render("productDetail", {product});

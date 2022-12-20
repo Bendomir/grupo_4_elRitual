@@ -44,7 +44,8 @@ const User = {
         fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, " "));
         return true;
     },
-    create: function (userData) {
+    create: 
+    function (userData) {
         let allUsers = this.findAll();
         let newUser = {
             id: this.generateId(),
