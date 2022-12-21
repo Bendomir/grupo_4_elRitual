@@ -8,6 +8,7 @@
 
 // 5. Eliminar usuario de la BD.
 const fs = require("fs")
+const bcrypt = require ('bcrypt')
 const User = {
 
 
@@ -47,9 +48,11 @@ const User = {
     create: 
     function (userData) {
         let allUsers = this.findAll();
+        let password = bcrypt.hashSync(userData.password, 10)
         let newUser = {
             id: this.generateId(),
-            ...userData
+            ...userData,
+            "password": password
         }
         allUsers.push(newUser);
         fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '))

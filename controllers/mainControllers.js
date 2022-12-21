@@ -4,54 +4,51 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const userFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
-const { validationResult } = require ('express-validator')
+const { validationResult } = require('express-validator')
 const User = require("../models/User")
+const bcrypt = require('bcrypt')
 
 
-const mainControllers={
-    index:(req, res) => {
+const mainControllers = {
+	index: (req, res) => {
 
-        res.render("index");
-    },
-    register: (req, res) => {
+		res.render("index");
+	},
+	register: (req, res) => {
 
-        res.render("register");
-    },
+		res.render("register");
+	},
 	procesarRegistro: (req, res) => {
-	let newUser = {
-		"id" : User.generateId(),
-		"firstName": req.body.firstName,
-		"lastName": req.body.apellido,
-		"email": req.body.email
-		
-	}
-
-	console.log (newUser)
-
-	
-	users.push(newUser)
-	fs.writeFileSync(userFilePath, JSON.stringify(users,null,"\t"))
-	return res.send ('Ok. Se guardó el usuario')
-	
-	
-	/*{
-		const resultValidation = validationResult(req);
-
-		if(resultValidation.errors.length > 0){
-			return res.render ('register', {errors: resultValidation.mapped(),
-				oldData: req.body
+		{
+			const resultValidation = validationResult(req);
+			if (resultValidation.errors.length > 0) {
+				return res.render('register', {
+					errors: resultValidation.mapped(),
+					oldData: req.body
 				})
+			}
+			User.create(req.body)
+			res.redirect('/tienda')
 		}
-		
-		
-		User.create(req.body)
-		return res.send ('Ok. Se guardó el usuario')
-	}*/
-},
-    productDetail: (req, res) => {
-        let product = products.find(product => product.id == req.params.id);
-        res.render("productDetail", {product});
-    },
+		/*(req, res) => {
+			let password = bcrypt.hashSync(req.body.password, 10)
+			let newUser = {
+			"id" : User.generateId(),
+			"firstName": req.body.firstName,
+			"lastName": req.body.lastName,
+			"email": req.body.email,
+			"userName": req.body.userName,
+			"password": password,
+		}
+		users.push(newUser)
+		fs.writeFileSync(userFilePath, JSON.stringify(users,null,"\t"))
+		res.redirect('/tienda')*/
+
+	},
+	productDetail: (req, res) => {
+		let product = products.find(product => product.id == req.params.id);
+		res.render("productDetail", { product });
+	},
 
 	destroy: (req, res) => {
 		let id = req.params.id
@@ -62,22 +59,22 @@ const mainControllers={
 
 	},
 
-    edit: (req, res) => {
+	edit: (req, res) => {
 		let product = products.find(product => product.id == req.params.id);
-        res.render("productDetailAdmin", {product});
+		res.render("productDetailAdmin", { product });
 	},
 	update: (req, res) => {
 		let productToEdit = products.find(product => product.id == req.params.id);
 
-         let img
-		 console.log(req)
-		 console.log('validacion', req.file )
-		  if(req.file){
-		 	img = req.file.filename
-			
-		  } else {
-		  	img = productToEdit.images
-		  }
+		let img
+		console.log(req)
+		console.log('validacion', req.file)
+		if (req.file) {
+			img = req.file.filename
+
+		} else {
+			img = productToEdit.images
+		}
 
 		let addProduct = {
 			'id': productToEdit.id,
@@ -85,100 +82,103 @@ const mainControllers={
 			'price': req.body.price,
 			'quota': req.body.quota,
 			'images': img
-			}
+		}
 
 		let newProduct = products.map(product => {
-			if (addProduct.id == product.id){
+			if (addProduct.id == product.id) {
 				return product = addProduct
 			} return product
 		})
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProduct, null, '\t'));
 
-	 res.redirect('/')
+		res.redirect('/')
 
 	},
 
-    carrito: (req, res) => {
+	carrito: (req, res) => {
 
-        res.render("carrito");
-    },
-    tienda: (req, res) => {
+		res.render("carrito");
+	},
+	tienda: (req, res) => {
 
-        res.render("tienda", {products});
-    },
-    login: (req, res) => {
+		res.render("tienda", { products });
+	},
+	login: (req, res) => {
 
-        res.render("login");   
-},
-    processLogin: function (req,res) {
-	let errors = validationResult(req);
+		res.render("login");
+	},
+	processLogin: function (req, res) {
+		let errors = validationResult(req);
 
-	if (errors.isEmpty()) {
-		let usersJSON = fs.readFileSync("users.json", {encoding: "utf-8"})
-		let users;
-		if (usersJSON == "") {
-			users = [];
-		} else {
-			users = JSON.parse(usersJSON)
-		}
-
-
-	for (let i = 0; i < users.length; i++){
-		if (users[i].email == req.body.email){
-			if (bcrypt.compareSync(req.body.password, users[i].password)){
-			let usuarioALogearse = users[i];
-			break;
+		if (errors.isEmpty()) {
+			let usersJSON = fs.readFileSync("users.json", { encoding: "utf-8" })
+			let users;
+			if (usersJSON == "") {
+				users = [];
+			} else {
+				users = JSON.parse(usersJSON)
 			}
+
+
+			for (let i = 0; i < users.length; i++) {
+				if (users[i].email == req.body.email) {
+					if (bcrypt.compareSync(req.body.password, users[i].password)) {
+						let usuarioALogearse = users[i];
+						break;
+					}
+				}
+			}
+			if (usuarioALogearse == undefined) {
+				return res.render("login", {
+					errors: [
+						{ msg: "Credenciales invalidas" }
+					]
+				})
+			}
+
+			req.session.usuarioALogearse = usuarioALogearse;
+			res.render("sucess")
+		} else {
+			return res.render("login", { errors: errors.mapped(), old: req.body })
 		}
-	}
-	if (usuarioALogearse == undefined) {
-		return res.render ("login", {errors: [
-			{msg: "Credenciales invalidas"}
-		]})
-	}
 
-		req.session.usuarioALogearse = usuarioALogearse;
-		res.render("sucess")
-	} else {
-		return res.render ("login", {errors: errors.mapped(), old: req.body})
-	}
-
-	},	
-	loginProcess: function (req,res) {
-	let userToLogin = User.findByField("user", req.body.user);
-	if(userToLogin){
+	},
+	loginProcess: function (req, res) {
+		let userToLogin = User.findByField("user", req.body.user);
+		if (userToLogin) {
 			let isOkThePassword = bcyptjs.compareSync(req.body.password, userToLogin.password)
-			if (userToLogin.password === req.body.password){
+			if (userToLogin.password === req.body.password) {
 				return res.send("ok puedes ingresar")
 			}
 		}
-	 return res.render("userLoginForm",{
-		errors: {
-			user: {
-				msg: "El usuario no se encuentra registrado"
+		return res.render("userLoginForm", {
+			errors: {
+				user: {
+					msg: "El usuario no se encuentra registrado"
+				}
 			}
-		}
-	})},
+		})
+	},
 
-    chargeProduct: (req, res) => {
+	chargeProduct: (req, res) => {
 
-    res.render("chargeProduct");   
-},
-	store: (req,res) => {
+		res.render("chargeProduct");
+	},
+	store: (req, res) => {
 		let img
-		if(req.files.length > 0){
+		if (req.files.length > 0) {
 			img = req.files[0].filename
-		} else{
-			img= "default-image.png"
+		} else {
+			img = "default-image.png"
 		}
 		let newProduct = {
-			"id" : products[products.length - 1]["id"] + 1,
+			"id": products[products.length - 1]["id"] + 1,
 			...req.body,
-			"images" : img
+			"images": img
 		}
 		products.push(newProduct)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products,null,"\t"))
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "\t"))
 		res.redirect("/tienda")
 	}
 
