@@ -45,7 +45,7 @@ const mainControllers = {
 		res.redirect('/tienda')*/
 
 	},
-	productDetail: (req, res) => {
+	/*productDetail: (req, res) => {
 		let product = products.find(product => product.id == req.params.id);
 		res.render("productDetail", { product });
 	},
@@ -94,7 +94,7 @@ const mainControllers = {
 
 		res.redirect('/')
 
-	},
+	},*/
 
 	carrito: (req, res) => {
 
@@ -161,7 +161,7 @@ const mainControllers = {
 		})
 	},
 
-	chargeProduct: (req, res) => {
+	/*chargeProduct: (req, res) => {
 
 		res.render("chargeProduct");
 	},
@@ -180,7 +180,7 @@ const mainControllers = {
 		products.push(newProduct)
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "\t"))
 		res.redirect("/tienda")
-	}
+	}*/
 
 }
 module.exports = mainControllers

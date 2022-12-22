@@ -9,11 +9,11 @@ router.get('/', mainControllers.index)
 router.get('/register', mainControllers.register)
 router.post('/register', mainControllers.procesarRegistro)
 
-router.get('/product/:id', mainControllers.productDetail);
+/*router.get('/product/:id', mainControllers.productDetail);
 router.delete('/product/:id', mainControllers.destroy);
 
 router.get('/product-admin/:id', mainControllers.edit);
-router.put('/product-admin/:id', upload.single("images"), mainControllers.update);
+router.put('/product-admin/:id', upload.single("images"), mainControllers.update);*/
 
 
 router.get('/carrito', mainControllers.carrito);
@@ -27,8 +27,8 @@ router.post("/login", [
 ] ,mainControllers.processLogin)
 router.post("/login", mainControllers.loginProcess)
 // /*** CREATE ONE PRODUCT ***/ 
-router.get('/charge-product', mainControllers.chargeProduct); 
-router.post('/charge-product', upload.any(""), mainControllers.store); 
+/*router.get('/charge-product', mainControllers.chargeProduct); 
+router.post('/charge-product', upload.any(""), mainControllers.store);*/ 
 
 
 

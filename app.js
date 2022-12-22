@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mainRouters = require ("./routers/mainRouters")
+const productRouters = require ('./routers/productRouters')
 const methodOverride =  require('method-override');
 const session = require ("express-session")
 const cookieParser = require("cookie-parser")
@@ -22,4 +23,4 @@ let PORT = process.env.PORT || 3000
 app.listen(PORT, () => console.log('Fiesta, Carnaval en ' + PORT));
 
 app.use("/", mainRouters)
-
+app.use ("/product/", productRouters)

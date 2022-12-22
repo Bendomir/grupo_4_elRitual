@@ -58,5 +58,15 @@
   "password": "$2b$10$7cuJaYYrgwaAV/KAfGmKu.mpChLe8.DrAnlLokgRrlOTPWif/rpqi",
   "userImage": "",
   "terms": "on"
+ },
+ {
+  "id": 7,
+  "firstName": "Maribel",
+  "lastName": "Medina",
+  "email": "mm@gmail.com",
+  "userName": "mm123",
+  "password": "$2b$10$M9aKNAz/zUz16ZEwjJDotuvR/SSBA.IZTUgp5HzPGBBaN7/Mw5V4e",
+  "userImage": "",
+  "terms": "on"
  }
 ]

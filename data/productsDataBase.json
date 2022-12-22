@@ -1,16 +1,16 @@
 [
 	{
 		"id": 1,
-		"name": "LIO",
+		"name": "LIO campeón mundial",
 		"price": "60000",
 		"quota": "6",
 		"images": "images-1670369934735.png"
 	},
 	{
 		"id": 2,
-		"name": "Vestido Nirvana",
-		"price": 6000,
-		"quota": 6,
+		"name": "Vestido Nirvana Negro y Amarillo",
+		"price": "6000",
+		"quota": "6",
 		"images": "../images/remera-nirvana.jpg"
 	},
 	{
@@ -110,31 +110,5 @@
 			"4"
 		],
 		"images": "imagenDePerfil-1670178172181.jpg"
-	},
-	{
-		"id": 15,
-		"name": "dasdsaasd",
-		"price": "9000",
-		"quota": "9",
-		"size": [
-			"7",
-			"2",
-			"4",
-			"7"
-		],
-		"images": "images-1670178255898.jpg"
-	},
-	{
-		"id": 16,
-		"name": "sdffsd",
-		"price": "sdfsfd",
-		"quota": "6",
-		"size": [
-			"0",
-			"0",
-			"0",
-			"0"
-		],
-		"images": "images-1670178608171.jpg"
 	}
 ]
