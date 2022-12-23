@@ -161,11 +161,11 @@ const mainControllers = {
 		})
 	},
 
-	/*chargeProduct: (req, res) => {
+	chargeProduct: (req, res) => {
 
 		res.render("chargeProduct");
 	},
-	store: (req, res) => {
+	/*store: (req, res) => {
 		let img
 		if (req.files.length > 0) {
 			img = req.files[0].filename

@@ -27,8 +27,8 @@ router.post("/login", [
 ] ,mainControllers.processLogin)
 router.post("/login", mainControllers.loginProcess)
 // /*** CREATE ONE PRODUCT ***/ 
-/*router.get('/charge-product', mainControllers.chargeProduct); 
-router.post('/charge-product', upload.any(""), mainControllers.store);*/ 
+router.get('/charge-product', mainControllers.chargeProduct); 
+//router.post('/charge-product', upload.any(""), mainControllers.store);
 
 
 

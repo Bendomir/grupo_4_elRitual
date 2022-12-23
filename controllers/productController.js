@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt')
 const productController = {
     productDetail: (req, res) => {
         let product = products.find(product => product.id == req.params.id);
-        res.render("productDetail", { product });
+        res.render("productDetail", {product});
     },
 
     destroy: (req, res) => {
@@ -61,7 +61,7 @@ const productController = {
     },
     chargeProduct: (req, res) => {
 
-        res.render('chargeProduct');
+		res.render("chargeProduct");
     },
     store: (req, res) => {
         let img
