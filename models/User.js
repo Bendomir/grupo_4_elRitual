@@ -8,7 +8,7 @@
 
 // 5. Eliminar usuario de la BD.
 const fs = require("fs")
-const bcrypt = require ('bcrypt')
+const bcrypt = require ('bcryptjs')
 const User = {
 
 
@@ -60,4 +60,6 @@ const User = {
     }
 }
 
+console.log(User.findByField("userName", "rarnedo123"))
 module.exports = User;
+

@@ -21,10 +21,10 @@ router.get('/carrito', mainControllers.carrito);
 router.get('/tienda', mainControllers.tienda);
 
 router.get('/login', mainControllers.login);
-router.post("/login", [
-    check("user").notEmpty().withMessage("Usuario invalido"),
-    check("password").isLength({min:8}).withMessage("La contraseña debe tener al menos 8 caracteres")
-] ,mainControllers.processLogin)
+// router.post("/login", [
+//     check("user").notEmpty().withMessage("Usuario invalido"),
+//     check("password").isLength({min:8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+// ] ,mainControllers.processLogin)
 router.post("/login", mainControllers.loginProcess)
 // /*** CREATE ONE PRODUCT ***/ 
 router.get('/charge-product', mainControllers.chargeProduct); 

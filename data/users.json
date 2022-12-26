@@ -68,5 +68,16 @@
   "password": "$2b$10$M9aKNAz/zUz16ZEwjJDotuvR/SSBA.IZTUgp5HzPGBBaN7/Mw5V4e",
   "userImage": "",
   "terms": "on"
+ },
+ {
+  "id": 8,
+  "firstName": "Nicolas",
+  "lastName": "Saucedio",
+  "email": "nicosaucedo@hotmail.com",
+  "userName": "nico123",
+  "password": "$2a$10$pmY0EPIQSkUqKqGkRkgeEe60x3HdFUrqsAvB05KdFT4Zv5.AYI2My",
+  "userImage": "",
+  "terms": "on",
+  "newsletter": "on"
  }
 ]

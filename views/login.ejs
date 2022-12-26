@@ -13,14 +13,19 @@
 
 <main>
 
-    <form action="/login" method="POST" class="login" enctype="multipart/form-data"> 
+    <form action="/login" method="POST" class="login"> 
             <h3>Inicio de sesión</h3>
 
             <div class="user-data">
                 <label for="user">
-                <input type="text" name="user" placeholder="Nombre de usuario" minlength="4" required>
+                <input type="text" name="userName" placeholder="Nombre de usuario" minlength="4" required>
                 <span class="feedback"></span>
                 </label>
+                <% if (locals.errors && errors.userName) { %>
+                 <div class="text-danger">
+                    <%= errors.userName.msg %> 
+                 </div>
+                <% } %>
             </div>
 
             <div class="user-data">
@@ -29,7 +34,7 @@
                 <span class="feedback"></span>
                 </label>
             </div>
-            <% if (typeof errors != "undefined") { %>
+            <!-- <% if (typeof errors != "undefined") { %>
                 <p style="color: red">ERROR</p>
                 <ul>
                    <% for( let i = 0; i < errors.length; i++ ) { %>
@@ -38,7 +43,7 @@
                    </li>
                    <% } %>
                 </ul>
-               <% } %>
+               <% } %> -->
 
             <div class="login-redes">
                 <button type="submit" class="facebook"><a href=""><i class="fab fa-facebook"></i>Ingresá con Facebook</a></button>
