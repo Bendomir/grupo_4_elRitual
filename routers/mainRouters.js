@@ -2,12 +2,14 @@ const express = require('express');
 const router = express.Router();
 const mainControllers = require ("../controllers/mainControllers")
 const upload = require('../middlewares/multer')
+const userImage = require('../middlewares/userImageUpload')
 const { check } = require ("express-validator")
+
 
 router.get('/', mainControllers.index)
 
 router.get('/register', mainControllers.register)
-router.post('/register', mainControllers.procesarRegistro)
+router.post('/register', userImage.single('userImage'), mainControllers.procesarRegistro)
 
 /*router.get('/product/:id', mainControllers.productDetail);
 router.delete('/product/:id', mainControllers.destroy);
@@ -28,7 +30,7 @@ router.get('/login', mainControllers.login);
 router.post("/login", mainControllers.loginProcess)
 // /*** CREATE ONE PRODUCT ***/ 
 router.get('/charge-product', mainControllers.chargeProduct); 
-//router.post('/charge-product', upload.any(""), mainControllers.store);
+router.post('/charge-product', upload.any('images'), mainControllers.procesarRegistro)
 
 
 

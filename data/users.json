@@ -79,5 +79,23 @@
   "userImage": "",
   "terms": "on",
   "newsletter": "on"
+ },
+ {
+  "id": 9,
+  "firstName": "Ciro",
+  "lastName": "Martinez",
+  "email": "ciromartinez@gmail.com",
+  "userName": "cm123",
+  "password": "$2a$10$6.YxQ29Suj3wRnUehpclLeHMM4B2fzHb3THy8XuH7uQW/lEy1/zcC",
+  "terms": "on"
+ },
+ {
+  "id": 10,
+  "firstName": "Rodolfo",
+  "lastName": "Caputto",
+  "email": "rgcaputto@gmail.com",
+  "userName": "rc123",
+  "password": "$2a$10$Fa2p7RFl3LV0wDM3n753uudyLtgK.RcZ259n4U72w5ufXyvmhARS.",
+  "terms": "on"
  }
 ]

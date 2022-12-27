@@ -86,11 +86,29 @@ const mainControllers = {
 	chargeProduct: (req, res) => {
 
 		res.render("chargeProduct");
-	}
+	},
+	/*store: (req, res) => {
+		let img
+		if (req.files.length > 0) {
+			img = req.files[0].filename
+		} else {
+			img = "default-image.png"
+		}
+		let newProduct = {
+			"id": products[products.length - 1]["id"] + 1,
+			...req.body,
+			"images": img
+		}
+		products.push(newProduct)
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "\t"))
+		res.redirect("/tienda")
 
+}*/
 }
+
 module.exports = mainControllers
-	// processLogin: function (req, res) {
+	
+// processLogin: function (req, res) {
 	// 	let errors = validationResult(req);
 
 	// 	if (errors.isEmpty()) {
@@ -144,7 +162,7 @@ module.exports = mainControllers
 		products.push(newProduct)
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "\t"))
 		res.redirect("/tienda")
-	}*/
+	}
 
 
 
@@ -183,7 +201,7 @@ module.exports = mainControllers
 			'id': productToEdit.id,
 			'name': req.body.name,
 			'price': req.body.price,
-			'quota': req.body.quota,
+	/		'quota': req.body.quota,
 			'images': img
 		}
 
@@ -197,4 +215,4 @@ module.exports = mainControllers
 
 		res.redirect('/')
 
-	},*/
+	}*/
