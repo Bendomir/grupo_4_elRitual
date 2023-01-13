@@ -8,16 +8,13 @@ const { validationResult } = require('express-validator')
 const User = require("../models/User")
 const bcrypt = require('bcryptjs')
 
+const userController = {
 
-const mainControllers = {
-	index: (req, res) => {
-
-		res.render("index");
-	},
 	register: (req, res) => {
 
 		res.render("register");
 	},
+
 	procesarRegistro: (req, res) => {
 		{
 			const resultValidation = validationResult(req);
@@ -28,7 +25,7 @@ const mainControllers = {
 				})
 			}
 			User.create(req.body)
-			res.redirect('/tienda')
+			res.redirect('/products')
 		}
 		/*(req, res) => {
 			let password = bcrypt.hashSync(req.body.password, 10)
@@ -42,23 +39,15 @@ const mainControllers = {
 		}
 		users.push(newUser)
 		fs.writeFileSync(userFilePath, JSON.stringify(users,null,"\t"))
-		res.redirect('/tienda')*/
+		res.redirect('/products')*/
 
 	},
 
-
-	carrito: (req, res) => {
-
-		res.render("carrito");
-	},
-	tienda: (req, res) => {
-
-		res.render("tienda", { products });
-	},
 	login: (req, res) => {
 
 		res.render("login");
 	},
+
 	loginProcess: function (req, res) {
 		let userToLogin = User.findByField("userName", req.body.userName);
 		if (userToLogin) {
@@ -83,31 +72,17 @@ const mainControllers = {
 		})
 	},
 
-	chargeProduct: (req, res) => {
+	carrito: (req, res) => {
 
-		res.render("chargeProduct");
-	},
-	/*store: (req, res) => {
-		let img
-		if (req.files.length > 0) {
-			img = req.files[0].filename
-		} else {
-			img = "default-image.png"
-		}
-		let newProduct = {
-			"id": products[products.length - 1]["id"] + 1,
-			...req.body,
-			"images": img
-		}
-		products.push(newProduct)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "\t"))
-		res.redirect("/tienda")
-
-}*/
+		res.render("carrito");
+	}
 }
 
-module.exports = mainControllers
-	
+module.exports = userController
+
+
+
+
 // processLogin: function (req, res) {
 	// 	let errors = validationResult(req);
 
@@ -144,75 +119,3 @@ module.exports = mainControllers
 	// 	}
 
 	//  },
-
-
-
-		/*store: (req, res) => {
-		let img
-		if (req.files.length > 0) {
-			img = req.files[0].filename
-		} else {
-			img = "default-image.png"
-		}
-		let newProduct = {
-			"id": products[products.length - 1]["id"] + 1,
-			...req.body,
-			"images": img
-		}
-		products.push(newProduct)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "\t"))
-		res.redirect("/tienda")
-	}
-
-
-
-		/*productDetail: (req, res) => {
-		let product = products.find(product => product.id == req.params.id);
-		res.render("productDetail", { product });
-	},
-
-	destroy: (req, res) => {
-		let id = req.params.id
-		let productToDelete = products.filter(product => product.id != id);
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
-		res.redirect('/');
-
-	},
-
-	edit: (req, res) => {
-		let product = products.find(product => product.id == req.params.id);
-		res.render("productDetailAdmin", { product });
-	},
-	update: (req, res) => {
-		let productToEdit = products.find(product => product.id == req.params.id);
-
-		let img
-		console.log(req)
-		console.log('validacion', req.file)
-		if (req.file) {
-			img = req.file.filename
-
-		} else {
-			img = productToEdit.images
-		}
-
-		let addProduct = {
-			'id': productToEdit.id,
-			'name': req.body.name,
-			'price': req.body.price,
-	/		'quota': req.body.quota,
-			'images': img
-		}
-
-		let newProduct = products.map(product => {
-			if (addProduct.id == product.id) {
-				return product = addProduct
-			} return product
-		})
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(newProduct, null, '\t'));
-
-		res.redirect('/')
-
-	}*/

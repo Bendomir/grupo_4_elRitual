@@ -97,5 +97,25 @@
   "userName": "rc123",
   "password": "$2a$10$Fa2p7RFl3LV0wDM3n753uudyLtgK.RcZ259n4U72w5ufXyvmhARS.",
   "terms": "on"
+ },
+ {
+  "id": 11,
+  "firstName": "Andrés",
+  "lastName": "Estevez",
+  "email": "a.estevezb@gmail.com",
+  "userName": "bendomir",
+  "password": "$2a$10$3l8QHcWxr7e7UV2FugDpCu7T5R6wOUFOnTHFgOhIRWzy7Rr4ffPPS",
+  "terms": "on",
+  "newsletter": "on"
+ },
+ {
+  "id": 12,
+  "firstName": "Ricardo",
+  "lastName": "Villalobos",
+  "email": "rvillalobos@fiesta.com",
+  "userName": "villalobos",
+  "password": "$2a$10$54erywiuOUahBK9w8IizG.4RBUQ2f7R9F2iGbi1J/VD75wT31nrSS",
+  "terms": "on",
+  "newsletter": "on"
  }
 ]

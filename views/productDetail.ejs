@@ -14,7 +14,7 @@
 
         <article class="copy">
             <a href="/">Inicio/</a>
-            <a href="/tienda">Productos/</a>
+            <a href="/products">Productos/</a>
             <p  class="products"> Remera AC/DC</p>
         </article>
 
@@ -38,10 +38,10 @@
                         </select>
                     </div>
                     <div class="edit">
-                        <a href="/product/product-admin/<%= product.id %> "><button>Editar</button></a>
+                        <a href="/products/product-admin/<%= product.id %> "><button>Editar</button></a>
                     </div>
                     <div class="edit">
-                        <form action="/product/<%= product.id %>?_method=DELETE" method="post">
+                        <form action="/products/<%= product.id %>?_method=DELETE" method="post">
                             <button type="submit">Borrar</button>
                         </form>
                     </div>

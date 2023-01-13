@@ -17,11 +17,11 @@
 
         <article class="copy">
             <a href="/">Inicio/</a>
-            <a href="/tienda">Productos/</a>
+            <a href="/products">Productos/</a>
             <a>Cargá un nuevo producto</a>
         </article>
         
-        <form action="/charge-product" method="POST" enctype="multipart/form-data">
+        <form action="/products/charge-product" method="POST" enctype="multipart/form-data">
        
             <article class="product">
             <section class="image">
@@ -117,7 +117,7 @@
                         </select>
                     </div>
                     <div class="save">
-                        <a href="/product-admin/:id"><button>Guardar</button></a>
+                        <a href="/products/product-admin/:id"><button>Guardar</button></a>
                     </div>
                 </div>
             </section>
