@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("partials/head") %>
+     <link rel="stylesheet" href="/css/style-productDetail.css">    
+    </head>
+    <body>
+        <header>
+    
+            <%- include("partials/headerProfile") %>
+    
+        </header>
+    <main>
+        
+        <h3>Bienvenido <%= user.firstName %> <%= user.lastName %></h3>
+        <img src="/images/userImages/<%= user.userImage %>" width = 600px>
+            
+    </main>
+
+    <footer>
+            <%- include("partials/footer") %>
+    </footer>
+
+
+</body>
+</html>

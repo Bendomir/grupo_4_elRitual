@@ -3,28 +3,38 @@ const router = express.Router();
 const userController = require ("../controllers/userController")
 const upload = require('../middlewares/multer')
 const userImage = require('../middlewares/userImageUpload')
-const { check } = require ("express-validator")
+const { check } = require ("express-validator");
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const validations = require('../middlewares/validateRegisterMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 
 
-router.get('/register', userController.register)
-router.post('/register', userImage.single('userImage'), userController.procesarRegistro)
-router.get('/login', userController.login);
 
-// router.post("/login", [
-//     check("user").notEmpty().withMessage("Usuario invalido"),
-//     check("password").isLength({min:8}).withMessage("La contraseña debe tener al menos 8 caracteres")
-// ] ,mainControllers.processLogin)
+router.get('/register',guestMiddleware, userController.register)
+router.post('/register', userImage.single('userImage'), validations, userController.procesarRegistro)
 
+router.get('/login',guestMiddleware, userController.login);
 router.post("/login", userController.loginProcess)
+
+router.get('/profile/', authMiddleware, userController.profile);
+
+router.get('/logout/', userController.logout);
+
+
 
 
 // RUTAS DE USUARIO CON RELACIONES DE PRODUCTO
 
-router.get('/carrito', userController.carrito);
-
-
+router.get('/carrito', userLoggedMiddleware, userController.carrito);
 
 
 
 
 module.exports = router
+
+
+// router.post("/login", [
+//     check("user").notEmpty().withMessage("Usuario invalido"),
+//     check("password").isLength({min:8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+// ] ,mainControllers.processLogin)

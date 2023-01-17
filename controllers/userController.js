@@ -1,7 +1,5 @@
 const path = require('path');
 const fs = require('fs');
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const userFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 const { validationResult } = require('express-validator')
@@ -24,8 +22,50 @@ const userController = {
 					oldData: req.body
 				})
 			}
-			User.create(req.body)
-			res.redirect('/products')
+
+			 let userInDB = User.findByField('userName', req.body.userName);
+			 let userInDB2 = User.findByField('email', req.body.email);
+
+			 if (userInDB) {
+			 	return res.render('register', {
+			 		errors: {
+						userName: {
+			 				msg: 'Este usuario ya está registrado'
+			 			}
+			 		},
+			 		oldData: req.body
+			 	});
+			 }
+			 if (userInDB2) {
+				return res.render('register', {
+					errors: {
+					   email: {
+							msg: 'Este email ya está registrado'
+						}
+					},
+					oldData: req.body
+				});
+			}
+	
+			if (req.file == undefined) {
+
+				let userToCreate = {
+					...req.body,
+					userImage: "user-default-image.png" 
+				}
+				let userCreated = User.create(userToCreate);
+
+			} else {
+				let userToCreate = {
+					...req.body,
+					userImage: req.file.filename  
+				}
+				let userCreated = User.create(userToCreate);
+
+			}
+	
+			return res.redirect('/user/login');
+
 		}
 		/*(req, res) => {
 			let password = bcrypt.hashSync(req.body.password, 10)
@@ -47,29 +87,49 @@ const userController = {
 
 		res.render("login");
 	},
-
-	loginProcess: function (req, res) {
-		let userToLogin = User.findByField("userName", req.body.userName);
-		if (userToLogin) {
-			let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+	loginProcess: (req, res) => {
+		let userToLogin = User.findByField('userName', req.body.userName);
+		
+		if(userToLogin) {
+			let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
 			if (isOkThePassword) {
-				return res.render("index")
-			}
-			return res.render("login", {
+				delete userToLogin.password;
+				req.session.userLogged = userToLogin;
+
+				if(req.body.remember_user) {
+					res.cookie('userName', req.body.userName, { maxAge: (1000 * 60) * 60 })
+				}
+
+				return res.redirect('/user/profile');
+			} 
+			return res.render('userLoginForm', {
 				errors: {
 					userName: {
-						msg: "Credenciales incorrectas"
+						msg: 'Las credenciales son inválidas'
 					}
 				}
 			});
 		}
-		return res.render("login", {
+
+		return res.render('userLoginForm', {
 			errors: {
 				userName: {
-					msg: "El usuario no se encuentra registrado"
+					msg: 'No se encuentra este usuario en nuestra base de datos'
 				}
 			}
-		})
+		});
+	},
+
+	profile: (req, res) => {
+		return res.render('userProfile', {
+			user: req.session.userLogged
+		});
+	},
+
+	logout: (req, res) => {
+		res.clearCookie('userName');
+		req.session.destroy();
+		return res.redirect('/');
 	},
 
 	carrito: (req, res) => {
@@ -119,3 +179,39 @@ module.exports = userController
 	// 	}
 
 	//  },
+
+
+
+
+
+
+
+
+
+
+	// loginProcess: function (req, res) {
+	// 	let userToLogin = User.findByField('email', req.body.email);;
+	// 	if (userToLogin) {
+	// 		let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+
+
+			
+	// 		if (isOkThePassword) {
+	// 			return res.render("index")
+	// 		}
+	// 		return res.render("login", {
+	// 			errors: {
+	// 				userName: {
+	// 					msg: "Credenciales incorrectas"
+	// 				}
+	// 			}
+	// 		});
+	// 	}
+	// 	return res.render("login", {
+	// 		errors: {
+	// 			userName: {
+	// 				msg: "El usuario no se encuentra registrado"
+	// 			}
+	// 		}
+	// 	})
+	// }

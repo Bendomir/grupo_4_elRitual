@@ -6,9 +6,15 @@
 </head>
 <body>
     <header>
+        <% if (locals.isLogged) { %>
 
-        <%- include("partials/header") %>
+            <%- include("partials/headerProfile") %>
+         
+        <% } else { %>
 
+            <%- include("partials/header") %>
+
+        <% } %>
     </header>
     <main>
     <div class="copy">

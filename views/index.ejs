@@ -6,7 +6,15 @@
     </head>
 <body>
     <header>
-    <%- include("partials/header") %>
+        <% if (locals.isLogged) { %>
+
+            <%- include("partials/headerProfile") %>
+         
+        <% } else { %>
+
+            <%- include("partials/header") %>
+
+        <% } %>
     </header>
     <main>
 

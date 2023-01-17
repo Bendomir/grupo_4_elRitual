@@ -19,7 +19,33 @@
             <form action="/user/register" method="POST" enctype="multipart/form-data">
                 <h3>Completa tus datos</h3>
 
-               
+                <% if (locals.errors && errors.userName) { %>
+                    <div class="text-danger">
+                        <%= errors.userName.msg %>
+                    </div>
+                <% } %> 
+                
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                <% } %>
+                
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                <% } %>
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                        <%= errors.password.msg %>
+                    </div>
+                <% } %>
+                <% if (locals.errors && errors.userImage) { %>
+                    <div class="text-danger">
+                        <%= errors.userImage.msg %>
+                    </div>
+                <% } %>
 
                 <div class="user-data">
                     <label for="firstName">
@@ -54,7 +80,7 @@
                     <div class="user-data">
                     <h5>Agregá una foto</h5>
                     <label for="user-avatar">
-                    <input type="file" id="userImage" name="userImage" accept=".jpg, .png">
+                    <input type="file" id="userImage" name="userImage" accept=".jpg, .png, .gif">
                     <span class="feedback"></span>
                     </label>
                 </div>

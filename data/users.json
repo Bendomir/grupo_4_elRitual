@@ -100,22 +100,24 @@
  },
  {
   "id": 11,
-  "firstName": "Andrés",
+  "firstName": "Andres",
   "lastName": "Estevez",
   "email": "a.estevezb@gmail.com",
-  "userName": "bendomir",
-  "password": "$2a$10$3l8QHcWxr7e7UV2FugDpCu7T5R6wOUFOnTHFgOhIRWzy7Rr4ffPPS",
+  "userName": "aestevez",
+  "password": "$2a$10$si7rHMgN3sVY9vAu./FUvOxIEJNucVRO4YqIFQ0L2w8xzGmbWOk0G",
   "terms": "on",
-  "newsletter": "on"
+  "newsletter": "on",
+  "userImage": "user-default-image.png"
  },
  {
   "id": 12,
-  "firstName": "Ricardo",
-  "lastName": "Villalobos",
-  "email": "rvillalobos@fiesta.com",
-  "userName": "villalobos",
-  "password": "$2a$10$54erywiuOUahBK9w8IizG.4RBUQ2f7R9F2iGbi1J/VD75wT31nrSS",
+  "firstName": "Fernando",
+  "lastName": "Bamonte",
+  "email": "bamonte@gmail.com",
+  "userName": "bamonte",
+  "password": "$2a$10$QlnFvtSqXoKnchtwomhsXeRM2jARHEinJ3J9lAL.6cRl8/G/rcYx6",
   "terms": "on",
-  "newsletter": "on"
+  "newsletter": "on",
+  "userImage": "userImage-1673980308873.png"
  }
 ]
