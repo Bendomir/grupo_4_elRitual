@@ -4,13 +4,19 @@
 
 CREATE TABLE users (
 	user_id INT UNSIGNED AUTO_INCREMENT	NOT NULL
---COMPLETAR
-PRIMARY KEY (user_id)
+	firstName     VARCHAR(45) NOT NULL
+	lastName	 	  VARCHAR(45) NOT NULL
+	email		 	  TEXT NOT NULL
+	userName	 	  VARCHAR(45) NOT NULL
+	userPassword  VARCHAR(45) NOT NULL
+	image		     TEXT
+	newsletter    TINYINT
+	PRIMARY KEY (user_id)
 )
 
 CREATE TABLE userCategories (
 	userCategories_id INT UNSIGNED AUTO_INCREMENT	NOT NULL
---COMPLETAR
+	categoryName	VARCHAR(45) NOT NULL
 PRIMARY KEY (userCategories_id)
 )
 
@@ -65,6 +71,7 @@ PRIMARY KEY (shop_id)
 -- ALTER TABLES - AGREGADO DE FOREIGN KEYS ///////////////////////////////////////////////
 
 ALTER TABLE users
+ADD FOREIGN KEY (userCategory_id) REFERENCES users(id)
 
 ALTER TABLE products
 
@@ -79,3 +86,4 @@ ALTER TABLE shopping
 ADD FOREIGN KEY (product_id) REFERENCES products(id)
 ADD FOREIGN KEY (user_id) REFERENCES users(id)
 
+CREATECREATE
