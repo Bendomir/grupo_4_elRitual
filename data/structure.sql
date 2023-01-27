@@ -8,7 +8,7 @@ CREATE TABLE users (
 	lastName	 	  VARCHAR(45) NOT NULL
 	email		 	  TEXT NOT NULL
 	userName	 	  VARCHAR(45) NOT NULL
-	userPassword  VARCHAR(45) NOT NULL
+	password  VARCHAR(45) NOT NULL
 	image		     TEXT
 	newsletter    TINYINT
 	PRIMARY KEY (user_id)
@@ -24,13 +24,16 @@ PRIMARY KEY (userCategories_id)
 
 CREATE TABLE products (
 	product_id INT UNSIGNED AUTO_INCREMENT	NOT NULL
---COMPLETAR
+	name VARCHAR(60) NOT NULL
+	quota  TINYINT NOT NULL
+	image  TEXT NOT NULL
+	price  INT NOT NULL
 PRIMARY KEY (product_id)
 )
 
 CREATE TABLE stock (
 	stock_id INT UNSIGNED AUTO_INCREMENT	NOT NULL
---COMPLETAR
+	quantity TINYINT NOT NULL
 PRIMARY KEY (stock_id)
 )
 
@@ -71,19 +74,20 @@ PRIMARY KEY (shop_id)
 -- ALTER TABLES - AGREGADO DE FOREIGN KEYS ///////////////////////////////////////////////
 
 ALTER TABLE users
-ADD FOREIGN KEY (userCategory_id) REFERENCES users(id)
+ADD FOREIGN KEY (userCategory_id) REFERENCES userCategories(userCategory_id)
 
 ALTER TABLE products
+ADD FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
 
 ALTER TABLE stock
-
+ADD FOREIGN KEY (product_id) REFERENCES products(product_id)
+ADD FOREIGN KEY (size_id) REFERENCES sizes(size_id)
 
 ALTER TABLE carts
-ADD FOREIGN KEY (product_id) REFERENCES products(id)
-ADD FOREIGN KEY (user_id) REFERENCES users(id)
-
+ADD FOREIGN KEY (product_id) REFERENCES products(product_id)
+ADD FOREIGN KEY (user_id) REFERENCES users(user_id)
 ALTER TABLE shopping    
-ADD FOREIGN KEY (product_id) REFERENCES products(id)
-ADD FOREIGN KEY (user_id) REFERENCES users(id)
+ADD FOREIGN KEY (product_id) REFERENCES products(product_id)
+ADD FOREIGN KEY (user_id) REFERENCES users(user_id)
 
 CREATECREATE
