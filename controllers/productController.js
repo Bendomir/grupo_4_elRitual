@@ -1,9 +1,12 @@
 const path = require('path');
 const fs = require('fs');
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const userFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+// const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+const db = require('../database/models');
+
+const products = db.product;
 
 
 const productController = {

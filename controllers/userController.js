@@ -1,10 +1,13 @@
 const path = require('path');
 const fs = require('fs');
 const userFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+// const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 const { validationResult } = require('express-validator')
 const User = require("../models/User")
 const bcrypt = require('bcryptjs')
+const db = require('../database/models');
+
+const users = db.users;
 
 const userController = {
 
