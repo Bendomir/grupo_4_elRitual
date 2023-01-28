@@ -26,8 +26,8 @@ const userController = {
 				})
 			}
 
-			 let userInDB = User.findByField('userName', req.body.userName);
-			 let userInDB2 = User.findByField('email', req.body.email);
+			 let userInDB = users.findByField('userName', req.body.userName);
+			 let userInDB2 = users.findByField('email', req.body.email);
 
 			 if (userInDB) {
 			 	return res.render('register', {
@@ -56,14 +56,14 @@ const userController = {
 					...req.body,
 					userImage: "user-default-image.png" 
 				}
-				let userCreated = User.create(userToCreate);
+				let userCreated = users.create(userToCreate);
 
 			} else {
 				let userToCreate = {
 					...req.body,
 					userImage: req.file.filename  
 				}
-				let userCreated = User.create(userToCreate);
+				let userCreated = users.create(userToCreate);
 
 			}
 	
@@ -91,7 +91,7 @@ const userController = {
 		res.render("login");
 	},
 	loginProcess: (req, res) => {
-		let userToLogin = User.findByField('userName', req.body.userName);
+		let userToLogin = users.findByField('userName', req.body.userName);
 		
 		if(userToLogin) {
 			let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
