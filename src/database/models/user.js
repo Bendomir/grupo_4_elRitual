@@ -40,18 +40,18 @@ module.exports = (sequelize, DataTypes) => {
     
     let config = {
     
-        tableName: 'Users',
+        tableName: 'users',
         timestamps: false
     }
     
     const User = sequelize.define(alias, cols, config)
 
-    User.associate = function (models){
-        User.belongsTo (models.userCategory, {
-            as: 'category',
-            foreignKey: 'userCategory_id'
-        })
-    }
+     User.associate = function (models){
+         User.belongsTo (models.UserCategories, {
+             as: 'category',
+             foreignKey: 'userCategory_id'
+         })
+     }
     
     return User
     }

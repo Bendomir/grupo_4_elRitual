@@ -7,7 +7,7 @@ const User = require("../models/User")
 const bcrypt = require('bcryptjs')
 const db = require('../src/database/models');
 
-const users = db.user;
+
 
 const userController = {
 
@@ -26,8 +26,8 @@ const userController = {
 				})
 			}
 
-			 let userInDB = users.findByField('userName', req.body.userName);
-			 let userInDB2 = users.findByField('email', req.body.email);
+			 let userInDB = db.User.findByField('userName', req.body.userName);
+			 let userInDB2 = db.User.findByField('email', req.body.email);
 
 			 if (userInDB) {
 			 	return res.render('register', {
