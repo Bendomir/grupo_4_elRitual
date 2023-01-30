@@ -60,6 +60,6 @@ const User = {
     }
 }
 
-console.log(User.findByField("userName", "rarnedo123"))
+
 module.exports = User;
 

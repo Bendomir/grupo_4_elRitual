@@ -20,9 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     let config = {
     
         tableName: 'stock',
-        timestamp: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        timestamp: false
     }
     
     const Stock = sequelize.define(alias, cols, config)

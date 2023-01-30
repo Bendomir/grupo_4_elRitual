@@ -17,6 +17,14 @@ module.exports = (sequelize, DataTypes) => {
         total_price:{
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        created_date:{
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        modified_date:{
+            type: DataTypes.DATE,
+            allowNull: false
         }
     };
     
@@ -24,8 +32,8 @@ module.exports = (sequelize, DataTypes) => {
     
         tableName: 'shopping',
         timestamp: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        created_date: 'created_date',
+        modified_date: 'modified_date'
     }
     
     const Shop = sequelize.define(alias, cols, config)

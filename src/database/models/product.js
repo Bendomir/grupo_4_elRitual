@@ -23,16 +23,13 @@ module.exports = (sequelize, DataTypes) => {
         },
         price:{
             type: DataTypes.TINYINT,
-        },
-        
+        }
     };
     
     let config = {
     
         tableName: 'products',
-        timestamp: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        timestamps: false
     }
     
     const Product = sequelize.define(alias, cols, config)

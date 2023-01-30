@@ -13,6 +13,14 @@ module.exports = (sequelize, DataTypes) => {
         quantity:{
             type: DataTypes.TINYINT,
             allowNull: false
+        },
+        created_date:{
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        modified_date:{
+            type: DataTypes.DATE,
+            allowNull: false
         }
     };
     
@@ -20,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
     
         tableName: 'carts',
         timestamp: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        created_date: 'created_date',
+        modified_date: 'modified_date'
     }
     
     const Cart = sequelize.define(alias, cols, config)
