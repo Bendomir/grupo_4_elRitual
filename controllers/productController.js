@@ -6,33 +6,49 @@ const userFilePath = path.join(__dirname, '../data/users.json');
 // const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 const db = require('../src/database/models');
 
-const products = db.product;
+// const products = db.product;
 
 
 const productController = {
 
     tienda: (req, res) => {
-
-		res.render("tienda", { products });
+        db.Products.findAll()
+        .then(function(products){
+            res.render("tienda", { products:products })
+        })
+		;
 	},
 
     productDetail: (req, res) => {
-        let product = products.find(product => product.id == req.params.id);
-        res.render("productDetail", {product});
+        // let product = products.find(product => product.id == req.params.id);
+        db.Products.findByPK(req.params.id)
+        .then(function(products){
+            res.render("productDetail", {product:product});
+        })
+        
     },
 
     destroy: (req, res) => {
         let id = req.params.id
         let productToDelete = products.filter(product => product.id != id);
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
+        // fs.writeFileSync(productsFilePath, JSON.stringify(productToDelete, null, '\t'));
+
+        db.Products.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
         res.redirect('/');
 
     },
 
     edit: (req, res) => {
-        let product = products.find(product => product.id == req.params.id);
-        res.render("productDetailAdmin", { product });
+        // let product = products.find(product => product.id == req.params.id);
+        db.Products.findAll(req.params.id)
+        .then(function(products){
+            res.render("productDetailAdmin", { products:products })
+        })
     },
 
     update: (req, res) => {
@@ -62,7 +78,17 @@ const productController = {
             } return product
         })
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(newProduct, null, '\t'));
+        // fs.writeFileSync(productsFilePath, JSON.stringify(newProduct, null, '\t'));
+        db.Products.update({
+            name: req.body.name,
+            quota: req.body.quota,
+            image: req.body.images,
+            price: req.body.price,
+        },{
+            where: {
+                id: req.params.id
+            }
+        })
 
         res.redirect('/')
 
@@ -74,20 +100,27 @@ const productController = {
     },
     
     store: (req, res) => {
-        let img
-        if (req.files.length > 0) {
-            img = req.files[0].filename
-        } else {
-            img = "default-image.png"
-        }
-        let newProduct = {
-            "id": products[products.length - 1]["id"] + 1,
-            ...req.body,
-            "images": img
-        }
-        products.push(newProduct)
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "\t"))
-        res.redirect("/products")
+     // let img
+     // if (req.files.length > 0) {
+     //     img = req.files[0].filename
+     // } else {
+     //     img = "default-image.png"
+     // }
+     // let newProduct = {
+     //     "id": products[products.length - 1]["id"] + 1,
+     //     ...req.body,
+     //     "images": img
+     // }
+     // products.push(newProduct)
+    //  fs.writeFileSync(productsFilePath, JSON.stringify(products, null, "\t"))
+        db.Products.create({
+            name: req.body.name,
+            quota: req.body.quota,
+            image: req.body.images,
+            price: req.body.price,
+            
+        })
+        res.redirect("/")
     }
 }
 
