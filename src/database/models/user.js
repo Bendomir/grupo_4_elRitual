@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
             unsigned: true
         },
         firstName:{
-            type: DataTypes.VARCHAR(45),
+            type: DataTypes.STRING,
             allowNull: false
         },
         lastName:{
-            type: DataTypes.VARCHAR(45),
+            type: DataTypes.STRING,
             allowNull: false
         },
         email:{
@@ -23,11 +23,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         userName:{
-            type: DataTypes.VARCHAR(45),
+            type: DataTypes.STRING,
             allowNull: false    
         },
         password:{
-            type: DataTypes.VARCHAR(45),
+            type: DataTypes.STRING,
             allowNull: false
         },
         image:{

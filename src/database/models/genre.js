@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
             unsigned: true
         },
         name:{
-            type: DataTypes.VARCHAR(45),
+            type: DataTypes.STRING,
             allowNull: false
         } 
     };
