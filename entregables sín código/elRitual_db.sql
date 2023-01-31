@@ -27,8 +27,8 @@ DROP TABLE IF EXISTS `carts`;
 CREATE TABLE `carts` (
   `cart_id` int unsigned NOT NULL AUTO_INCREMENT,
   `quantity` tinyint NOT NULL,
-  `created_date` date NOT NULL,
-  `modified_date` date NOT NULL,
+  `createdAt` date NOT NULL,
+  `modifiedAt` date NOT NULL,
   `product_id` int unsigned NOT NULL,
   `user_id` int unsigned NOT NULL,
   PRIMARY KEY (`cart_id`),
@@ -49,29 +49,6 @@ LOCK TABLES `carts` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `genres`
---
-
-DROP TABLE IF EXISTS `genres`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `genres` (
-  `genre_id` int unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`genre_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `genres`
---
-
-LOCK TABLES `genres` WRITE;
-/*!40000 ALTER TABLE `genres` DISABLE KEYS */;
-/*!40000 ALTER TABLE `genres` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `products`
 --
 
@@ -84,10 +61,9 @@ CREATE TABLE `products` (
   `quota` tinyint NOT NULL,
   `image` text NOT NULL,
   `price` int NOT NULL,
-  `genre_id` int unsigned NOT NULL,
-  PRIMARY KEY (`product_id`),
-  KEY `genre_id` (`genre_id`),
-  CONSTRAINT `genre_id` FOREIGN KEY (`genre_id`) REFERENCES `genres` (`genre_id`)
+  `createdAt` date NOT NULL,
+  `modifiedAt` date NOT NULL,
+  PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -111,7 +87,7 @@ CREATE TABLE `shopping` (
   `shop_id` int unsigned NOT NULL AUTO_INCREMENT,
   `quantity` tinyint DEFAULT NULL,
   `total_price` int DEFAULT NULL,
-  `created_date` date DEFAULT NULL,
+  `createdAt` date NOT NULL,
   `product_id` int unsigned NOT NULL,
   `user_id` int unsigned NOT NULL,
   PRIMARY KEY (`shop_id`),
@@ -142,7 +118,7 @@ CREATE TABLE `sizes` (
   `size_id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`size_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,6 +127,7 @@ CREATE TABLE `sizes` (
 
 LOCK TABLES `sizes` WRITE;
 /*!40000 ALTER TABLE `sizes` DISABLE KEYS */;
+INSERT INTO `sizes` VALUES (1,'S'),(2,'M'),(3,'L'),(4,'XL');
 /*!40000 ALTER TABLE `sizes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,7 +171,7 @@ CREATE TABLE `usercategories` (
   `userCategory_id` int unsigned NOT NULL AUTO_INCREMENT,
   `categoryName` varchar(45) NOT NULL,
   PRIMARY KEY (`userCategory_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -203,6 +180,7 @@ CREATE TABLE `usercategories` (
 
 LOCK TABLES `usercategories` WRITE;
 /*!40000 ALTER TABLE `usercategories` DISABLE KEYS */;
+INSERT INTO `usercategories` VALUES (1,'Administrador'),(2,'Comprador');
 /*!40000 ALTER TABLE `usercategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,6 +201,8 @@ CREATE TABLE `users` (
   `image` text,
   `newsletter` tinyint DEFAULT NULL,
   `userCategory_id` int unsigned NOT NULL,
+  `createdAt` date NOT NULL,
+  `modifiedAt` date NOT NULL,
   PRIMARY KEY (`user_id`),
   KEY `userCategory_id` (`userCategory_id`),
   CONSTRAINT `userCategory_id` FOREIGN KEY (`userCategory_id`) REFERENCES `usercategories` (`userCategory_id`)
@@ -237,6 +217,10 @@ LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'elritual_db'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -247,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-30 11:14:12
+-- Dump completed on 2023-01-30 21:44:50

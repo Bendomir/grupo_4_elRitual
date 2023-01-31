@@ -23,23 +23,47 @@ module.exports = (sequelize, DataTypes) => {
         },
         price:{
             type: DataTypes.TINYINT,
+        },
+        createdAt:{
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        modifiedAt:{
+            type: DataTypes.DATE,
+            allowNull: false
         }
     };
     
     let config = {
     
         tableName: 'products',
-        timestamps: false
+        timestamp: true,
+        createdAt: 'createdAt',
+        modifiedAt: 'modifiedAt'
     }
     
     const Product = sequelize.define(alias, cols, config)
 
      Product.associate = function (models){
-     Product.belongsTo(models.Genres, {
-     as: 'genres',
-     foreignKey: 'genre_id'
+     Product.hasMany(models.Carts, {
+        as: "productCart",
+        foreignKey: "product_id"
      })
     }
+
+    Product.associate = function (models){
+        Product.hasMany(models.Shopping, {
+            as: "productsShop",
+            foreignKey: "product_id"
+        })
+    }
+
+    Product.associate = function (models){
+        Product.hasMany(models.Stocks, {
+           as: "productCart",
+           foreignKey: "product_id"
+        })
+       }
     
     return Product
     }

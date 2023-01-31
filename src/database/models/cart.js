@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TINYINT,
             allowNull: false
         },
-        created_date:{
+        createdAt:{
             type: DataTypes.DATE,
             allowNull: false
         },
-        modified_date:{
+        modifiedAt:{
             type: DataTypes.DATE,
             allowNull: false
         }
@@ -28,15 +28,15 @@ module.exports = (sequelize, DataTypes) => {
     
         tableName: 'carts',
         timestamp: true,
-        created_date: 'created_date',
-        modified_date: 'modified_date'
+        createdAt: 'createdAt',
+        modifiedAt: 'modifiedAt'
     }
     
     const Cart = sequelize.define(alias, cols, config)
 
     Cart.associate = function (models) {
         Cart.belongsTo (models.Products, {
-            as: "productsCart",
+            as: "productCart",
             foreignKey: "product_id"
         })
     }

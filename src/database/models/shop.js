@@ -18,11 +18,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        created_date:{
-            type: DataTypes.DATE,
-            allowNull: false
-        },
-        modified_date:{
+        createdAt:{
             type: DataTypes.DATE,
             allowNull: false
         }
@@ -32,8 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     
         tableName: 'shopping',
         timestamp: true,
-        created_date: 'created_date',
-        modified_date: 'modified_date'
+        createdAt: 'createdAt',
     }
     
     const Shop = sequelize.define(alias, cols, config)

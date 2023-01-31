@@ -35,13 +35,23 @@ module.exports = (sequelize, DataTypes) => {
         },
         newsletter:{
             type: DataTypes.TINYINT
+        },
+        createdAt:{
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        modifiedAt:{
+            type: DataTypes.DATE,
+            allowNull: false
         }
     };
     
     let config = {
     
         tableName: 'users',
-        timestamps: false
+        timestamp: true,
+        createdAt: 'createdAt',
+        modifiedAt: 'modifiedAt'
     }
     
     const User = sequelize.define(alias, cols, config)

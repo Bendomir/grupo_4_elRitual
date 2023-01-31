@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 
-    let alias = 'stock';
+    let alias = 'Stocks';
     
     let cols = {
         stock_id:{
@@ -19,21 +19,21 @@ module.exports = (sequelize, DataTypes) => {
     
     let config = {
     
-        tableName: 'stock',
+        tableName: 'Stocks',
         timestamp: false
     }
     
     const Stock = sequelize.define(alias, cols, config)
 
     Stock.associate = function (models){
-        Stock.belongsTo (models.sizes, {
-            as: 'sizes',
+        Stock.belongsTo (models.Sizes, {
+            as: 'productSize',
             foreignKey: 'size_id'
         })}
 
     Stock.associate = function (models){
         Stock.belongsTo (models.Products, {
-            as: 'products',
+            as: 'productStock',
             foreignKey: 'product_id'
         })
     }
