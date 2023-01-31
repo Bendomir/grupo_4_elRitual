@@ -27,8 +27,8 @@ DROP TABLE IF EXISTS `carts`;
 CREATE TABLE `carts` (
   `cart_id` int unsigned NOT NULL AUTO_INCREMENT,
   `quantity` tinyint NOT NULL,
-  `createdAt` date NOT NULL,
-  `modifiedAt` date NOT NULL,
+  `createdAt` date DEFAULT NULL,
+  `modifiedAt` date DEFAULT NULL,
   `product_id` int unsigned NOT NULL,
   `user_id` int unsigned NOT NULL,
   PRIMARY KEY (`cart_id`),
@@ -61,8 +61,8 @@ CREATE TABLE `products` (
   `quota` tinyint NOT NULL,
   `image` text NOT NULL,
   `price` int NOT NULL,
-  `createdAt` date NOT NULL,
-  `modifiedAt` date NOT NULL,
+  `createdAt` date DEFAULT NULL,
+  `modifiedAt` date DEFAULT NULL,
   PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -87,7 +87,7 @@ CREATE TABLE `shopping` (
   `shop_id` int unsigned NOT NULL AUTO_INCREMENT,
   `quantity` tinyint DEFAULT NULL,
   `total_price` int DEFAULT NULL,
-  `createdAt` date NOT NULL,
+  `createdAt` date DEFAULT NULL,
   `product_id` int unsigned NOT NULL,
   `user_id` int unsigned NOT NULL,
   PRIMARY KEY (`shop_id`),
@@ -169,7 +169,7 @@ DROP TABLE IF EXISTS `usercategories`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usercategories` (
   `userCategory_id` int unsigned NOT NULL AUTO_INCREMENT,
-  `categoryName` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
   PRIMARY KEY (`userCategory_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -201,8 +201,8 @@ CREATE TABLE `users` (
   `image` text,
   `newsletter` tinyint DEFAULT NULL,
   `userCategory_id` int unsigned NOT NULL,
-  `createdAt` date NOT NULL,
-  `modifiedAt` date NOT NULL,
+  `createdAt` date DEFAULT NULL,
+  `modifiedAt` date DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   KEY `userCategory_id` (`userCategory_id`),
   CONSTRAINT `userCategory_id` FOREIGN KEY (`userCategory_id`) REFERENCES `usercategories` (`userCategory_id`)
@@ -231,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-30 21:44:50
+-- Dump completed on 2023-01-30 21:58:02

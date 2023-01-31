@@ -13,14 +13,14 @@ CREATE TABLE users (
 	image				TEXT,
 	newsletter  		TINYINT,
     userCategory_id 	INT UNSIGNED NOT NULL,
-	createdAt 			DATE NOT NULL,
-	modifiedAt 			DATE NOT NULL,
+	createdAt 			DATE,
+	modifiedAt 			DATE,
 PRIMARY KEY (user_id)
 );
 
 CREATE TABLE userCategories (
 	userCategory_id 	INT UNSIGNED AUTO_INCREMENT	NOT NULL,
-	categoryName		VARCHAR(45) NOT NULL,
+	name				VARCHAR(45) NOT NULL,
 PRIMARY KEY (userCategory_id)
 );
 
@@ -32,8 +32,8 @@ CREATE TABLE products (
 	quota  				TINYINT NOT NULL,
 	image  				TEXT NOT NULL,
 	price  				INT NOT NULL,
-	createdAt 			DATE NOT NULL,
-	modifiedAt 			DATE NOT NULL,
+	createdAt 			DATE,
+	modifiedAt 			DATE,
 PRIMARY KEY (product_id)
 );
 
@@ -56,8 +56,8 @@ PRIMARY KEY (size_id)
 CREATE TABLE carts (
 	cart_id 			INT UNSIGNED AUTO_INCREMENT	NOT NULL,
 	quantity 			TINYINT NOT NULL,
-	createdAt 			DATE NOT NULL,
-	modifiedAt 			DATE NOT NULL,
+	createdAt 			DATE,
+	modifiedAt 			DATE,
     product_id 			INT UNSIGNED NOT NULL,
     user_id 			INT UNSIGNED NOT NULL,
 PRIMARY KEY (cart_id)
@@ -67,7 +67,7 @@ CREATE TABLE shopping (
 	shop_id 			INT UNSIGNED AUTO_INCREMENT NOT NULL,
 	quantity 			TINYINT,
 	total_price 		INT,
-	createdAt 			DATE NOT NULL,
+	createdAt 			DATE,
     product_id 			INT UNSIGNED NOT NULL,
     user_id 			INT UNSIGNED NOT NULL,
 PRIMARY KEY (shop_id)

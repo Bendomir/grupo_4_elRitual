@@ -37,12 +37,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TINYINT
         },
         createdAt:{
-            type: DataTypes.DATE,
-            allowNull: false
+            type: DataTypes.DATE
         },
         modifiedAt:{
-            type: DataTypes.DATE,
-            allowNull: false
+            type: DataTypes.DATE
         }
     };
     
