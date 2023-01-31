@@ -17,6 +17,7 @@
         <% } %>
     </header>
     <main>
+        
     <div class="copy">
         <a href="/">Inicio</a>
         <p  class="product">/productos</p>
@@ -25,6 +26,12 @@
     <h1>
         ELEGÍ LA INDUMENTARIA DE TU SHOW
     </h1>
+
+    <form action="/products/<%= products.product_id %> " class="search" method="GET">
+        <button class="loupe"><i class="fa fa-search"></i></button>
+        <input type="text" placeholder="Buscar tu remera" class="search-bar">
+    </form>
+
     <form action="*" method="post">
     <div class="filter">
         
@@ -46,9 +53,9 @@
     <% products.forEach(product => { %> 
 
     <div class="card">
-        <a href="/products/<%= product.id %> ">
+        <a href="/products/<%= product.product_id %> ">
         <article class="product-detail">
-            <img src= "/images/<%= product.images %>" alt="">
+            <img src= "/images/<%= product.image %>" alt="">
         </a>
             <section class="description">
                 <h3><%= product.name %></h3>
