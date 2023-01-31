@@ -25,13 +25,12 @@
         </article>
 
         <article class="product">
-            <img src="/images/<%= product.images %>" alt="">
+            <img src="/images/<%= product.image %>" alt="">
 
             <div class="product-detail">
                 <h2><%= product.name %></h2>
                 <h1>$ <%= product.price %></h1>
-                <p> <i class="far fa-credit-card"></i>    <%= product.quota %> cuotas sin interes de $ <%= (product.price)/(product.quota) %> </p>        
-                <h2> Talle XL </h2>
+                <p> <i class="far fa-credit-card"></i>    <%= product.quota %> cuotas sin interes de $ <%= (product.price)/(product.quota) %> </p>
 
                 <div class="admin">
                     <div class="size">
@@ -44,10 +43,10 @@
                         </select>
                     </div>
                     <div class="edit">
-                        <a href="/products/product-admin/<%= product.id %> "><button>Editar</button></a>
+                        <a href="/products/product-admin/<%= product.product_id %> "><button>Editar</button></a>
                     </div>
                     <div class="edit">
-                        <form action="/products/<%= product.id %>?_method=DELETE" method="post">
+                        <form action="/products/<%= product.product_id %>?_method=DELETE" method="post">
                             <button type="submit">Borrar</button>
                         </form>
                     </div>
