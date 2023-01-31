@@ -6,6 +6,9 @@ const { validationResult } = require('express-validator')
 const User = require("../models/User")
 const bcrypt = require('bcryptjs')
 const db = require('../src/database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const { render } = require('ejs');
 
 
 
@@ -16,75 +19,63 @@ const userController = {
 		res.render("register");
 	},
 
-	procesarRegistro: (req, res) => {
-		{
-			const resultValidation = validationResult(req);
-			if (resultValidation.errors.length > 0) {
-				return res.render('register', {
-					errors: resultValidation.mapped(),
-					oldData: req.body
-				})
-			}
-
-			 let userInDB = db.User.findByField('userName', req.body.userName);
-			 let userInDB2 = db.User.findByField('email', req.body.email);
-
-			 if (userInDB) {
-			 	return res.render('register', {
-			 		errors: {
-						userName: {
-			 				msg: 'Este usuario ya está registrado'
-			 			}
-			 		},
-			 		oldData: req.body
-			 	});
-			 }
-			 if (userInDB2) {
-				return res.render('register', {
-					errors: {
-					   email: {
-							msg: 'Este email ya está registrado'
-						}
-					},
-					oldData: req.body
-				});
-			}
-	
-			if (req.file == undefined) {
-
-				let userToCreate = {
-					...req.body,
-					userImage: "user-default-image.png" 
-				}
-				let userCreated = users.create(userToCreate);
-
-			} else {
-				let userToCreate = {
-					...req.body,
-					userImage: req.file.filename  
-				}
-				let userCreated = users.create(userToCreate);
-
-			}
-	
-			return res.redirect('/user/login');
-
+	procesarRegistro: (req, res) => 
+	{
+		const resultValidation = validationResult(req);
+		if (resultValidation.errors.length > 0) {
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
 		}
-		/*(req, res) => {
-			let password = bcrypt.hashSync(req.body.password, 10)
-			let newUser = {
-			"id" : User.generateId(),
-			"firstName": req.body.firstName,
-			"lastName": req.body.lastName,
-			"email": req.body.email,
-			"userName": req.body.userName,
-			"password": password,
-		}
-		users.push(newUser)
-		fs.writeFileSync(userFilePath, JSON.stringify(users,null,"\t"))
-		res.redirect('/products')*/
+		
+		let userToRegister = db.Users.findAll({where:{userName: req.body.userName}})
+		let emailToRegister = db.Users.findAll({where:{email: req.body.email}})
 
-	},
+		Promise.all([userToRegister, emailToRegister])
+		.then(([user, email]) =>{
+			 if (user !=  0 || email != 0) {
+				res.render('register', {
+		 			errors:{
+		 				userName:{
+		 					msg:'Es usuario ya está registrado'
+		 				}
+					}
+		 		})
+		 	} 
+			else {
+		 			let password = bcrypt.hashSync(req.body.password, 10)
+					let img = req.body.userImage
+					console.log(img)
+					if (img != 0) {
+		 		  	let newUser = {
+		 		  	"firstName": req.body.firstName,
+		 		  	"lastName": req.body.lastName,
+ 		    		"email": req.body.email,
+		 		  	"userName": req.body.userName,
+		 		  	"password": password,
+					"image": img,
+		 		  	"userCategory_id": 1}
+					   db.Users.create(newUser)
+					   .then(() =>{
+						   res.redirect('/products')})
+					}else{
+						let newUser = {
+						"firstName": req.body.firstName,
+						"lastName": req.body.lastName,
+						"email": req.body.email,
+						"userName": req.body.userName,
+						"password": password,
+						"image": "user-defaul-image.png",
+						"userCategory_id": 1
+					}
+		 		
+					db.Users.create(newUser)
+		 		.then(() =>{
+		 			res.redirect('/products')})
+		 	}}
+		})
+},
 
 	login: (req, res) => {
 
