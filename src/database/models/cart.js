@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         createdAt:{
             type: DataTypes.DATE
         },
-        modifiedAt:{
+        updatedAt:{
             type: DataTypes.DATE
         }
     };
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'carts',
         timestamp: true,
         createdAt: 'createdAt',
-        modifiedAt: 'modifiedAt'
+        updatedAt: 'updatedAt'
     }
     
     const Cart = sequelize.define(alias, cols, config)

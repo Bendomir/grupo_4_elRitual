@@ -28,7 +28,7 @@ CREATE TABLE `carts` (
   `cart_id` int unsigned NOT NULL AUTO_INCREMENT,
   `quantity` tinyint NOT NULL,
   `createdAt` date DEFAULT NULL,
-  `modifiedAt` date DEFAULT NULL,
+  `updatedAt` date DEFAULT NULL,
   `product_id` int unsigned NOT NULL,
   `user_id` int unsigned NOT NULL,
   PRIMARY KEY (`cart_id`),
@@ -58,11 +58,11 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `product_id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
-  `quota` tinyint NOT NULL,
+  `quota` tinyint DEFAULT NULL,
   `image` text NOT NULL,
   `price` int NOT NULL,
   `createdAt` date DEFAULT NULL,
-  `modifiedAt` date DEFAULT NULL,
+  `updatedAt` date DEFAULT NULL,
   PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -88,6 +88,7 @@ CREATE TABLE `shopping` (
   `quantity` tinyint DEFAULT NULL,
   `total_price` int DEFAULT NULL,
   `createdAt` date DEFAULT NULL,
+  `updatedAt` date DEFAULT NULL,
   `product_id` int unsigned NOT NULL,
   `user_id` int unsigned NOT NULL,
   PRIMARY KEY (`shop_id`),
@@ -140,7 +141,7 @@ DROP TABLE IF EXISTS `stock`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stock` (
   `stock_id` int unsigned NOT NULL AUTO_INCREMENT,
-  `quantity` tinyint NOT NULL,
+  `quantity` tinyint DEFAULT NULL,
   `product_id` int unsigned NOT NULL,
   `size_id` int unsigned NOT NULL,
   PRIMARY KEY (`stock_id`),
@@ -180,7 +181,7 @@ CREATE TABLE `usercategories` (
 
 LOCK TABLES `usercategories` WRITE;
 /*!40000 ALTER TABLE `usercategories` DISABLE KEYS */;
-INSERT INTO `usercategories` VALUES (1,'Administrador'),(2,'Comprador');
+INSERT INTO `usercategories` VALUES (1,'Admin'),(2,'User');
 /*!40000 ALTER TABLE `usercategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,7 +203,7 @@ CREATE TABLE `users` (
   `newsletter` tinyint DEFAULT NULL,
   `userCategory_id` int unsigned NOT NULL,
   `createdAt` date DEFAULT NULL,
-  `modifiedAt` date DEFAULT NULL,
+  `updatedAt` date DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   KEY `userCategory_id` (`userCategory_id`),
   CONSTRAINT `userCategory_id` FOREIGN KEY (`userCategory_id`) REFERENCES `usercategories` (`userCategory_id`)
@@ -231,4 +232,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-30 21:58:02
+-- Dump completed on 2023-01-30 22:11:10

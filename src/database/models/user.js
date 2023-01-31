@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         createdAt:{
             type: DataTypes.DATE
         },
-        modifiedAt:{
+        updatedAt:{
             type: DataTypes.DATE
         }
     };
@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'users',
         timestamp: true,
         createdAt: 'createdAt',
-        modifiedAt: 'modifiedAt'
+        updatedAt: 'updatedAt'
     }
     
     const User = sequelize.define(alias, cols, config)
