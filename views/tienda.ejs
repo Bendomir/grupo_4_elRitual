@@ -27,9 +27,9 @@
         ELEGÍ LA INDUMENTARIA DE TU SHOW
     </h1>
 
-    <form action="/products/<%= products.product_id %> " class="search" method="GET">
+    <form action="/products/" class="search" method="POST">
         <button class="loupe"><i class="fa fa-search"></i></button>
-        <input type="text" placeholder="Buscar tu remera" class="search-bar">
+        <input type="text" placeholder="Buscar tu remera" class="search-bar" name="searchBarStore" id="searchBarStore">
     </form>
 
     <form action="*" method="post">

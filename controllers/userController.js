@@ -44,37 +44,31 @@ const userController = {
 		 		})
 		 	} 
 			else {
-		 			let password = bcrypt.hashSync(req.body.password, 10)
-					let img = req.body.userImage
-					console.log(img)
-					if (img != 0) {
-		 		  	let newUser = {
-		 		  	"firstName": req.body.firstName,
-		 		  	"lastName": req.body.lastName,
- 		    		"email": req.body.email,
-		 		  	"userName": req.body.userName,
-		 		  	"password": password,
-					"image": img,
-		 		  	"userCategory_id": 1}
-					   db.Users.create(newUser)
-					   .then(() =>{
-						   res.redirect('/products')})
-					}else{
-						let newUser = {
-						"firstName": req.body.firstName,
-						"lastName": req.body.lastName,
-						"email": req.body.email,
-						"userName": req.body.userName,
-						"password": password,
-						"image": "user-defaul-image.png",
-						"userCategory_id": 1
-					}
-		 		
-					db.Users.create(newUser)
-		 		.then(() =>{
-		 			res.redirect('/products')})
-		 	}}
-		})
+				let img
+				if (req.file) {
+					img = req.file.filename
+				} else {
+					img = "user-default-image.png"}
+	
+				let password = bcrypt.hashSync(req.body.password, 10)
+				let newUser = {
+					'firstName': req.body.firstName,
+					'lastName': req.body.lastName,
+					'email': req.body.email,
+					'userName': req.body.userName,
+					'password': password,
+					'image': img,
+					'newsletter': req.body.newsletter,
+					'userCategory_id' : 1
+				}
+
+				db.Users.create(newUser)
+			.then(() =>{
+				res.redirect('/')})
+			.catch((error) =>
+			console.log (error))
+			}}
+		)
 },
 
 	login: (req, res) => {
@@ -82,7 +76,14 @@ const userController = {
 		res.render("login");
 	},
 	loginProcess: (req, res) => {
-		let userToLogin = users.findByField('userName', req.body.userName);
+		db.Users.findAll({
+			where: {
+				userName: req.body.userName
+			}
+		})
+		.then ((userToLogin) => {
+
+		
 		
 		if(userToLogin) {
 			let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
@@ -111,7 +112,8 @@ const userController = {
 					msg: 'No se encuentra este usuario en nuestra base de datos'
 				}
 			}
-		});
+		})
+	});
 	},
 
 	profile: (req, res) => {

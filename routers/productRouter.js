@@ -8,6 +8,7 @@ const upload = require('../middlewares/multer')
 const { check } = require ("express-validator")
 
 router.get('/', userLoggedMiddleware, productController.tienda);
+router.post('/', userLoggedMiddleware, productController.search);
 
 router.get('/charge-product', userLoggedMiddleware, productController.chargeProduct);
 router.post('/charge-product', upload.any(""), productController.store); 

@@ -28,7 +28,7 @@
             
             <img src="/images/<%= product.image %>" alt="">
             <form action="/products/product-admin/<%= product.product_id %>?_method=PUT" class="product-detail" method="POST" enctype="multipart/form-data">
-                <input type="file" id="images" name="images">
+                <input type="file" id="images" name="image">
                 <input type="text" id="name" name="name" placeholder="<%= product.name %>" value="<%= product.name %>">
                 <input type="text" id="price" name="price" placeholder="<%= product.price %>" value="<%= product.price %>">
                 <input type="text" id="quota" name="quota" placeholder="<%= product.quota %> Cuotas sin interes" value="<%= product.quota %>">

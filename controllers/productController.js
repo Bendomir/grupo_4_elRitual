@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const db = require('../src/database/models');
+const Op = db.Sequelize.Op
 
 
 const productController = {
@@ -9,15 +10,15 @@ const productController = {
         db.Products.findAll()
         .then(function(products){
             res.render("tienda", { products:products })
-        })
-		;
+        });
+		// console.log(req.body.searchBarStore)
 	},
 
     productDetail: (req, res) => {
         db.Products.findByPk(req.params.id)
         .then(function(product){
             res.render("productDetail", {product:product});
-        })        
+        })		
     },
 
     destroy: (req, res) => {
@@ -73,7 +74,19 @@ const productController = {
             
         })
         res.redirect("/")
-    }
+    },
+	search: (req, res) => {
+		db.Products.findAll({
+			where: {
+				name: {[Op.Like]: "%" + req.body.searchBarStore + "%"}					
+			}
+		})
+			.then(function(products){
+        	    res.render("tienda", { products:products })
+        	})
+
+		console.log(req.body.searchBarStore)
+	}
 }
 
 module.exports = productController
