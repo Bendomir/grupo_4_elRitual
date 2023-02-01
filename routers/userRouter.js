@@ -18,6 +18,8 @@ router.get('/login',guestMiddleware, userController.login);
 router.post("/login", userController.loginProcess)
 
 router.get('/profile/', authMiddleware, userController.profile);
+router.get('/profile/edit', authMiddleware, userController.editProfile)
+router.post('/profile/edit', userImage.single('userImage'), userController.storeEditProfile)
 
 router.get('/logout/', userController.logout);
 

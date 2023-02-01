@@ -82,11 +82,10 @@ const userController = {
 			}
 		})
 		.then ((userToLogin) => {
+			
 
-		
-		
 		if(userToLogin) {
-			let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+			let isOkThePassword = bcrypt.compareSync(req.body.password, (userToLogin[0].dataValues.password));
 			if (isOkThePassword) {
 				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
@@ -97,7 +96,7 @@ const userController = {
 
 				return res.redirect('/user/profile');
 			} 
-			return res.render('userLoginForm', {
+			return res.render('login', {
 				errors: {
 					userName: {
 						msg: 'Las credenciales son inválidas'
@@ -106,7 +105,7 @@ const userController = {
 			});
 		}
 
-		return res.render('userLoginForm', {
+		return res.render('login', {
 			errors: {
 				userName: {
 					msg: 'No se encuentra este usuario en nuestra base de datos'
@@ -118,9 +117,34 @@ const userController = {
 
 	profile: (req, res) => {
 		return res.render('userProfile', {
-			user: req.session.userLogged
-		});
+			user: req.session.userLogged[0]
+		})
 	},
+
+	editProfile: (req, res) => {
+		return res.render('userEditProfile', {
+			user: req.session.userLogged[0]
+		})
+	},
+
+	storeEditProfile: (req, res) => {
+			
+		db.Users.update({
+			'firstName': req.body.firstName,
+			'lastName': req.body.lastName,
+			'email': req.body.email,
+			'userName': req.body.userName,
+			'password': password,
+			'image': img,
+			'newsletter': req.body.newsletter,
+        },{
+            where: {
+                user_id: req.session.userLogged[0].user_id
+            }
+        })
+		.then(res.redirect('/user/profile'))
+	
+		},
 
 	logout: (req, res) => {
 		res.clearCookie('userName');

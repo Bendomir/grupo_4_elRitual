@@ -13,9 +13,14 @@
     <main>
         
         <h3>Bienvenido <%= user.firstName %> <%= user.lastName %></h3>
-        <img src="/images/userImages/<%= user.userImage %>" width = 600px>
-            
+        <img src="/images/userImages/<%= user.image %>" width = 600px>
+
+        <div class="edit">
+            <a href="/user/profile/edit "><button>Editar</button></a>
+        </div>
+
     </main>
+
 
     <footer>
             <%- include("partials/footer") %>
