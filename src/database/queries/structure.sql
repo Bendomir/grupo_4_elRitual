@@ -1,15 +1,13 @@
--- /////////// CREATE TABLES - CREACION DE TABLAS SIN LAS FOREIGN KEYS //////////////////
-
---                       ///// USUARIOS  ////
+CREATE SCHEMA `elRitual_db` DEFAULT CHARACTER SET utf8mb4 ;
 
 
-CREATE TABLE users (
+CREATE TABLE elRitual_db.users (
 	user_id				INT UNSIGNED AUTO_INCREMENT	NOT NULL,
 	firstName			VARCHAR(45) NOT NULL,
 	lastName			VARCHAR(45) NOT NULL,
 	email				TEXT NOT NULL,
 	userName			VARCHAR(45) NOT NULL,
-	password 			VARCHAR(45) NOT NULL,
+	password 			TEXT NOT NULL,
 	image				TEXT,
 	newsletter  		TINYINT,
     userCategory_id 	INT UNSIGNED NOT NULL,
@@ -18,7 +16,7 @@ CREATE TABLE users (
 PRIMARY KEY (user_id)
 );
 
-CREATE TABLE userCategories (
+CREATE TABLE elRitual_db.userCategories (
 	userCategory_id 	INT UNSIGNED AUTO_INCREMENT	NOT NULL,
 	name				VARCHAR(45) NOT NULL,
 PRIMARY KEY (userCategory_id)
@@ -26,7 +24,7 @@ PRIMARY KEY (userCategory_id)
 
 --                     ///// PRODUCTOS  ////
 
-CREATE TABLE products (
+CREATE TABLE elRitual_db.products (
 	product_id 			INT UNSIGNED AUTO_INCREMENT	NOT NULL,
 	name 				VARCHAR(60) NOT NULL,
 	quota  				TINYINT,
@@ -37,7 +35,7 @@ CREATE TABLE products (
 PRIMARY KEY (product_id)
 );
 
-CREATE TABLE stock (
+CREATE TABLE elRitual_db.stock (
 	stock_id 			INT UNSIGNED AUTO_INCREMENT NOT NULL,
 	quantity 			TINYINT,
     product_id 			INT UNSIGNED NOT NULL,
@@ -45,7 +43,7 @@ CREATE TABLE stock (
 PRIMARY KEY (stock_id)
 );
 
-CREATE TABLE sizes (
+CREATE TABLE elRitual_db.sizes (
 	size_id 			INT UNSIGNED AUTO_INCREMENT NOT NULL,
 	name 				VARCHAR(15),
 PRIMARY KEY (size_id)
@@ -53,7 +51,7 @@ PRIMARY KEY (size_id)
 
 --                   ///// CARRITO Y SHOPING /////
 
-CREATE TABLE carts (
+CREATE TABLE elRitual_db.carts (
 	cart_id 			INT UNSIGNED AUTO_INCREMENT	NOT NULL,
 	quantity 			TINYINT NOT NULL,
 	createdAt 			DATE,
@@ -63,7 +61,7 @@ CREATE TABLE carts (
 PRIMARY KEY (cart_id)
 );
 
-CREATE TABLE shopping (
+CREATE TABLE elRitual_db.shopping (
 	shop_id 			INT UNSIGNED AUTO_INCREMENT NOT NULL,
 	quantity 			TINYINT,
 	total_price 		INT,
@@ -79,12 +77,12 @@ PRIMARY KEY (shop_id)
 
 
 
-ALTER TABLE users
+ALTER TABLE elRitual_db.users
 	ADD CONSTRAINT userCategory_id
 		FOREIGN KEY (userCategory_id)
 		REFERENCES userCategories(userCategory_id);
 
-ALTER TABLE stock
+ALTER TABLE elRitual_db.stock
 	ADD CONSTRAINT productStock_id
 		FOREIGN KEY (product_id) 
 		REFERENCES products(product_id),
@@ -92,7 +90,7 @@ ALTER TABLE stock
 		FOREIGN KEY (size_id) 
 		REFERENCES sizes(size_id);
 
-ALTER TABLE carts
+ALTER TABLE elRitual_db.carts
 	ADD CONSTRAINT productCart_id
 		FOREIGN KEY (product_id) 
 		REFERENCES products(product_id),
@@ -100,11 +98,10 @@ ALTER TABLE carts
 		FOREIGN KEY (user_id) 
 		REFERENCES users(user_id);
 
-ALTER TABLE shopping    
+ALTER TABLE elRitual_db.shopping    
 	ADD CONSTRAINT productShop_id
 		FOREIGN KEY (product_id) 
 		REFERENCES products(product_id),
 	ADD CONSTRAINT userShop_id
 		FOREIGN KEY (user_id) 
 		REFERENCES users(user_id);
-

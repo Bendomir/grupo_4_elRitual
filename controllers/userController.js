@@ -73,6 +73,10 @@ const userController = {
 
 	login: (req, res) => {
 
+		console.log("prueba")
+		console.log(bcrypt.hashSync("prueba", 10))
+
+
 		res.render("login");
 	},
 	loginProcess: (req, res) => {

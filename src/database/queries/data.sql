@@ -1,14 +1,24 @@
+/*USERSCATEGORIES DATA*/
+insert into elRitual_db.usercategories (name) values ('Admin');
+insert into elRitual_db.usercategories (name) values ('User');
+/*SIZES DATA*/
+insert into elRitual_db.sizes (name) values ('S');
+insert into elRitual_db.sizes (name) values ('M');
+insert into elRitual_db.sizes (name) values ('L');
+insert into elRitual_db.sizes (name) values ('XL');
+
+
 /*USERS DATA*/
-insert into users (fistName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Sloan', 'Josselsohn', 'sjosselsohn0@ustream.tv', 'sjosselsohn0', '7ppmMcA', 'http://dummyimage.com/138x100.png/dddddd/000000', false, 1);
-insert into users (fistName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Alaster', 'Beadle', 'abeadle1@forbes.com', 'abeadle1', 'cZ2UU3ixTOB', 'http://dummyimage.com/200x100.png/cc0000/ffffff', true, 1);
-insert into users (fistName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Ferdinand', 'Ungerecht', 'fungerecht2@nyu.edu', 'fungerecht2', 'RrDo2B9q', 'http://dummyimage.com/119x100.png/ff4444/ffffff', true, 1);
-insert into users (fistName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Godard', 'Elsley', 'gelsley3@dmoz.org', 'gelsley3', 'NY3Rv5', 'http://dummyimage.com/161x100.png/ff4444/ffffff', true, 1);
-insert into users (fistName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Caria', 'Peak', 'cpeak4@google.ca', 'cpeak4', 'uGOQdzWTjeF', 'http://dummyimage.com/238x100.png/5fa2dd/ffffff', true, 1);
+insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Andres', 'Estevez', 'aestevez@gmail.com', 'aestevez', '$2a$10$hcOOjoZfrbKXDxufqaJK9OTXOGeCHsGy7o5MbnaV0yFcnMMrDRihe', 'userImage-1673980308873.jpg', NULL, 1);
+insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Nicolas', 'Saucedo', 'nsaucedo@gmail.com', 'nsaucedo', '$2a$10$DBUIb8CFxjSme.xWesz3M.uCKx4cnWlRH9syJCnAtqdSi7Lbd5p7.', 'userImage-1675128215827.jpg', 0, 1);
+insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Rodolfo', 'Caputto', 'rcaputto@gmail.com', 'rcaputto', '$2a$10$OB.Jaxuo5ZDov6FviZ7ht.Eyl019NkiSdFux0OAVM48OglqBIVHjS', 'userImage-1675193675682.jpg', 0, 1);
+insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Usuario', 'Prueba', 'prueba@gmail.com', 'prueba', '$2a$10$CoOmoy1U9qx1hIvUhwnAfu7xSy/e/PspqZ5qfJAxEMs6qv.afObpW', 'user-default-image.jpg', NULL, 1);
 
-/*PRODUCT DATA*/
 
-insert into products (name, quota, image, price) values ('cpaull0', 1, 'http://dummyimage.com/192x100.png/dddddd/000000', '2000');
-insert into products (name, quota, image, price) values ('abim1', 2, 'http://dummyimage.com/204x100.png/cc0000/ffffff', '6000');
-insert into products (name, quota, image, price) values ('vkilshaw2', 3, 'http://dummyimage.com/178x100.png/dddddd/000000', '6000');
-insert into products (name, quota, image, price) values ('dsweedy3', 4, 'http://dummyimage.com/168x100.png/dddddd/000000', '6000');
-insert into products (name, quota, image, price) values ('ejepensen4', 5, 'http://dummyimage.com/124x100.png/cc0000/ffffff', '6000');
+/*PRODUCTS DATA*/
+
+insert into elRitual_db.products (name, quota, image, price) values ('Los Piojos', 1, 'logo-el-ritual.jpg', '2000');
+insert into elRitual_db.products (name, quota, image, price) values ('ACDC Blanca', 3, 'remera.jpg', '6000');
+insert into elRitual_db.products (name, quota, image, price) values ('Nirvana', 6, 'remera-nirvana.jpg', '6000');
+insert into elRitual_db.products (name, quota, image, price) values ('ACDC Negra', 9, 'remera-ACDC.jpg', '6000');
+insert into elRitual_db.products (name, quota, image, price) values ('Soda Stereo', 12, 'remera-soda-stereo.jpg', '6000');
