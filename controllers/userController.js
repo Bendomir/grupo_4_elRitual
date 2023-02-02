@@ -120,9 +120,13 @@ const userController = {
 	},
 
 	profile: (req, res) => {
-		return res.render('userProfile', {
-			user: req.session.userLogged[0]
-		})
+		let user = req.session.userLogged[0]
+		console.log(user)
+
+		db.Users.findByPk(user.user_id)
+		.then (user => {
+				return res.render('userProfile', { user
+		})})
 	},
 
 	editProfile: (req, res) => {
@@ -132,14 +136,16 @@ const userController = {
 	},
 
 	storeEditProfile: (req, res) => {
-			
+		
+		// let password = bcrypt.hashSync(req.body.password, 10)
+		// console.log(password)
 		db.Users.update({
 			'firstName': req.body.firstName,
 			'lastName': req.body.lastName,
-			'email': req.body.email,
 			'userName': req.body.userName,
-			'password': password,
-			'image': img,
+			'email': req.body.email,
+			// 'password': password,
+			'image': req.body.image,
 			'newsletter': req.body.newsletter,
         },{
             where: {

@@ -15,18 +15,18 @@
         <h3>Aquí puedes cambiar tus datos personales</h3>
         <img src="/images/userImages/<%= user.image %>" width = 200px>
 
-        <form action="/user/profile/?_method=PUT" class="user-data" method="POST" enctype="multipart/form-data">
-            <input type="file" id="images" name="image">
+        <form action="/user/profile/edit" class="user-data" method="POST" enctype="multipart/form-data">
+            <input type="file" id="images" name="image" value="<%= user.image %>">
             <br>
-            <input type="text" id="name" name="name" placeholder="<%= user.firstName %>" value="<%= user.firstName %>">
+            <input type="text" id="firstName" name="firstName" placeholder="<%= user.firstName %>" value="<%= user.firstName %>">
             <br>
-            <input type="text" id="price" name="price" placeholder="<%= user.lastName %>" value="<%= user.lastName %>">
+            <input type="text" id="price" name="lastName" placeholder="<%= user.lastName %>" value="<%= user.lastName %>">
             <br>
-            <input type="text" id="quota" name="quota" placeholder="<%= user.email %> " value="<%= user.email %>">
+            <input type="text" id="email" name="email" placeholder="<%= user.email %> " value="<%= user.email %>">
             <br>
-            <input type="text" id="quota" name="quota" placeholder="<%= user.userName %> " value="<%= user.userName %>">
+            <input type="text" id="userName" name="userName" placeholder="<%= user.userName %> " value="<%= user.userName %>">
             <br>
-            <input type="text" id="quota" name="quota" placeholder="<%= user.password %> " value="<%= user.password %>">
+            <!-- <input type="text" id="quota" name="quota" placeholder="Coloque su contraseña> -->
             <br>
             <input type="checkbox" name="newsletter"> Deseo recibir información sobre eventos y promociones.
     
