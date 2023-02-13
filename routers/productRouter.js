@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const productController = require ('../controllers/productController')
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
-
+const validationsProducts = require('../middlewares/validateProductMiddleware')
 
 const upload = require('../middlewares/multer')
 const { check } = require ("express-validator")
@@ -10,7 +10,7 @@ const { check } = require ("express-validator")
 router.get('/', userLoggedMiddleware, productController.tienda);
 
 router.get('/charge-product', userLoggedMiddleware, productController.chargeProduct);
-router.post('/charge-product', upload.any(""), productController.store); 
+router.post('/charge-product', upload.any(""), validationsProducts, productController.store); 
 
 router.get('/:id', userLoggedMiddleware, productController.productDetail);
 router.delete('/:id', productController.destroy);

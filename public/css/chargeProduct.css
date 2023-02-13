@@ -4,6 +4,10 @@
     padding: 0px;
 }
 
+.text-danger{
+    color: red;
+}
+
 body {
     font-family: 'Arimo', 'Roboto', sans-serif;
 }
