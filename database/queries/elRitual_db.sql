@@ -198,7 +198,7 @@ CREATE TABLE `users` (
   `lastName` varchar(45) NOT NULL,
   `email` text NOT NULL,
   `userName` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` text NOT NULL,
   `image` text,
   `newsletter` tinyint DEFAULT NULL,
   `userCategory_id` int unsigned NOT NULL,
