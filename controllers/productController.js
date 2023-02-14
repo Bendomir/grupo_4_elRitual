@@ -39,42 +39,71 @@ const productController = {
     },
 
     update: (req, res) => {
+		let resultValidation = validationResult(req)
+
+		if(resultValidation.errors.length > 0){
+		   return res.render("product-admin",{errors:resultValidation.mapped(), oldData:req.body})
+		} else{
+		   let img = req.file.filename
+		   
         db.Products.update({
             name: req.body.name,
             quota: req.body.quota,
-            image: req.body.image,
+            image: img,
             price: req.body.price,
         },{
             where: {
                 product_id: req.params.id
             }
         })
-
+	
         res.redirect('/')
-
-    },
+	}},
 
     chargeProduct: (req, res) => {
 		res.render("chargeProduct");
     },
     
-    store: (req, res) => {
-		let resultValidation = validationResult(req)
-
-		 if(resultValidation.errors.length > 0){
-			return res.render("chargeProduct",{errors:resultValidation.mapped(), oldData:req.body})
-		 } else{
-
-   
-			db.Products.create({
-				name: req.body.name,
-				quota: req.body.quota,
-			   image: img,
-			   price: req.body.price,
-			   
-			})
-        res.redirect("/") }
-    },
+	store: (req, res) => {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+		  return res.render("chargeProduct", {
+			errors: errors.mapped(),
+			oldData: req.body,
+		  });
+		}
+	  
+		if (!req.file) {
+		  return res.render("chargeProduct", {
+			errors: { images: { msg: "Debes subir una imagen." } },
+			oldData: req.body,
+		  });
+		}
+	  
+		const img = req.file.filename
+	  
+		db.Products.create({
+		  name: req.body.name,
+		  quota: req.body.quota,
+		  image: img,
+		  price: req.body.price,
+		})
+		.then(() => {
+		  db.Products.findAll()
+		  .then(products => {
+			res.redirect("/");
+		  })
+			.catch(error => {
+			  console.log(error);
+			  res.render("error", { error });
+			});
+		  })
+		  .catch(error => {
+			console.log(error);
+			res.render("error", { error });
+		  });
+		
+	  },
 	search: (req, res) => {
 		
 		let probando = db.Products.findAll({

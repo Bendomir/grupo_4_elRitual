@@ -30,7 +30,21 @@
             <form action="/products/product-admin/<%= product.product_id %>?_method=PUT" class="product-detail" method="POST" enctype="multipart/form-data">
                 <input type="file" id="images" name="image">
                 <input type="text" id="name" name="name" placeholder="<%= product.name %>" value="<%= product.name %>">
+                <% if (locals.errors && errors.name) { %>                 
+                
+                    <div class="text-danger">
+                        <%= errors.name.msg %>
+                    </div>
+                </div>
+                    <% } %>
                 <input type="text" id="price" name="price" placeholder="<%= product.price %>" value="<%= product.price %>">
+                <% if (locals.errors && errors.price) { %>                 
+                        
+                    <div class="text-danger">
+                        <%= errors.price.msg %>
+                    </div>
+    
+                    <% } %>
                 <input type="text" id="quota" name="quota" placeholder="<%= product.quota %> Cuotas sin interes" value="<%= product.quota %>">
 
 
