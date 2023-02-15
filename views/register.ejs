@@ -19,21 +19,26 @@
             <form action="/user/register" method="POST" enctype="multipart/form-data">
                 <h3>Completa tus datos</h3>
 
-                <% if (locals.errors && errors.userName) { %>
+                <% if (locals.errors && errors.firstName) { %>
                     <div class="text-danger">
-                        <%= errors.userName.msg %>
+                        <%= errors.firstName.msg %>
                     </div>
                 <% } %> 
                 
-                <% if (locals.errors && errors.email) { %>
+                <% if (locals.errors && errors.lastName) { %>
                     <div class="text-danger">
-                        <%= errors.email.msg %>
+                        <%= errors.lastName.msg %>
                     </div>
                 <% } %>
                 
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger">
                         <%= errors.email.msg %>
+                    </div>
+                <% } %>
+                <% if (locals.errors && errors.userName) { %>
+                    <div class="text-danger">
+                        <%= errors.userName.msg %>
                     </div>
                 <% } %>
                 <% if (locals.errors && errors.password) { %>
@@ -49,30 +54,30 @@
 
                 <div class="user-data">
                     <label for="firstName">
-                    <input type="text" id="firstName" name="firstName" placeholder="Nombre " required>
+                    <input type="text" id="firstName" name="firstName" placeholder="Nombre " value="<%= locals.oldData ? oldData.firstName : null %>">
                     </label>
                 </div>
                 <div class="user-data">
                     <label for="lastName">
-                        <input type="text" id="lastName" name="lastName" placeholder="apellido " required>
+                        <input type="text" id="lastName" name="lastName" placeholder="apellido " value="<%= locals.oldData ? oldData.lastName : null %>" required>
                     </label>
 
                 </div>
 
                 <div class="user-data">
                     <label for="email">
-                    <input type="email" id="email" name="email" placeholder="email" required>
+                    <input type="email" id="email" name="email" placeholder="email" value="<%= locals.oldData ? oldData.email : null %>" required>
                     </label>
                 </div>
 
                 <div class="user-data">
                     <label for="userName">
-                        <input type="text" id="userName" name="userName" placeholder="Crea tu usuario " required>
+                        <input type="text" id="userName" name="userName" placeholder="Crea tu usuario " value="<%= locals.oldData ? oldData.userName : null %>" required>
                     </label>
                 </div>
                 <div class="user-data">
                     <label for="password">
-                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <input type="password" id="password" name="password" placeholder="Password" value="<%= locals.oldData ? oldData.password : null %>" required>
                     </label>
                 </div>
 
@@ -115,6 +120,7 @@
     
     <footer>
         <%- include("partials/footer") %>
-</footer>
+    </footer>
+    <script src="../public/js/userRegister.js" type="text/html"></script>
 </body>
 </html>

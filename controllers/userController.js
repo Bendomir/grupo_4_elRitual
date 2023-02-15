@@ -38,9 +38,10 @@ const userController = {
 				res.render('register', {
 		 			errors:{
 		 				userName:{
-		 					msg:'Es usuario ya está registrado'
+		 					msg:'El email ya está registrado o el nombre de usuario ya esta en uso'
 		 				}
-					}
+					},
+					oldData: req.body
 		 		})
 		 	} 
 			else {
