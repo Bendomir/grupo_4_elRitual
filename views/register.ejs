@@ -56,29 +56,33 @@
                     <label for="firstName">
                     <input type="text" id="firstName" name="firstName" placeholder="Nombre " value="<%= locals.oldData ? oldData.firstName : null %>">
                     </label>
+                    <p class="firstNameError">El nombre debe ser mas largo</p>
                 </div>
                 <div class="user-data">
                     <label for="lastName">
                         <input type="text" id="lastName" name="lastName" placeholder="apellido " value="<%= locals.oldData ? oldData.lastName : null %>" required>
                     </label>
-
+                    <p class="lastNameError">El apellido debe ser mas largo</p>
                 </div>
 
                 <div class="user-data">
                     <label for="email">
                     <input type="email" id="email" name="email" placeholder="email" value="<%= locals.oldData ? oldData.email : null %>" required>
                     </label>
+                    <p class="emailError">Debe utilizar un formato válido</p>
                 </div>
 
                 <div class="user-data">
                     <label for="userName">
                         <input type="text" id="userName" name="userName" placeholder="Crea tu usuario " value="<%= locals.oldData ? oldData.userName : null %>" required>
                     </label>
+                    <p class="userNameError">Debe tener al menos 8 carácteres</p>
                 </div>
                 <div class="user-data">
                     <label for="password">
                     <input type="password" id="password" name="password" placeholder="Password" value="<%= locals.oldData ? oldData.password : null %>" required>
                     </label>
+                    <p class="passwordError">Debe tener al menos 8 carácteres</p>
                 </div>
 
                 
@@ -121,6 +125,6 @@
     <footer>
         <%- include("partials/footer") %>
     </footer>
-    <script src="../public/js/userRegister.js" type="text/html"></script>
+    <script src="/js/userRegister.js" type="text/javascript"></script>
 </body>
 </html>

@@ -41,6 +41,8 @@ const userController = {
 		 					msg:'El email ya está registrado o el nombre de usuario ya esta en uso'
 		 				}
 					},
+
+					
 					oldData: req.body
 		 		})
 		 	} 

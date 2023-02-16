@@ -10,6 +10,10 @@ body {
 }
 
 /* -----------------MAIN ------------------*/
+.firstNameError, .lastNameError, .emailError, .userNameError, .passwordError{
+    display: none;
+    color: red
+}
 
 main{
     margin: 0% auto;
