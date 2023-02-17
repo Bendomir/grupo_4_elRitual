@@ -83,6 +83,14 @@ const userController = {
 		res.render("login");
 	},
 	loginProcess: (req, res) => {
+	
+		const errors = validationResult(req);
+			if (!errors.isEmpty()) {
+			  return res.render("login", {
+				errors: errors.mapped(),
+			  });
+			}
+		  
 		db.Users.findAll({
 			where: {
 				userName: req.body.userName
@@ -90,17 +98,17 @@ const userController = {
 		})
 		.then ((userToLogin) => {
 			
-
-		if(userToLogin) {
+	
+		if(userToLogin.length == 1) {
 			let isOkThePassword = bcrypt.compareSync(req.body.password, (userToLogin[0].dataValues.password));
 			if (isOkThePassword) {
 				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
-
+	
 				if(req.body.remember_user) {
 					res.cookie('userName', req.body.userName, { maxAge: (1000 * 60) * 60 })
 				}
-
+	
 				return res.redirect('/user/profile');
 			} 
 			return res.render('login', {
@@ -111,7 +119,7 @@ const userController = {
 				}
 			});
 		}
-
+	
 		return res.render('login', {
 			errors: {
 				userName: {

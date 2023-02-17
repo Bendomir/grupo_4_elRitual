@@ -76,6 +76,11 @@ h5 {
 
 .user-data{
     display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 24rem;
+    margin-left: 24rem;
+    margin-top: 12px;
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 5px;
@@ -108,7 +113,7 @@ input{
     padding: .2rem 1rem;
     border-radius: 1rem;
     border-color: #7a9cc6;
-    width: 80%;
+    width: 20%;
    }
 
 .login input{
