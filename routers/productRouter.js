@@ -4,6 +4,7 @@ const productController = require ('../controllers/productController')
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 
 const validationsProducts = require('../middlewares/validateProductMiddleware')
+const validationUpdate = require("../middlewares/validateUpdate")
 
 const upload = require('../middlewares/multer')
 const { check } = require ("express-validator")
@@ -17,7 +18,7 @@ router.get('/buscador', userLoggedMiddleware, productController.tienda);
 router.post('/buscador', userLoggedMiddleware, productController.search);
 
 router.get('/product-admin/:id', userLoggedMiddleware, productController.edit);
-router.put('/product-admin/:id', upload.single("images"),validationsProducts, productController.update);
+router.put('/product-admin/:id', upload.single("image"),validationUpdate, productController.update);
 
 router.get('/:id', userLoggedMiddleware, productController.productDetail);
 router.delete('/:id', productController.destroy);

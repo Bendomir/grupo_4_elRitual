@@ -38,27 +38,50 @@ const productController = {
         })
     },
 
-    update: (req, res) => {
-		let resultValidation = validationResult(req)
-
-		if(resultValidation.errors.length > 0){
-		   return res.render("product-admin",{errors:resultValidation.mapped(), oldData:req.body})
-		} else{
-		   let img = req.file.filename
-		   
-        db.Products.update({
-            name: req.body.name,
-            quota: req.body.quota,
-            image: img,
-            price: req.body.price,
-        },{
-            where: {
-                product_id: req.params.id
-            }
-        })
+	update: async ( req, res, next) => {
+		let productId = req.params.id;
+		let product = await db.Products.findByPk(req.params.id)
+		let resultValidation = validationResult(req);
+		console.log(resultValidation);
 	
-        res.redirect('/')
-	}},
+		let img;
+		
+		if (req.file == undefined || req.file.filename == undefined) {
+			img = product.image
+			
+		} else {
+			img = req.file.filename
+		}
+	
+		if (resultValidation.isEmpty()) {
+		  db.Product.update(
+			{
+			  name: req.body.name,
+			  quota: req.body.quota,
+			  price: req.body.price,
+			  image: img,
+			},
+			{
+			  where: { product_id: productId },
+			}
+		  )
+			.then(() => {
+			  res.redirect('/product/product-admin/' + productId);
+			})
+			.catch((error) => {
+			  console.log(error);
+			  res.send('Error al actualizar el producto');
+			});
+		} else {
+		  db.Products.findByPk(productId).then((product) => {
+			res.render('productDetail', {
+			  product: product,
+			  oldData: req.body,
+			  errors: resultValidation.mapped(),
+			});
+		  });
+		}
+	  },
 
     chargeProduct: (req, res) => {
 		res.render("chargeProduct");
@@ -73,15 +96,8 @@ const productController = {
 		  });
 		}
 	  
-		if (!req.file) {
-		  return res.render("chargeProduct", {
-			errors: { images: { msg: "Debes subir una imagen." } },
-			oldData: req.body,
-		  });
-		}
-	  
-		const img = req.file.filename
-	  
+		let img = req.file.filename
+
 		db.Products.create({
 		  name: req.body.name,
 		  quota: req.body.quota,
@@ -90,7 +106,7 @@ const productController = {
 		})
 		.then(() => {
 		  db.Products.findAll()
-		  .then(products => {
+		  .then(product => {
 			res.redirect("/");
 		  })
 			.catch(error => {

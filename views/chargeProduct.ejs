@@ -27,7 +27,7 @@
             <a>Cargá un nuevo producto</a>
         </article>
         
-        <form action="/products/charge-product" method="POST" enctype="multipart/form-data">
+        <form action="/products/charge-product" class="reservation" method="POST" enctype="multipart/form-data">
        
             <article class="product">
             <section class="image">
@@ -35,6 +35,7 @@
                 <label for="images" class="perfil"> Agregar Imagen</label>
                 <input type="file" id="images" name="images">
                 <br>
+                <span class="imageError">Por favor seleccione una imagen</span>
                 <br>
 
                 <% if (locals.errors && errors.images) { %>                 
@@ -53,7 +54,8 @@
             <section class="product-detail">
                 <div class="user-data">
                     <label for="name-lastName">
-                    <input type="text" id="name" name="name" placeholder="Nombre de Indumentaria" value="<%= locals.oldData ? oldData.name : null %>" required>
+                    <input type="text" id="name" name="name" class="name" placeholder="Nombre de Indumentaria" value="<%= locals.oldData ? oldData.name : null %>" required>
+                    <span class="nameError">Por favor ingrese al menos 5 caracteres</span>
                     <span class="feedback"></span>
                     </label>
 
@@ -66,8 +68,9 @@
                         <% } %>
                         <div class="user-data">
                             <label for="name-lastName">
-                            <input type="text" id="price" name="price" placeholder="Precio" value="<%= locals.oldData ? oldData.price : null %>" >
+                            <input type="text" id="price" name="price" class="price" placeholder="Precio" value="<%= locals.oldData ? oldData.price : null %>" >
                             <span class="feedback"></span>
+                            
                             </label>
                         </div>
                         <% if (locals.errors && errors.price) { %>                 

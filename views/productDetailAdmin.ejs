@@ -29,6 +29,13 @@
             <img src="/images/<%= product.image %>" alt="">
             <form action="/products/product-admin/<%= product.product_id %>?_method=PUT" class="product-detail" method="POST" enctype="multipart/form-data">
                 <input type="file" id="images" name="image">
+                <% if (locals.errors && errors.image) { %>                 
+                
+                    <div class="text-danger">
+                        <%= errors.image.msg %>
+                    </div>
+                </div>
+                    <% } %>
                 <input type="text" id="name" name="name" placeholder="<%= product.name %>" value="<%= product.name %>">
                 <% if (locals.errors && errors.name) { %>                 
                 

@@ -12,6 +12,11 @@ body {
     font-family: 'Arimo', 'Roboto', sans-serif;
 }
 
+.nameError, .imageError{
+    display: none;
+    color: red
+}
+
 main {
     margin: 0% auto;
     width: 90%;
