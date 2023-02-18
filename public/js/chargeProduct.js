@@ -14,11 +14,11 @@ window.onload = function() {
         }
     })
     
-    image.addEventListener("input", (e)=> {
+     image.addEventListener("input", (e)=> {
         if (!e.target.value) {
-            imageError.style.display = "block"
+             imageError.style.display = "block"
         } else {
-            imageError.style.display = "none"
+             imageError.style.display = "none"
         }
-    })
+     })
   }

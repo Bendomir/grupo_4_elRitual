@@ -40,6 +40,7 @@ const productController = {
 
 	update: async ( req, res, next) => {
 		let productId = req.params.id;
+		console.log(productId)
 		let product = await db.Products.findByPk(req.params.id)
 		let resultValidation = validationResult(req);
 		console.log(resultValidation);
@@ -53,8 +54,18 @@ const productController = {
 			img = req.file.filename
 		}
 	
-		if (resultValidation.isEmpty()) {
-		  db.Product.update(
+		if (resultValidation.errors.length > 0) {
+			db.Products.findByPk(productId).then((product) => {
+				res.render('productDetail', {
+				  product: product,
+				  oldData: req.body,
+				  errors: resultValidation.mapped(),
+				});
+			  });
+		} else {
+		  
+		
+		db.Products.update(
 			{
 			  name: req.body.name,
 			  quota: req.body.quota,
@@ -66,21 +77,12 @@ const productController = {
 			}
 		  )
 			.then(() => {
-			  res.redirect('/product/product-admin/' + productId);
+			  res.redirect('/products/' + productId);
 			})
 			.catch((error) => {
 			  console.log(error);
 			  res.send('Error al actualizar el producto');
-			});
-		} else {
-		  db.Products.findByPk(productId).then((product) => {
-			res.render('productDetail', {
-			  product: product,
-			  oldData: req.body,
-			  errors: resultValidation.mapped(),
-			});
-		  });
-		}
+			})}
 	  },
 
     chargeProduct: (req, res) => {
