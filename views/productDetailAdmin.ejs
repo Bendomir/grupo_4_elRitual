@@ -29,6 +29,9 @@
             <img src="/images/<%= product.image %>" alt="">
             <form action="/products/product-admin/<%= product.product_id %>?_method=PUT" class="product-detail" method="POST" enctype="multipart/form-data">
                 <input type="file" id="images" name="image">
+                <br>
+                <p class="imageError">Las extensiones de archivo permitidas son .jpg .jpeg .png .gif</p>
+                <br>
                 <% if (locals.errors && errors.image) { %>                 
                 
                     <div class="text-danger">
@@ -37,6 +40,7 @@
                 </div>
                     <% } %>
                 <input type="text" id="name" name="name" placeholder="<%= product.name %>" value="<%= product.name %>">
+                <p class="nameError">Por favor ingrese al menos 3 caracteres</p>
                 <% if (locals.errors && errors.name) { %>                 
                 
                     <div class="text-danger">
@@ -45,6 +49,7 @@
                 </div>
                     <% } %>
                 <input type="text" id="price" name="price" placeholder="<%= product.price %>" value="<%= product.price %>">
+                <p class="priceError">Por favor ingrese un valor</p>
                 <% if (locals.errors && errors.price) { %>                 
                         
                     <div class="text-danger">
@@ -120,7 +125,7 @@
     <footer>
             <%- include("partials/footer") %>
     </footer>
-
+    <script src="/js/productDetailAdmin.js" type="text/javascript"></script>
 
 </body>
 </html>

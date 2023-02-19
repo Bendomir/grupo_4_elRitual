@@ -1,0 +1,19 @@
+-- ALTER TABLES - AGREGADO DE FOREIGN KEYS ///////////////////////////////////////////////
+
+ALTER TABLE users
+ADD FOREIGN KEY (userCategory_id) REFERENCES userCategories(userCategory_id);
+
+ALTER TABLE products
+ADD FOREIGN KEY (genre_id) REFERENCES genres(genre_id);
+
+ALTER TABLE stock
+ADD FOREIGN KEY (product_id) REFERENCES products(product_id),
+ADD FOREIGN KEY (size_id) REFERENCES sizes(size_id);
+
+ALTER TABLE carts
+ADD FOREIGN KEY (product_id) REFERENCES products(product_id),
+ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
+
+ALTER TABLE shopping    
+ADD FOREIGN KEY (product_id) REFERENCES products(product_id),
+ADD FOREIGN KEY (user_id) REFERENCES users(user_id);

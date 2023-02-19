@@ -35,7 +35,7 @@
                 <label for="images" class="perfil"> Agregar Imagen</label>
                 <input type="file" id="images" name="images">
                 <br>
-                <p class="imageError">Por favor seleccione una imagen</p>
+                <p class="imageError">Las extensiones de archivo permitidas son .jpg .jpeg .png .gif</p>
                 <br>
 
                 <% if (locals.errors && errors.images) { %>                 
@@ -55,7 +55,7 @@
                 <div class="user-data">
                     <label for="name-lastName">
                     <input type="text" id="name" name="name" class="name" placeholder="Nombre de Indumentaria" value="<%= locals.oldData ? oldData.name : null %>" required>
-                    <p class="nameError">Por favor ingrese al menos 5 caracteres</p>
+                    <p class="nameError">Por favor ingrese al menos 3 caracteres</p>
                     <span class="feedback"></span>
                     </label>
 
@@ -69,6 +69,7 @@
                         <div class="user-data">
                             <label for="name-lastName">
                             <input type="text" id="price" name="price" class="price" placeholder="Precio" value="<%= locals.oldData ? oldData.price : null %>" >
+                            <p class="priceError">Por favor ingrese un valor</p>
                             <span class="feedback"></span>
                             
                             </label>

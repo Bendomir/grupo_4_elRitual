@@ -11,6 +11,10 @@ body {
 
 
 /*--------------MAIN-----------------*/
+.imageError, .nameError, .priceError{
+  display: none;
+  color: red
+}
 
 main{
   margin: 0% auto;

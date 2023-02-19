@@ -12,7 +12,7 @@ body {
     font-family: 'Arimo', 'Roboto', sans-serif;
 }
 
-.nameError, .imageError{
+.nameError, .imageError, .priceError{
     display: none;
     color: red
 }

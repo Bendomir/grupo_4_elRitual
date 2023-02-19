@@ -55,11 +55,12 @@ const productController = {
 		}
 	
 		if (resultValidation.errors.length > 0) {
-			db.Products.findByPk(productId).then((product) => {
+			db.Products.findByPk(productId)
+			.then((product) => {
 				res.render('productDetail', {
-				  product: product,
-				  oldData: req.body,
-				  errors: resultValidation.mapped(),
+			   product: product,
+				errors: resultValidation.mapped(),
+				oldData: req.body,
 				});
 			  });
 		} else {
