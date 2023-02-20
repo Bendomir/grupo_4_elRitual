@@ -11,6 +11,11 @@ body {
 
 
 /*--------------MAIN-----------------*/
+
+.text-danger{
+  color: red;
+}
+
 .imageError, .nameError, .priceError{
   display: none;
   color: red

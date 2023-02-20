@@ -57,7 +57,7 @@ const productController = {
 		if (resultValidation.errors.length > 0) {
 			db.Products.findByPk(productId)
 			.then((product) => {
-				res.render('productDetail', {
+				res.render('productDetailAdmin', {
 			   product: product,
 				errors: resultValidation.mapped(),
 				oldData: req.body,

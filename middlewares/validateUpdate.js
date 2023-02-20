@@ -5,6 +5,8 @@ module.exports = [
      check("name")
      .notEmpty().withMessage('Tienes que escribir un nombre').bail()
      .isLength({ min: 5 }).withMessage('Tienes que escribir un nombre más largo'),
+     check("price").notEmpty().withMessage('Tienes que escribir un precio').bail()
+     .isLength({ min: 2 }).withMessage('Tienes que escribir un valor de 3 digitos'),
      check("image")
      .custom((value, { req }) => {
           if (!req.file) {
