@@ -14,12 +14,19 @@ module.exports = (sequelize, DataTypes) => {
         quantity:{
             type: DataTypes.TINYINT
         },
+
+        sizes_id: {
+            type: DataTypes.INTEGER,
+        },
+
+        product_id: {
+            type: DataTypes.INTEGER,
+        },
         
     };
     
     let config = {
     
-        tableName: 'Stocks',
         timestamp: false
     }
     

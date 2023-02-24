@@ -9,13 +9,12 @@ const validations = require('../middlewares/validateRegisterMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 
-const apiUserController = require('../controllers/api/apiUserController');
 
 
 
 
-router.get('/api/users', apiUserController.list)
-router.get('/api/users/:id', apiUserController.detail)
+
+
 
 router.get('/register',guestMiddleware, userController.register)
 router.post('/register', userImage.single('userImage'), validations, userController.procesarRegistro)

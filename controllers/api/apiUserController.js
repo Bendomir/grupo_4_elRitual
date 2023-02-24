@@ -5,13 +5,22 @@ module.exports =  {
     list: (req, res) =>{
         dB.Users
         .findAll()
-         .then(users => {
-            res.json({
+        .then(users => {
+            res.json(
+                {
                 total: users.length,
-                data: users,
+                data: 
+                        users.map((user) => ({
+                            id: user.user_id,
+                            firstName: user.firstName,
+                            lastName: user.lastName,
+                            email: user.email,
+                            detail: "localhost:3000/api/users/" + user.user_id
+                        })),
                 status: 200
-            });
-         })
+                }
+            );
+        })
         },
     
     detail: (req, res) =>{
@@ -20,7 +29,7 @@ module.exports =  {
          .then(user => {
             res.json({
                 data: {
-                    id: user.id,
+                    id: user.user_id,
                     firstName: user.firstName,
                     lastName: user.lastName,
                     email: user.email,

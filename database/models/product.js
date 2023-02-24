@@ -47,19 +47,21 @@ module.exports = (sequelize, DataTypes) => {
         as: "productCart",
         foreignKey: "product_id"
      })
-    }
+    
 
-    Product.associate = function (models){
+   
         Product.hasMany(models.Shopping, {
             as: "productsShop",
             foreignKey: "product_id"
         })
-    }
+    
 
-    Product.associate = function (models){
-        Product.hasMany(models.Stocks, {
-           as: "productCart",
-           foreignKey: "product_id"
+ 
+        Product.belongsToMany(models.Stocks, {
+           as: "productStock",
+           through: 'stock',
+           foreignKey: "product_id",
+           otherKey: 'size_id'
         })
        }
     
