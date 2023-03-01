@@ -10,35 +10,38 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement:true,
             unsigned: true
         },
-
         quantity:{
             type: DataTypes.TINYINT
         },
-
-        sizes_id: {
+        size_id: {
             type: DataTypes.INTEGER,
         },
 
         product_id: {
             type: DataTypes.INTEGER,
         },
+        createdAt:{
+            type: DataTypes.DATE
+        },
+        updatedAt:{
+            type: DataTypes.DATE
+        }
         
     };
     
     let config = {
     
-        timestamp: false
+        timestamp: true
     }
     
-    const Stock = sequelize.define(alias, cols, config)
+    const Stock = sequelize.define(alias, cols)
 
     Stock.associate = function (models){
         Stock.belongsTo (models.Sizes, {
             as: 'productSize',
             foreignKey: 'size_id'
-        })}
+        })
 
-    Stock.associate = function (models){
         Stock.belongsTo (models.Products, {
             as: 'productStock',
             foreignKey: 'product_id'

@@ -22,3 +22,12 @@ insert into elRitual_db.products (name, quota, image, price) values ('ACDC Blanc
 insert into elRitual_db.products (name, quota, image, price) values ('Nirvana', 6, 'remera-nirvana.jpg', '6000');
 insert into elRitual_db.products (name, quota, image, price) values ('ACDC Negra', 9, 'remera-ACDC.jpg', '6000');
 insert into elRitual_db.products (name, quota, image, price) values ('Soda Stereo', 12, 'remera-soda-stereo.jpg', '6000');
+
+
+
+/*STOCKS DATA*/
+
+INSERT INTO elritual_db.stocks (quantity, product_id, size_id) values (5, 1, 1);
+INSERT INTO elritual_db.stocks (quantity, product_id, size_id) values (15, 2, 1);
+INSERT INTO elritual_db.stocks (quantity, product_id, size_id) values (10, 3, 1);
+INSERT INTO elritual_db.stocks (quantity, product_id, size_id) values (7, 4, 1);

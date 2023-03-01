@@ -35,11 +35,13 @@ CREATE TABLE elRitual_db.products (
 PRIMARY KEY (product_id)
 );
 
-CREATE TABLE elRitual_db.stock (
+CREATE TABLE elRitual_db.stocks (
 	stock_id 			INT UNSIGNED AUTO_INCREMENT NOT NULL,
 	quantity 			TINYINT,
     product_id 			INT UNSIGNED NOT NULL,
     size_id 			INT UNSIGNED NOT NULL,
+	createdAt 			DATE,
+	updatedAt 			DATE,
 PRIMARY KEY (stock_id)
 );
 
@@ -82,7 +84,7 @@ ALTER TABLE elRitual_db.users
 		FOREIGN KEY (userCategory_id)
 		REFERENCES userCategories(userCategory_id);
 
-ALTER TABLE elRitual_db.stock
+ALTER TABLE elRitual_db.stocks
 	ADD CONSTRAINT productStock_id
 		FOREIGN KEY (product_id) 
 		REFERENCES products(product_id),
