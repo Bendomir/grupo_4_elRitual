@@ -5,8 +5,8 @@ import "./assets/css/app.css";
 function App() {
   return (
     <>
-    <SideBar/>
     <ContentWrapper/>
+    <SideBar/>
     </>
   );
 }

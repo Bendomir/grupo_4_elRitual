@@ -7,8 +7,7 @@ function SideBar() {
         <ul
             className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
             id="accordionSidebar"
-            // style={{listStyle: 'none', textDecoration: 'none', width: 20 + '%', 
-            // height: 100 + '%vheight'}}
+            
         >
             {/*<!-- Sidebar - Brand -->*/}
             <Link
