@@ -1,12 +1,15 @@
-import './App.css';
+import React from 'react';
 import ContentWrapper from './components/ContentWrapper';
 import SideBar from './components/SideBar';
-import "./assets/css/app.css";
+
+
 function App() {
   return (
     <>
-    <ContentWrapper/>
-    <SideBar/>
+      	<div id="wrapper">
+          <SideBar />
+          {/* <ContentWrapper /> */}
+        </div>
     </>
   );
 }

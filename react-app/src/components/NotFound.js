@@ -1,16 +1,16 @@
 // import React, { useEffect, useState } from "react";
 import React from "react"
-function ContentRow (){
+function LastProduct (){
 
 
 return(
         <>
                 
                 <h1 className="h3 mb-2 text-gray-800">
-                    Content ROW
+                ERROR 404
                 </h1>
             </>
     )
 }
 
-export default ContentRow
+export default LastProduct

@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-let PORT = process.env.PORT || 3000
+let PORT = process.env.PORT || 3030
 
 
 app.listen(PORT, () => console.log('Fiesta, Carnaval en ' + PORT));
