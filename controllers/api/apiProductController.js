@@ -26,12 +26,17 @@ module.exports =  {
         let productList = dB.Products 
                             .findByPk(req.params.id)
         let productStock = dB.Stocks
-                            .findByPk(req.params.id)
+                            .findAll({
+                                where: {
+                                    product_id: req.params.id
+                                }})
 
 
         Promise.all([productList, productStock])
 
          .then(([product, stock]) => {
+             let totalStock = 0
+
             res.json({
                 data: {
                     id: product.product_id,
@@ -39,8 +44,9 @@ module.exports =  {
                     quota: product.quota,
                     image: "localhost:3000/images/" + product.image,
                     price: product.price,
-                    quantity: stock.quantity
-
+                    quantity: (stock.forEach(e => {
+                        totalStock = totalStock + e.dataValues.quantity
+                    })), totalStock
                 },
                 status: 200
             });
