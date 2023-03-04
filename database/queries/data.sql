@@ -9,10 +9,10 @@ insert into elRitual_db.sizes (name) values ('XL');
 
 
 /*USERS DATA*/
-insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Andres', 'Estevez', 'aestevez@gmail.com', 'aestevez', '$2a$10$hcOOjoZfrbKXDxufqaJK9OTXOGeCHsGy7o5MbnaV0yFcnMMrDRihe', 'userImage-1673980308873.jpg', NULL, 1);
+insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Andres', 'Estevez', 'aestevez@gmail.com', 'aestevez', '$2a$10$hcOOjoZfrbKXDxufqaJK9OTXOGeCHsGy7o5MbnaV0yFcnMMrDRihe', 'userImage-1673980308873.png', NULL, 1);
 insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Nicolas', 'Saucedo', 'nsaucedo@gmail.com', 'nsaucedo', '$2a$10$DBUIb8CFxjSme.xWesz3M.uCKx4cnWlRH9syJCnAtqdSi7Lbd5p7.', 'userImage-1675128215827.jpg', 0, 1);
 insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Rodolfo', 'Caputto', 'rcaputto@gmail.com', 'rcaputto', '$2a$10$OB.Jaxuo5ZDov6FviZ7ht.Eyl019NkiSdFux0OAVM48OglqBIVHjS', 'userImage-1675193675682.jpg', 0, 1);
-insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Usuario', 'Prueba', 'prueba@gmail.com', 'prueba', '$2a$10$CoOmoy1U9qx1hIvUhwnAfu7xSy/e/PspqZ5qfJAxEMs6qv.afObpW', 'user-default-image.jpg', NULL, 1);
+insert into elRitual_db.users (firstName, lastName, email, userName, password, image, newsletter, userCategory_id) values ('Usuario', 'Prueba', 'prueba@gmail.com', 'prueba', '$2a$10$CoOmoy1U9qx1hIvUhwnAfu7xSy/e/PspqZ5qfJAxEMs6qv.afObpW', 'user-default-image.png', NULL, 1);
 
 
 /*PRODUCTS DATA*/

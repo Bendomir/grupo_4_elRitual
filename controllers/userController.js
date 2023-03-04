@@ -62,7 +62,7 @@ const userController = {
 					'password': password,
 					'image': img,
 					'newsletter': req.body.newsletter,
-					'userCategory_id' : 1
+					'userCategory_id' : 2
 				}
 
 				db.Users.create(newUser)
