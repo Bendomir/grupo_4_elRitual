@@ -156,16 +156,17 @@ const userController = {
 			'userName': req.body.userName,
 			'email': req.body.email,
 			// 'password': password,
-			'image': req.body.image,
+			'image': req.file.filename,
 			'newsletter': req.body.newsletter,
         },{
             where: {
                 user_id: req.session.userLogged[0].user_id
             }
         })
-		.then(res.redirect('/user/profile'))
-	
+		.then(() =>{
+			res.redirect('/user/profile')})
 		},
+
 
 	logout: (req, res) => {
 		res.clearCookie('userName');
