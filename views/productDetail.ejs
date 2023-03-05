@@ -6,10 +6,14 @@
     </head>
     <body>
         <header>
-            <% if (locals.isLogged) { %>
+            <% if (locals.isAdmin) { %>
+    
+                <%- include("partials/headerProfileAdmin") %>
+             
+            <% } else if (locals.isLogged) { %>
     
                 <%- include("partials/headerProfile") %>
-             
+    
             <% } else { %>
     
                 <%- include("partials/header") %>
@@ -42,6 +46,9 @@
                             <option value="l">XL</option>
                         </select>
                     </div>
+                    
+                    <% if (locals.isAdmin) { %>        
+                    
                     <div class="edit">
                         <a href="/products/product-admin/<%= product.product_id %> "><button>Editar</button></a>
                     </div>
@@ -50,6 +57,14 @@
                             <button type="submit">Borrar</button>
                         </form>
                     </div>
+
+                    <% } else { %>
+                    <% } %>
+
+                    <div class="agregar-carrito">
+                        <button>AGREGAR AL CARRITO</button>
+                    </div>
+
                 </div>
             </div>
 

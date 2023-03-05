@@ -1,18 +1,15 @@
-const User = require('../models/User');
-
 function userLoggedMiddleware(req, res, next) {
 	res.locals.isLogged = false;
-
-	let userNameInCookie = req.cookies.userName;
-	let userFromCookie = User.findByField('userName', userNameInCookie);
-
-	if (userFromCookie) {
-		req.session.userLogged = userFromCookie;
-	}
+	res.locals.isAdmin = false
 
 	if (req.session.userLogged) {
 		res.locals.isLogged = true;
 		res.locals.userLogged = req.session.userLogged;
+	}
+
+	if (req.session.userAdmin) {
+		res.locals.isAdmin = true
+		res.locals.userAdmin = req.session.userAdmin
 	}
 
 	next();

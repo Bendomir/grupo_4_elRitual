@@ -104,6 +104,12 @@ const userController = {
 			if (isOkThePassword) {
 				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
+
+				let userCategory = userToLogin[0].dataValues.userCategory_id
+				
+				if (userCategory === 1) {
+					req.session.userAdmin = userToLogin
+				}
 	
 				if(req.body.remember_user) {
 					res.cookie('userName', req.body.userName, { maxAge: (1000 * 60) * 60 })

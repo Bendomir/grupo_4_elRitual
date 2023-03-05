@@ -22,9 +22,9 @@ router.post('/register', userImage.single('userImage'), validations, userControl
 router.get('/login',guestMiddleware, userController.login);
 router.post("/login", userController.loginProcess)
 
-router.get('/profile/', authMiddleware, userController.profile);
-router.get('/profile/edit', authMiddleware, userController.editProfile)
-router.post('/profile/edit', userImage.single('image'), userController.storeEditProfile)
+router.get('/profile/', authMiddleware, userLoggedMiddleware, userController.profile);
+router.get('/profile/edit', authMiddleware, userLoggedMiddleware, userController.editProfile)
+router.post('/profile/edit', userImage.single('userImage'), userController.storeEditProfile)
 
 router.get('/logout/', userController.logout);
 

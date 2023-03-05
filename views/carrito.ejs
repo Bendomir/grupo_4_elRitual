@@ -6,18 +6,19 @@
     </head>
     <body>
         <header>
-
-            <% if (locals.isLogged) { %>
-
-                <%- include("partials/headerProfile") %>
+            <% if (locals.isAdmin) { %>
+    
+                <%- include("partials/headerProfileAdmin") %>
              
+            <% } else if (locals.isLogged) { %>
+    
+                <%- include("partials/headerProfile") %>
+    
             <% } else { %>
-
+    
                 <%- include("partials/header") %>
-
+    
             <% } %>
-    
-    
         </header>
 
     <main>
