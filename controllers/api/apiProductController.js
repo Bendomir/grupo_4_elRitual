@@ -32,10 +32,15 @@ module.exports =  {
                                 }})
 
 
+                
         Promise.all([productList, productStock])
 
          .then(([product, stock]) => {
              let totalStock = 0
+
+             if (!product){
+                res.json("El producto no existe")
+             } else {
 
             res.json({
                 data: {
@@ -49,7 +54,7 @@ module.exports =  {
                     })), totalStock
                 },
                 status: 200
-            });
+            })};
          })
         }
 }

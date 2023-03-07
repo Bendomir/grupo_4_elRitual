@@ -27,6 +27,11 @@ module.exports =  {
         dB.Users
         .findByPk(req.params.id)
          .then(user => {
+
+            if (!user){
+                res.json("El usuario no existe")
+             } else {
+
             res.json({
                 data: {
                     id: user.user_id,
@@ -37,7 +42,7 @@ module.exports =  {
                     imageUrl: "localhost:3000/images/userImages/" + user.image,
                 },
                 status: 200
-            });
+            })};
          })
         }
 }
