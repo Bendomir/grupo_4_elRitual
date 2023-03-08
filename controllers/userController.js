@@ -156,13 +156,19 @@ const userController = {
 		
 		// let password = bcrypt.hashSync(req.body.password, 10)
 		// console.log(password)
+		let user = req.session.userLogged[0]
+		let img
+				if (req.file) {
+					img = req.file.filename
+				} else {
+					img = user.image}
 		db.Users.update({
 			'firstName': req.body.firstName,
 			'lastName': req.body.lastName,
 			'userName': req.body.userName,
 			'email': req.body.email,
 			// 'password': password,
-			'image': req.file.filename,
+			'image': img,
 			'newsletter': req.body.newsletter,
         },{
             where: {

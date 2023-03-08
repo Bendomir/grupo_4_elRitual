@@ -22,13 +22,21 @@
         </header>
     <main>
         
-        <h3>Bienvenido <%= user.firstName %> <%= user.lastName %></h3>
-        <img src="/images/userImages/<%= user.image %>" width = 600px>
+        <div class="logged-user">
+        
+        <img src="/images/userImages/<%= user.image %>">
+        <div class="user">
+        <p style="font-size: 18px; color: green;">Bienvenido:<h3> <%= user.firstName %> <%= user.lastName %></h3> </p>
+        <p style="font-size: 18px; color: green;">Nombre de usuario: <h3><%= user.userName %></h3></p>
+        <p style="font-size: 18px; color: green;">Email: <h3><%= user.email %></h3></p>
+    </div>  
 
+
+        
+        </div>
         <div class="edit">
             <a href="/user/profile/edit "><button>Editar</button></a>
-        </div>
-
+    </div>
     </main>
 
 

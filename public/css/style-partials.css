@@ -7,7 +7,7 @@ header{
     display: flex;
     justify-content: center;
     font-family: 'Rock Salt';
-    padding-bottom: 1%;
+    ;
     
 }
 
@@ -250,7 +250,7 @@ footer{
     header a{
         text-decoration: none;
         color: white;
-        font-size: 23px;
+        font-size: 20px;
     }
 
     .burger-menu{
@@ -298,7 +298,7 @@ footer{
         color: black;
         background-color: #D0CFEC;
         border-radius: 40px;
-        font-size: 28px;
+        font-size: 16px;
     }
 
     @keyframes logo{

@@ -199,3 +199,24 @@ font-size: 20px;
 
 }
 /* ----------------- FIN botton libreria ------------------*/
+/* PERFIL DE USUARIO */
+
+.logged-user{
+  display: flex;
+  align-items: center;
+}
+
+.user{
+  margin-left: 16rem;
+}
+
+.logged-user img{
+  width: 100%;
+  border-radius: 50%;
+  margin-top: 2rem;
+  border: solid 2px black;
+  border-radius: 50%;
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+}
