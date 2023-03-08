@@ -76,8 +76,8 @@ const userController = {
 
 	login: (req, res) => {
 
-		console.log("prueba")
-		console.log(bcrypt.hashSync("prueba", 10))
+		// console.log("prueba")
+		// console.log(bcrypt.hashSync("prueba", 10))
 
 
 		res.render("login");
@@ -138,7 +138,7 @@ const userController = {
 
 	profile: (req, res) => {
 		let user = req.session.userLogged[0]
-		console.log(user)
+		// console.log(user)
 
 		db.Users.findByPk(user.user_id)
 		.then (user => {

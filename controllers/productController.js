@@ -40,10 +40,10 @@ const productController = {
 
 	update: async ( req, res, next) => {
 		let productId = req.params.id;
-		console.log(productId)
+		// console.log(productId)
 		let product = await db.Products.findByPk(req.params.id)
 		let resultValidation = validationResult(req);
-		console.log(resultValidation);
+		// console.log(resultValidation);
 	
 		let img;
 		
@@ -134,8 +134,8 @@ const productController = {
 			res.render("tienda", { products:products })
 		})
 		
-		console.log(probando)
-		console.log(req.body.searchBarStore)
+		// console.log(probando)
+		// console.log(req.body.searchBarStore)
 	}
 }
 
