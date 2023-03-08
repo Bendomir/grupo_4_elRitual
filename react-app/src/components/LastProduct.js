@@ -7,16 +7,22 @@ function LastProduct (){
                 useEffect(() => {
                         fetch ('/api/products', {method:'GET', mode: 'no-cors'}) 
                         .then(response => response.json())
-                        .then(data=> {setProducts(data)})
-                        .catch(err => console.error)
-                }, []);
-
+                        .then(data=> { let productsArray = data.data
+                        let lastProductInDB = productsArray.at(-1).name
+                        let lastProductDetail = productsArray.at(-1).detail
+                        fetch(lastProductDetail, {method:'GET', mode: 'no-cors'})
+                        .then(response => response.json())
+                        .then(data=> { let productDetail = data.data
+                                setProducts(productDetail)
+                                console.log("🚀 ~ file: LastProduct.js:20 ~ useEffect ~ productDetail:", productDetail)
+                        })
+                        .catch(err => console.error)})
+                }, [])
+               
                 useEffect(() => {
                 }, [products])
 
-        const totalProducts = products.total
-
-        console.log(totalProducts)
+       
 
 //         const [lastProduct, setLastProduct] = useState ([])
 
@@ -35,10 +41,9 @@ function LastProduct (){
         return (
                 <>
                 <h1 className="h3 mb-0 text-gray-800">LAST PRODUCT</h1>
-                {/* <h3> {lastProduct.name} </h3>  */}
-
+                { <h3> {products.name } </h3> }
+                <img src={products.image}></img>
                 </>
             );
         }
-
 export default LastProduct

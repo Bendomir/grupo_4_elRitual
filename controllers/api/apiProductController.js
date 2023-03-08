@@ -13,7 +13,7 @@ module.exports =  {
                         products.map((product) => ({
                             id: product.product_id,
                             name: product.name,
-                            detail: "localhost:3000/api/products/" + product.product_id
+                            detail: "/api/products/" + product.product_id
                         })),
                 status: 200
                 }
@@ -47,7 +47,7 @@ module.exports =  {
                     id: product.product_id,
                     name: product.name,
                     quota: product.quota,
-                    image: "localhost:3000/images/" + product.image,
+                    image: "/images/" + product.image,
                     price: product.price,
                     quantity: (stock.forEach(e => {
                         totalStock = totalStock + e.dataValues.quantity
