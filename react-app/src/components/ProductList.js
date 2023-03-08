@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./dashboard.css"
 
 function ProductList (){
 
@@ -19,20 +20,24 @@ function ProductList (){
 
 return(
         <>
-            <h1> Listado de productos </h1>
-            <ul>
+       
+            <div className="cartList">
+            <h1 className="titleList"> Listado de productos </h1>
+            <ul className="List">
                 {products.length === 0 && <p>cargando...</p>}
 
                 {
                     products.map((product,i) => {
                             return (
                                 <li key={i}>
-                                    <h3> {product.name} </h3> 
+                                    <h3 className="nameList"> {product.name} </h3> 
                                 </li>
                             )
                     })
                 }
             </ul>
+            </div>
+    
         </>
     )
 }

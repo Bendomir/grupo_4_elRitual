@@ -28,7 +28,7 @@ function SideBar(){
                     <li className="nav-item active" style={{marginTop: 6 + 'rem'}}>
                         <Link className="nav-link" to="/">
                             <i className="fas fa-fw fa-tachometer-alt"></i>
-                            <span>Dashboard - El Ritual</span></Link>
+                            <span> El Ritual</span></Link>
                     </li>
 
                     {/*<!-- Divider -->*/}

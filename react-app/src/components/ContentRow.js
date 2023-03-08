@@ -34,7 +34,7 @@ function ContentRow (){
 
 
 return(
-        <div className='row'>
+        <div className='row' id="row2">
             <div className="col-md-4 mb-4">
                 <div className={`card border-left-success shadow h-100 py-2`}>
                     <div className="card-body">

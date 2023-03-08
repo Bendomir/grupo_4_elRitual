@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./dashboard.css"
 
 function LastProduct (){
 
@@ -24,25 +25,17 @@ function LastProduct (){
 
        
 
-//         const [lastProduct, setLastProduct] = useState ([])
-
-//                   useEffect(() => {
-//                           fetch (`/api/products/${totalProducts}`, {method:'GET', mode: 'no-cors'}) 
-//                           .then(response => response.json())
-//                           .then(data=> {setLastProduct(data.data)})
-//                           .catch(err => console.error)
-//                   }, []);
-
-//                   useEffect(() => {
-//                   }, [lastProduct])
-
-//        console.log(lastProduct)
-
         return (
                 <>
-                <h1 className="h3 mb-0 text-gray-800">LAST PRODUCT</h1>
-                { <h3> {products.name } </h3> }
-                <img src={products.image}></img>
+                
+                <div className="CartLastProduct">
+                <h1 className="titleList">Último Producto</h1>
+                { <h3 className="nameProduct"> {products.name } </h3> }
+                <img src={products.image} className="imageProduct"></img>
+                { <h3 className="nameProduct"> Precio: ${products.price } </h3> }
+                { <h3 className="nameProduct"> Stock: {products.totalStock } </h3> }
+                </div>
+                
                 </>
             );
         }

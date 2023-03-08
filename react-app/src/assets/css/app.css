@@ -8,6 +8,9 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+
+
 :root {
     --blue: #4e73df;
     --indigo: #6610f2;
@@ -47,6 +50,8 @@
 ::before {
     box-sizing: border-box;
 }
+
+
 html {
     font-family: sans-serif;
     line-height: 1.15;
@@ -76,7 +81,23 @@ body {
     color: #858796;
     text-align: left;
     background-color: #fff;
+
 }
+
+#row2{
+display: flex;
+justify-content: center;
+
+}
+
+
+.titulo{
+    text-align: center;
+    color: whitesmoke;
+    padding-bottom: 3%;
+    font-family: 'Rock Salt';
+}
+
 [tabindex="-1"]:focus {
     outline: 0 !important;
 }
@@ -6749,6 +6770,7 @@ button.bg-dark:hover {
 .my-0 {
     margin-bottom: 0 !important;
 }
+
 .ml-0,
 .mx-0 {
     margin-left: 0 !important;
@@ -8750,6 +8772,13 @@ a:focus {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
+.container-fluid{
+    background-image: url(../images/fondo-home.jpeg)!important;
+    background-repeat: repeat-y;
+    background-size: cover;   
+        padding: 3rem 0;
+}
+
 .scroll-to-top {
     position: fixed;
     right: 1rem;
@@ -9991,6 +10020,8 @@ form.user .btn-user {
 footer.sticky-footer {
     padding: 2rem 0;
     flex-shrink: 0;
+    background-color: #1e1e1e;
+    color: whitesmoke;
 }
 footer.sticky-footer .copyright {
     line-height: 1;
