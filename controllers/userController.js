@@ -179,6 +179,45 @@ const userController = {
 			res.redirect('/user/profile')})
 		},
 
+	userList: (req, res) => {
+
+		db.Users.findAll()
+        .then(function(users){
+            res.render("usersList", { users:users })
+        });
+	},
+
+	userDetail: (req, res) => {
+
+		db.Users.findByPk(req.params.id)
+        .then(function(user){
+            res.render("userDetail", { user })
+        });
+	},
+
+    destroy: (req, res) => {
+        db.Users.destroy({
+            where:{
+                user_id:req.params.id
+            }
+        })
+        res.redirect('/');
+
+    },
+
+	changeToAdmin: (req, res) => {
+		db.Users.update({
+			userCategory_id: 1
+        },{
+            where: {
+                user_id: req.params.id
+            }
+        })
+		.then(() =>{
+			res.redirect('/user/users-list')})
+		
+
+    },
 
 	logout: (req, res) => {
 		res.clearCookie('userName');

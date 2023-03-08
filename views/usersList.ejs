@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head") %>
+ <link rel="stylesheet" href="/css/tienda.css">
+</head>
+<body>
+    <header>
+        <% if (locals.isAdmin) { %>
+
+            <%- include("partials/headerProfileAdmin") %>
+         
+        <% } else if (locals.isLogged) { %>
+
+            <%- include("partials/headerProfile") %>
+
+        <% } else { %>
+
+            <%- include("partials/header") %>
+
+        <% } %>
+    </header>
+    <main>
+
+    <h1>
+        ADMINISTRA LOS USUARIOS
+    </h1>
+
+
+    <form action="*" method="post">
+    <div class="filter">
+        
+    <section class="product">
+
+
+    <% users.forEach(user => { %> 
+
+    <div class="card">
+        <a href="/user/users-list/<%= user.user_id %> ">
+        <article class="product-detail">
+            <img src= "/images/userImages/<%= user.image %>" alt="">
+        </a>
+            <section class="description">
+                <h3><%= user.userName %></h3>
+
+                <% if (user.userCategory_id == 1) { %>
+                <p class="precio"> Usuario Administrador</p>
+                <% } else { %>
+                    
+                    <p class="precio"> Usuario Comprador</p>
+                <% } %>
+
+                <div class="edit">
+                    <form action="/user/users-list/<%= user.user_id %>?_method=DELETE" method="post">
+                        <button type="submit">Borrar</button>
+                    </form>
+                </div>
+            
+
+            </section>
+        </article>
+    </div>
+
+    <% }) %> 
+
+</section>
+    </main>
+    <footer>
+    <%- include("partials/footer") %>
+    </footer>
+</body>
+
+</html>

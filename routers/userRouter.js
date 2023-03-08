@@ -26,6 +26,11 @@ router.get('/profile/', authMiddleware, userLoggedMiddleware, userController.pro
 router.get('/profile/edit', authMiddleware, userLoggedMiddleware, userController.editProfile)
 router.post('/profile/edit', userImage.single('image'), userController.storeEditProfile)
 
+router.get('/users-list', userLoggedMiddleware, userController.userList)
+router.get('/users-list/:id', userLoggedMiddleware, userController.userDetail)
+router.put('/users-list/:id', userLoggedMiddleware, userController.changeToAdmin)
+router.delete('/users-list/:id', userLoggedMiddleware, userController.destroy);
+
 router.get('/logout/', userController.logout);
 
 

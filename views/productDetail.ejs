@@ -46,24 +46,25 @@
                             <option value="l">XL</option>
                         </select>
                     </div>
-                    
+                    <div class="edit"></div>
                     <% if (locals.isAdmin) { %>        
                     
-                    <div class="edit">
+                        <div class="edit">
                         <a href="/products/product-admin/<%= product.product_id %> "><button>Editar</button></a>
-                    </div>
-                    <div class="edit">
+                        </div>
+                    
                         <form action="/products/<%= product.product_id %>?_method=DELETE" method="post">
                             <button type="submit">Borrar</button>
                         </form>
-                    </div>
+                   
 
                     <% } else { %>
                     <% } %>
-
+                    </div>
                     <div class="agregar-carrito">
                         <button>AGREGAR AL CARRITO</button>
                     </div>
+                
 
                 </div>
             </div>
