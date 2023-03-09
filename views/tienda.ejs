@@ -28,20 +28,22 @@
     </div>
 
     <h1>
-        ELEGÍ LA INDUMENTARIA DE TU SHOW
+        ELEGÍ LA INDUMENTARIA PARA TU SHOW
     </h1>
-
+<div class="search-links">
+    <div class="searchTshirt">
     <form action="/products/buscador" class="search" method="POST">
         <button class="loupe"><i class="fa fa-search"></i></button>
-        <input type="text" placeholder="Buscar tu remera" class="search-bar" name="searchBarStore" id="searchBarStore">
+        <input type="text" placeholder="  Buscar tu remera" class="search-bar" name="searchBarStore" id="searchBarStore">
     </form>
+</div>
 
     <form action="*" method="post">
     <div class="filter">
         
-            <label for="">Ordenar por: </label>
+            <label for="" class="orden">Ordenar por: </label>
                 <select name="categorias" class="categorias">
-                    <option value="Más vendidos" selected>Más vendidos</option>
+                    <option value="Más vendidos" selected> Más vendidos</option>
                     <option value="Precio: Mayor-Menor">Precio: Mayor-Menor</option>
                     <option value="Precio: Mayor-Menor">Precio: Menor - Mayor </option>
                     <option value="Más visitados">Más visitados</option>
@@ -49,7 +51,7 @@
                 </select>
             </div>
         </form>
-    
+    </div>
 
     <section class="product">
 

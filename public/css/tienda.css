@@ -18,23 +18,56 @@ body {
     flex-direction: row;
 }
 
+.search-links{
+  display:flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 32px;
+}
+
+
 h1{
-    font-size: 16px;
+    font-size: 24px;
     text-align: center;
-    font-family: 'arimo';
+    font-family: 'Roboto';
+    font-weight: bolder;
 }
 .filter{
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4rem;
+    
 }
 .categorias{
-    width: 50%;
-    margin-top: 10px;
+    width: 100%;
+    flex-grow: 2;
+    align-self: flex-start;
       border: solid 2px #B600F6;
-      margin: 10px 200px -8px 15px;
+      margin-left: 8px;
       background-color: #fff;
-      border-radius: 0.9em
+      border-radius: 0.9em;
+      font-size: 20px
   
+}
+.search{
+  display: flex;
+}
+
+.search-bar{
+  width: 100%;
+    flex-grow: 1;
+    align-self: center;
+      border: solid 2px #B600F6;
+      margin-left: 8px;
+      background-color: #fff;
+      border-radius: 0.9em;
+      font-size: 20px;
+      
+}
+
+.orden{
+  align-self: center;
 }
 
 main{
@@ -69,7 +102,7 @@ main img{
     backdrop-filter: blur(7px);
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 26px;
-    box-shadow: 35px 35px 68px 0px rgba(106, 90, 205, 0.2), inset -8px -8px 16px 0px rgba(106, 90, 205, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+    box-shadow: 35px 35px 68px 0px rgba(37, 37, 38, 0.2), inset -8px -8px 16px 0px rgba(182, 180, 189, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
     transition: all 0.3s;
     display: flex;
     flex-direction: column;
